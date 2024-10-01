@@ -13,7 +13,7 @@ const Navbar = () => {
 
 
   return (
-    <div className='bg-white h-[70px] text-black flex items-center flex-row md:px-[30px] fixed top-0 w-[100%]'>
+    <div className='bg-white h-[70px] text-black flex items-center flex-row md:px-[30px] fixed top-0 w-[100%] z-20'>
 
       {/*three dot container */}
 

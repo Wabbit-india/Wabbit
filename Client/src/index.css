@@ -3,3 +3,23 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* width */
+/* ::-webkit-scrollbar {
+  width: 2px;
+} */
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+  background: #f9f9f9; 
+} */
+ 
+/* Handle */
+/* ::-webkit-scrollbar-thumb {
+  background: #f9f9f9; 
+} */
+
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+  background: #f9f9f9; 
+} */
