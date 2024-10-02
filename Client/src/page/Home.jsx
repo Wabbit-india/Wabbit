@@ -5,15 +5,16 @@ import MobileNav from '../components/Home/Navbar/Mobilenav'
 import FindFreelance from '../components/Home/FindFreelance'
 import Category from '../components/Home/Category'
 import Aboutus from '../components/Home/Aboutus'
+import Whywabbit from '../components/Home/Whywabbit'
 
 export default function Home() {
     const isnavbar = useContext(Mycontext);
     return (
-        <div>
+        <div className='flex flex-col h-auto justify-between'> 
                 <Navbar />
                 {/* {isnavbar && <MobileNav />} */}
                 <FindFreelance />
-                {/* <Category/> */}
+                <Category/>
                 {/* <Whywabbit/> */}
                 {/* <Aboutus/> */}
         </div>
