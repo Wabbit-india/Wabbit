@@ -20,9 +20,9 @@ export default function Category() {
   ];
 
   return (
-    <div className="min-h-[100vh] flex items-center p-8 flex-col justify-center gap-7">
+    <div className="min-h-[100vh] flex items-center p-8 flex-col justify-start gap-7 mt-[50px]">
       <div className="text-center lg:w-[100%] h-auto text-black lg:text-start">
-        <p className=" text-[22px] sm:text-[35px] lg:text-6xl font-nunito ">Browse professionals by category</p>
+        <p className=" text-[25px] sm:text-[35px] lg:text-6xl font-nunito ">Browse professionals by category</p>
       </div>
       <div className="w-[100%] h-auto text-black">
         <p className="text-center font-nunito sm:text-[25px] lg:text-2xl lg:text-start">
@@ -36,11 +36,11 @@ export default function Category() {
         </p>
       </div>
 
-      <div className="flex flex-row flex-wrap h-auto justify-between w-[100%] lg:gap-[5%]">
+      <div className="flex flex-row flex-wrap min-h-[70vh] justify-evenly w-[100%] lg:gap-[5%]">
         {categories.map((category, index) => (
           <div
             key={index}
-            className="w-[45%] h-[24%] lg:w-[20%] my-2 lg:h-[25vh] bg-bgmain rounded-2xl lg:my-5 p-2 flex items-center justify-center flex-col cursor-pointer hover:scale-105 shadow-custom-complex transition duration-300"
+            className="w-[45%] h-[16vh] lg:w-[20%] my-2 lg:h-[25vh] bg-bgmain rounded-2xl lg:my-5 p-2 flex items-center justify-center flex-col cursor-pointer hover:scale-105 shadow-custom-complex transition duration-300"
           >
             <div className="h-[50%] w-[50%] flex items-center justify-center">
               <img
