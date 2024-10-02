@@ -7,7 +7,7 @@ function App() {
 
 
   return (
-    <div className=' h-auto w-lvw box-border m-0 p-0 pt-[80px]'>
+    <div className=' h-auto max-w-lvw box-border m-0 p-0'>
       <Contextprovider>
         <BrowserRouter>
           <Routes>
