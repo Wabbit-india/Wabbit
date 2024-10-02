@@ -8,35 +8,36 @@ export default function Workwithus() {
   const headings = ["Trusted by:", "h1", "h1", "h1", "h1"]
 
   return (
-    <div className='w-screen h max-xl:h-[490px] xl:h-[539px] 2xl:h-[600px]'>
+    <div className='w-full mt-[100px] cursor-pointer flex justify-center items-center max-xl:h-[490px] xl:h-[539px] 2xl:h-[600px] '>
 
-      <div className='w-[95%] h-[100%] cursor-pointer bg-bgmain -m-3 flex flex-col items-center rounded-2xl max-2xl:ml-[3%] 2xl:ml-[40px] '>
+      <div className='w-[95%] h-[95%] rounded-2xl  flex flex-col items-center relative bg-bgmain'>
 
         {/* Star-Img */}
 
         <img
           src={img1}
           alt="img01"
-          className='max-sm:hidden absolute object-cover sm:h-24 sm:left-7 sm:top-36 xl:left-20'
+          className='max-sm:hidden absolute object-cover md:h-24 md:left-2 md:top-3 xl:h-32 xl:left-10'
         />
 
         <img
           src={img2}
           alt="img2"
-          className='max-sm:hidden absolute h-[125px] object-cover sm:bottom-60 sm:left-7 sm:h-24 xl:bottom-36 xl:left-20 xl:h-32 2xl:bottom-60 2xl:left-16 2xl:h-40'
+          className='max-sm:hidden absolute object-cover md:h-28 md:left-2 md:bottom-28 xl:h-36 xl:left-10 xl:bottom-32'
         />
 
         <img
           src={img3}
           alt="img2"
-          className='max-sm:hidden absolute  object-cover sm:h-[250px] sm:right-3 sm:bottom-32 xl:right-24 xl:bottom-20 xl:h-[300px] 2xl:right-16 2xl:bottom-44 2xl:h-[350px]'
+          className='max-sm:hidden absolute  object-cover md:h-52 md:right-3 md:bottom-24 xl:h-80 xl:right-8 xl:bottom-20'
         />
 
         <img
           src={img4}
           alt="img2"
-          className='max-sm:hidden absolute h-[125px] bject-cover -rotate-45 sm:bottom-48 xl:bottom-28 2xl:bottom-56 2xl:h-32'
+          className='max-sm:hidden absolute -rotate-45 object-cover md:h-24 md:left-[40%] md:bottom-32 xl:h-32 xl:left-[45%] xl:bottom-[90px]'
         />
+
 
         {/* Heading Dev */}
 
@@ -78,7 +79,7 @@ export default function Workwithus() {
 
         {/* WorkWith */}
 
-        <div className=' max-sm:hidden w-[90%] bg-black h-14 relative top-44 rounded-3xl flex flex-row justify-evenly  items-center sm:top-[140px] lg:top-36 2xl:top-[145px]'>
+        <div className=' max-sm:hidden w-[90%] bg-black h-14 rounded-3xl flex flex-row justify-evenly  items-center mt-28'>
           {headings.map((heading, index) => (
             <h1 className='text-white'
               key={index}>{heading}
