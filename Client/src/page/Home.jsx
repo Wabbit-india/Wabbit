@@ -7,6 +7,7 @@ import Category from '../components/Home/Category'
 import Aboutus from '../components/Home/Aboutus'
 import Whywabbit from '../components/Home/Whywabbit'
 import Footer from '../components/Footer'
+import Footer from "../components/Home/Footer"
 
 export default function Home() {
     const isnavbar = useContext(Mycontext);
@@ -19,6 +20,9 @@ export default function Home() {
                 <Footer/>
                 {/* <Whywabbit/> */}
                 {/* <Aboutus/> */}
+                {/* <Whywabbit/>
+                <Aboutus/> */}
+                <Footer/>
         </div>
     )
 }
