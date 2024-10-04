@@ -6,6 +6,7 @@ import FindFreelance from '../components/Home/FindFreelance'
 import Category from '../components/Home/Category'
 import Aboutus from '../components/Home/Aboutus'
 import Whywabbit from '../components/Home/Whywabbit'
+import Footer from "../components/Home/Footer"
 
 export default function Home() {
     const isnavbar = useContext(Mycontext);
@@ -15,8 +16,9 @@ export default function Home() {
                 {/* {isnavbar && <MobileNav />} */}
                 <FindFreelance />
                 <Category/>
-                {/* <Whywabbit/> */}
-                {/* <Aboutus/> */}
+                {/* <Whywabbit/>
+                <Aboutus/> */}
+                <Footer/>
         </div>
     )
 }
