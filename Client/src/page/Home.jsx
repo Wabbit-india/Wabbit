@@ -17,12 +17,8 @@ export default function Home() {
                 {/* {isnavbar && <MobileNav />} */}
                 <FindFreelance />
                 <Category/>
-                <Footer/>
                 {/* <Whywabbit/> */}
                 {/* <Aboutus/> */}
-                {/* <Whywabbit/>
-                <Aboutus/> */}
-                <Footer/>
         </div>
     )
 }
