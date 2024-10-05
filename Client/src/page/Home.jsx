@@ -6,17 +6,27 @@ import FindFreelance from '../components/Home/FindFreelance'
 import Category from '../components/Home/Category'
 import Aboutus from '../components/Home/Aboutus'
 import Whywabbit from '../components/Home/Whywabbit'
+import Fordesigner from '../components/Home/Fordesigner'
+import Footer from '../components/Home/Footer'
 
 export default function Home() {
     const isnavbar = useContext(Mycontext);
     return (
-        <div className='flex flex-col h-auto justify-between'> 
-                <Navbar />
-                {/* {isnavbar && <MobileNav />} */}
-                <FindFreelance />
-                <Category/>
-                {/* <Whywabbit/> */}
-                {/* <Aboutus/> */}
+        <div className='flex flex-col h-auto justify-between'>
+            <Navbar />
+            {/* {isnavbar && <MobileNav />} */}
+            <FindFreelance />
+            <Category />
+            {/* <Whywabbit/> */}
+
+            {/* <Aboutus/> */}
+
+            <Fordesigner />
+
+
+
+
+            {/* <Footer/> */}
         </div>
     )
 }

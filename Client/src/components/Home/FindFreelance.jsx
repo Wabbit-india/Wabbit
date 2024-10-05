@@ -5,7 +5,11 @@ import img3 from '../../assets/Home/img03.png'
 import img4 from '../../assets/Home/img04.png'
 
 export default function Workwithus() {
-  const headings = ["Trusted by:", "h1", "h1", "h1", "h1"]
+  // const Brand = [
+  //   { image: canvaImage, altText: "canva expert"},
+  //   { image: cameraImage, altText: "video editor"},
+  //   { image: star, altText: "logo designer"},
+  // ];
 
   return (
     <div className='w-full mt-[100px] cursor-pointer flex justify-center items-center max-xl:h-[490px] xl:h-[539px] 2xl:h-[600px] '>
@@ -80,11 +84,7 @@ export default function Workwithus() {
         {/* WorkWith */}
 
         <div className=' max-sm:hidden w-[90%] bg-black h-14 rounded-3xl flex flex-row justify-evenly  items-center mt-28'>
-          {headings.map((heading, index) => (
-            <h1 className='text-white'
-              key={index}>{heading}
-            </h1>
-          ))}
+      
         </div>
       </div>
     </div>
