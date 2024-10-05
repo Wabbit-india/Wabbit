@@ -14,6 +14,7 @@ export default {
         maincolor: "#00bf63",
         hovercolor: "#00bf63",
         bgmain: "#f9f9f9",
+        dcolor:'#adebad'
       },
       boxShadow: {
         'box-shadow': 'rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px',
