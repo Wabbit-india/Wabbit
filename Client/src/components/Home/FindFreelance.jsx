@@ -14,7 +14,7 @@ export default function Workwithus() {
   return (
     <div className='w-full mt-[100px] cursor-pointer flex justify-center items-center max-xl:h-[490px] xl:h-[539px] 2xl:h-[600px] '>
 
-      <div className='w-[95%] h-[95%] rounded-2xl  flex flex-col items-center relative bg-bgmain'>
+      <div className='w-[90%] h-[95%] rounded-2xl  flex flex-col items-center relative bg-bgmain overflow-hidden'>
 
         {/* Star-Img */}
 
@@ -27,7 +27,7 @@ export default function Workwithus() {
         <img
           src={img2}
           alt="img2"
-          className='max-sm:hidden absolute object-cover md:h-28 md:left-2 md:bottom-28 xl:h-36 xl:left-10 xl:bottom-32'
+          className='max-sm:hidden absolute object-cover md:h-28 md:-left-9 md:bottom-28 xl:h-36 xl:-left-9 xl:bottom-32'
         />
 
         <img

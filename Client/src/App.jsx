@@ -2,6 +2,7 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Contextprovider } from '../src/context/Contextprovider';
 import Home from './page/Home';
+import About from './page/About';
 
 function App() {
 
@@ -12,6 +13,8 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About/>} />
+            {/* <Route path="/auth" element={<Auth/>} /> */}
           </Routes>
         </BrowserRouter>
       </Contextprovider>

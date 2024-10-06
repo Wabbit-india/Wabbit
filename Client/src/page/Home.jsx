@@ -4,10 +4,13 @@ import Navbar from "../components/Home/Navbar/Navbar"
 import MobileNav from '../components/Home/Navbar/Mobilenav'
 import FindFreelance from '../components/Home/FindFreelance'
 import Category from '../components/Home/Category'
+import Topeditors from '../components/Home/Topeditors'
 import Aboutus from '../components/Home/Aboutus'
 import Whywabbit from '../components/Home/Whywabbit'
 import Fordesigner from '../components/Home/Fordesigner'
 import Footer from '../components/Home/Footer'
+import Abourus2 from '../components/Home/Abourus2'
+
 
 export default function Home() {
     const isnavbar = useContext(Mycontext);
@@ -17,16 +20,12 @@ export default function Home() {
             {/* {isnavbar && <MobileNav />} */}
             <FindFreelance />
             <Category />
-            {/* <Whywabbit/> */}
-
-            {/* <Aboutus/> */}
-
+            <Topeditors />
+            <Aboutus />
+            <Whywabbit />
+            <Abourus2 />
             <Fordesigner />
-
-
-
-
-            {/* <Footer/> */}
+            <Footer/>
         </div>
     )
 }
