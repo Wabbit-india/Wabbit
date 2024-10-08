@@ -12,7 +12,7 @@ export default function Workwithus() {
   // ];
 
   return (
-    <div className='w-full mt-[100px] cursor-pointer flex justify-center items-center max-xl:h-[490px] xl:h-[539px] 2xl:h-[600px] '>
+    <div className='w-full  h-[90vh] mt-[100px] cursor-pointer flex justify-center items-center'>
 
       <div className='w-[90%] h-[95%] rounded-2xl  flex flex-col items-center relative bg-bgmain overflow-hidden'>
 

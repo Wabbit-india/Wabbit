@@ -25,7 +25,7 @@ export default function Home() {
             <Whywabbit />
             <Abourus2 />
             <Fordesigner />
-            <Footer/>
+            {/* <Footer/> */}
         </div>
     )
 }
