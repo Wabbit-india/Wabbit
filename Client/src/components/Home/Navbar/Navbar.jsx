@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import logo from "../../../../src/assets/Home/navlogo.png"
 import { Mycontext } from '../../../context/Mycontext'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -39,13 +40,14 @@ const Navbar = () => {
       {/* Nav Lists container */}
       <div className='w-auto  h-full flex items-center justify-end md:w-[85%] gap-[11%]'>
         <div className='hidden md:flex flex-row items-center h-[100%] justify-between gap-[9%]'>
-          <li className='list-none text-2xl text-nowrap font-semibold md:text-xl hover:text-hovercolor hover:cursor-pointer transition ease-in'>
-            Home
-          </li>
 
-          <li className='list-none text-2xl text-nowrap font-semibold md:text-xl hover:text-hovercolor hover:cursor-pointer transition-all'>
+          <Link className='list-none text-2xl text-nowrap font-semibold md:text-xl hover:text-hovercolor hover:cursor-pointer transition ease-in' to="/">
+            Home
+          </Link>
+
+          <Link className='list-none text-2xl text-nowrap font-semibold md:text-xl hover:text-hovercolor hover:cursor-pointer transition-all' to="/about">
             About
-          </li>
+          </Link>
 
           <li className='list-none text-2xl text-nowrap font-semibold md:text-xl hover:text-hovercolor hover:cursor-pointer transition-all'>
             Monetize Your Skill
