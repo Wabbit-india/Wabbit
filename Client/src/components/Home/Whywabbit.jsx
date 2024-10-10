@@ -1,27 +1,36 @@
 import React from 'react'
+import img1 from '../../assets/Home/img001.svg'
+import img2 from "../../assets/Home/WhyWabbit/Hiring-removebg-preview.svg"
+import img3 from "../../assets/Home/WhyWabbit/sale.png"
+import designer from '../../assets/Home/WhyWabbit/designer.png'
+import texttool from '../../assets/Home/WhyWabbit/text-tool.png'
+import graphicdesigner from '../../assets/Home/WhyWabbit/graphicdesigner.png'
+import appdevelopment from '../../assets/Home/WhyWabbit/app-development.png'
+import rupees from '../../assets/Home/WhyWabbit/rupees.png'
+import sale from '../../assets/Home/WhyWabbit/sale.png'
 
 export default function Whywabbit() {
   return (
-    <div className='w-scree h-[100vh] flex items-center justify-center'>
+    <div className='w-scree flex items-center justify-center mt-10'>
 
-      <div className='h-[90%] w-[90%] rounded-3xl flex max-sm:flex-col overflow-hidden bg-Thirdbg'>
+      <div className='h-auto w-[90%] rounded-3xl flex max-sm:flex-col overflow-hidden bg-Thirdbg '>
 
         {/* Text-Div */}
 
-        <div className='h-[100%] w-[60%] max-sm:w-[100%] max-sm:h-[60%]'>
+        <div className=' w-[68%] max-lg:w-[100%]'>
 
           {/* Heading-Div */}
 
-          <div className='max-sm:text-center '>
-            <h1 className='text-white max-sm:text-[26px] pt-3 md:text-[35px] md:ml-3 lg:text-[53px]'>
+          <div className='max-lg:text-center'>
+            <h1 className='text-white max-sm:text-[26px] pt-3 md:text-[50px] lg:pl-7 '>
               The right partnerships
             </h1>
 
-            <h1 className='text-maincolor text-[24px] pt-1 md:text-[35px] md:ml-3 lg:text-[48px]'>
+            <h1 className='text-maincolor text-[24px] pt-1 md:text-[45px] sm:pr-2 lg:text-[45px] lg:pl-7'>
               elevate good companies
             </h1>
 
-            <h1 className='text-maincolor max-lg:text-[24px] max-sm:text-start pl-5 375:pl-11 425:pl-16 md:text-[35px] md:-ml-12 lg:text-[50px]'>
+            <h1 className='text-maincolor max-lg:text-[24px] max-lg:text-start pl-5 375:pl-11 425:pl-16 md:text-[45px] sm:pl-28 lg:px-10  lg:text-[45px]'>
               to greatness.
             </h1>
 
@@ -29,29 +38,48 @@ export default function Whywabbit() {
 
           {/* Secheading-Div */}
 
-          <div className='text-[20px] text-white mt-3'>
-            <p className='font-nunito text-[20px] pl-4'>
+          <div className='text-[20px] text-white mt-3 max-sm:px-5'>
+            <p className='font-nunito text-[25px] lg:text-[29px] md:px-5'>
               Access the top 1% of talent on <span className='text-maincolor font-bold'>wabbit</span>, with the complete suite of hybrid workforce management tools.This is how innovation happens today.
             </p>
           </div>
 
-          <div className=' max-sm:hidden list-none pl-3 mt-3'>
 
-            <li className='text-[20px] text-white font-nunito'>
+          <div className='list-none mt-3 flex lg:mt-5'>
+            <img
+              src={img1}
+              alt=""
+              className="h-[8%] w-[8%] object-contain ml-4 lg:mt-5"
+            />
+            <p className='text-[16px] pt-1 sm:text-[25px] sm:py-4 text-white font-nunito pl-2 lg:pl-2 lg:pt-2 xl:pt-9'>
               Elevate your e-commerce game with Wabbit.
-            </li>
-
-            <li className='text-[20px] text-white font-nunito'>
-              Control every step: hire, classify, and pay your talent efficiently.
-            </li>
-
-            <li className='sm:text-[18px] text-white font-nunito'>
-              With <span className='text-maincolor text-[15px] font-bold'>Wabbit</span>,experience total support from start to finish.
-            </li>
-
+            </p>
           </div>
 
-          <button className=' mt-4 ml-5 h-[40px] w-[120px] bg-white text-maincolor rounded-lg text-[18px] font-semibold'>
+          <div className='list-none mt-3 flex '>
+            <img
+              src={img2}
+              alt=""
+              className="h-[8%] w-[8%] object-contain ml-4 lg:mt-5"
+            />
+            <p className='text-[16px] pt-1 sm:text-[25px] sm:py-4 text-white font-nunito pl-2 lg:pl-2 lg:pt-2 xl:pt-8'>
+              Control every step: hire, classify, and pay your talent efficiently.
+            </p>
+          </div>
+
+          <div className='list-none mt-3 flex'>
+            <img
+              src={img3}
+              alt=""
+              className="h-[8%] w-[8%] object-contain ml-3"
+            />
+            <p className='text-[15px] sm:text-[25px] sm:py-4 text-white font-nunito pl-2 lg:pl-4 xl:pt-5'>
+              With <span className='text-maincolor'>Wabbit</span>, experience total support from start to finish.
+
+            </p>
+          </div>
+
+          <button className='mx-6 my-4 h-[40px] w-[120px] bg-white text-maincolor rounded-lg text-[18px] font-semibold lg:mx-[70px] lg:my-6'>
             Get details
           </button>
 
@@ -59,10 +87,60 @@ export default function Whywabbit() {
 
         {/* Img-Div */}
 
-        <div className='max-lg:hidden h-[100] w-[40%]  bg-yellow-600'>
+        <div className='max-lg:hidden  w-[40%] overflow-hidden'>
 
+          <div className='flex lg:my-16'>
+
+            <div className='w-[50%] h-[100%]  flex flex-col'>
+              <img
+                src={designer}
+                alt="graphicdesigner"
+                className='h-[50%] w-[50%] lg:h-[100%] object-contain bg-white ml-20 lg:ml-10  rounded-tl-2xl '
+              />
+
+              <img
+                src={texttool}
+                alt="graphicdesigner"
+                className='h-[40%] w-[50%] object-contain bg-white mt-10 ml-20 lg:ml-10 '
+              />
+
+            </div>
+
+            <div className=' h-[90%] w-[45%] bg-white mt-11 rounded-tr-3xl'>
+              <img
+                src={graphicdesigner}
+                alt="graphicdesigner"
+                className='h-[100%] w-[80%] object-contain  ml-5 '
+              />
+            </div>
+
+          </div>
+
+          <div className='flex lg:mt-[120px] xl:mt-[70px]'>
+
+            <div className=' h-[100%] w-[50%] bg-white mt-14 ml-16 lg:ml-3 rounded-bl-2xl'>
+              <img
+                src={appdevelopment}
+                alt="graphicdesigner"
+                className='h-[80%] w-[80%] object-contain ml-5 '
+              />
+            </div>
+
+            <div className='w-[50%] h-[100%]  flex flex-col'>
+              <img
+                src={rupees}
+                alt="graphicdesigner"
+                className='h-[35%] w-[50%] object-contain bg-white mt-14 ml-20'
+              />
+
+              <img
+                src={sale}
+                alt="graphicdesigner"
+                className='h-[35%] w-[50%] object-contain bg-white mt-3 ml-20 rounded-br-2xl'
+              />
+            </div>
+          </div>
         </div>
-
       </div>
     </div>
   )

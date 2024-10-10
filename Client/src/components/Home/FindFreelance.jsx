@@ -3,16 +3,17 @@ import img1 from '../../assets/Home/img01.png'
 import img2 from '../../assets/Home/img02.png'
 import img3 from '../../assets/Home/img03.png'
 import img4 from '../../assets/Home/img04.png'
+import Dudki from '../../assets/Home/Brand/lino.png'
 
 export default function Workwithus() {
-  // const Brand = [
-  //   { image: canvaImage, altText: "canva expert"},
-  //   { image: cameraImage, altText: "video editor"},
-  //   { image: star, altText: "logo designer"},
-  // ];
+  const Brand = [
+    { image: Dudki, altText: "Dudki" }
+    // { image: cameraImage, altText: "video editor"},
+    // { image: star, altText: "logo designer"},
+  ];
 
   return (
-    <div className='w-full  h-[90vh] mt-[100px] cursor-pointer flex justify-center items-center'>
+    <div className='w-full  h-auto mt-[100px] cursor-pointer flex justify-center items-center'>
 
       <div className='w-[90%] h-[95%] rounded-2xl  flex flex-col items-center relative bg-bgmain overflow-hidden'>
 
@@ -39,7 +40,7 @@ export default function Workwithus() {
         <img
           src={img4}
           alt="img2"
-          className='max-sm:hidden absolute -rotate-45 object-cover md:h-24 md:left-[40%] md:bottom-32 xl:h-32 xl:left-[45%] xl:bottom-[90px]'
+          className='max-sm:hidden absolute -rotate-45 object-cover md:h-24 md:left-[40%] md:bottom-32 xl:h-32 xl:left-[45%] xl:bottom-[140px]'
         />
 
 
@@ -72,7 +73,7 @@ export default function Workwithus() {
 
         {/* Search */}
 
-        <div className='max-2xl:mt-9 2xl:mt-20 z-10 sm:mr-14'>
+        <div className='max-2xl:mt-9 2xl:mt-20 z-10 sm:mr-14 my-16'>
           <input
             type="search"
             placeholder='what are you loocking for'
@@ -83,8 +84,15 @@ export default function Workwithus() {
 
         {/* WorkWith */}
 
-        <div className=' max-sm:hidden w-[90%] bg-black h-14 rounded-3xl flex flex-row justify-evenly  items-center mt-28'>
-      
+        <div className=' max-sm:hidden w-[90%] bg-black h-14 rounded-3xl flex flex-row justify-evenly  items-center my-12 text-white'>
+          {Brand.map((brandItem, index) => (
+            <img
+              key={index}
+              src={brandItem.image}
+              alt={brandItem.altText}
+              className="h-[100%] w-auto object-contain text-white"
+            />
+          ))}
         </div>
       </div>
     </div>
