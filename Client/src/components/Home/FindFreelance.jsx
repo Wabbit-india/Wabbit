@@ -90,7 +90,7 @@ export default function Workwithus() {
               key={index}
               src={brandItem.image}
               alt={brandItem.altText}
-              className="h-[100%] w-auto object-contain text-white"
+              className="h-[100%] w-auto object-contain bg-white"
             />
           ))}
         </div>
