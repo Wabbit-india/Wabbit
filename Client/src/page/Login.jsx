@@ -42,7 +42,7 @@ const Login = () => {
       </div>
 
       <div className="w-full h-[20%] text-[12px] ">
-      By joining, you agree to the Fiverr <a href="" className="underline">Terms of Service</a> and to occasionally receive emails from us. Please read our <a href="" className="underline">Privacy Policy</a> to learn how we use your personal data.
+      By joining, you agree to the Wabbit <a href="" className="underline">Terms of Service</a> and to occasionally receive emails from us. Please read our <a href="" className="underline">Privacy Policy</a> to learn how we use your personal data.
       </div>
     </div>
   );
