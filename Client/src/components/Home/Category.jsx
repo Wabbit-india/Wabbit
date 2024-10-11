@@ -40,7 +40,7 @@ export default function Category() {
         {categories.map((category, index) => (
           <div
             key={index}
-            className="w-[45%] h-[16vh] lg:w-[20%] my-2 lg:h-[25vh] bg-bgmain rounded-2xl lg:my-5 p-2 flex items-center justify-center flex-col cursor-pointer hover:scale-105 shadow-custom-complex transition duration-300"
+            className="w-[45%] h-[16vh] lg:w-[20%] my-2 lg:h-[20vh] bg-bgmain rounded-2xl lg:my-5 p-2 flex items-center justify-center flex-col cursor-pointer hover:scale-105 shadow-custom-complex transition duration-300"
           >
             <div className="h-[50%] w-[50%] flex items-center justify-center">
               <img
