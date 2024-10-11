@@ -45,41 +45,41 @@ export default function Whywabbit() {
           </div>
 
 
-          <div className='list-none mt-3 flex lg:mt-5'>
+          <div className='list-none flex'>
             <img
               src={img1}
               alt=""
-              className="h-[8%] w-[8%] object-contain ml-4 lg:mt-5"
+              className="h-[6%] w-[6%] object-contain ml-6  sm:mt-4 lg:mt-4"
             />
-            <p className='text-[16px] pt-1 sm:text-[25px] sm:py-4 text-white font-nunito pl-2 lg:pl-2 lg:pt-2 xl:pt-9'>
+            <p className='text-[16px] pt-1 sm:text-[25px] sm:py-4 text-white font-nunito pl-2 lg:pl-2 lg:pt-5 xl:pt-5'>
               Elevate your e-commerce game with Wabbit.
             </p>
           </div>
 
-          <div className='list-none mt-3 flex '>
+          <div className='list-none flex '>
             <img
               src={img2}
               alt=""
-              className="h-[8%] w-[8%] object-contain ml-4 lg:mt-5"
+              className="h-[6%] w-[6%] object-contain ml-5 sm:mt-5 lg:mt-4"
             />
-            <p className='text-[16px] pt-1 sm:text-[25px] sm:py-4 text-white font-nunito pl-2 lg:pl-2 lg:pt-2 xl:pt-8'>
+            <p className='text-[16px] pt-1 sm:text-[25px] sm:py-4 text-white font-nunito pl-2 lg:pl-2 lg:pt-2 xl:pt-5'>
               Control every step: hire, classify, and pay your talent efficiently.
             </p>
           </div>
 
-          <div className='list-none mt-3 flex'>
+          <div className='list-none flex'>
             <img
               src={img3}
               alt=""
-              className="h-[8%] w-[8%] object-contain ml-3"
+              className="h-[6%] w-[6%] object-contain ml-6"
             />
-            <p className='text-[15px] sm:text-[25px] sm:py-4 text-white font-nunito pl-2 lg:pl-4 xl:pt-5'>
+            <p className='text-[15px] sm:text-[25px] sm:pt-2 text-white font-nunito pl-2 lg:pl-4 xl:pt-5'>
               With <span className='text-maincolor'>Wabbit</span>, experience total support from start to finish.
 
             </p>
           </div>
 
-          <button className='mx-6 my-4 h-[40px] w-[120px] bg-white text-maincolor rounded-lg text-[18px] font-semibold lg:mx-[70px] lg:my-6'>
+          <button className='mx-6 my-3 h-[40px] w-[120px] bg-white text-maincolor rounded-lg text-[18px] font-semibold lg:mx-[70px] lg:mt-8'>
             Get details
           </button>
 
@@ -87,57 +87,77 @@ export default function Whywabbit() {
 
         {/* Img-Div */}
 
-        <div className='max-lg:hidden  w-[40%] overflow-hidden'>
+        <div className='max-lg:hidden  w-[40%] bg-yellow-500'>
 
-          <div className='flex lg:my-16'>
+          {/* IMG-TOP */}
 
-            <div className='w-[50%] h-[100%]  flex flex-col'>
-              <img
-                src={designer}
-                alt="graphicdesigner"
-                className='h-[50%] w-[50%] lg:h-[100%] object-contain bg-white ml-20 lg:ml-10  rounded-tl-2xl '
-              />
+          <div className='flex lg:mt-2 bg-purple-500'>
 
-              <img
-                src={texttool}
-                alt="graphicdesigner"
-                className='h-[40%] w-[50%] object-contain bg-white mt-10 ml-20 lg:ml-10 '
-              />
+            <div className='flex flex-col'>
 
+              {/* TOP-Left */}
+
+              <div className='w-[50%] h-[100%]'>
+                <img
+                  src={designer}
+                  alt="graphicdesigner"
+                  className='h-[100%] w-[60%] object-contain bg-white ml-20 lg:ml-5  rounded-tl-2xl '
+                />
+              </div>
+
+              <div className='w-[50%] h-[100%]'>
+                <img
+                  src={texttool}
+                  alt="graphicdesigner"
+                  className='h-[85%] w-[60%] object-contain bg-white mt-5 ml-20 lg:ml-10 '
+                />
+              </div>
             </div>
 
-            <div className=' h-[90%] w-[45%] bg-white mt-11 rounded-tr-3xl'>
+            {/* TOP-Right */}
+
+            {/* <div className=' h-[100%] w-[50%] bg-white rounded-tr-3xl'>
               <img
                 src={graphicdesigner}
                 alt="graphicdesigner"
-                className='h-[100%] w-[80%] object-contain  ml-5 '
+                className='h-[100%] w-[100%] object-contain'
               />
-            </div>
-
+            </div> */}
           </div>
 
-          <div className='flex lg:mt-[120px] xl:mt-[70px]'>
+          {/* IMG-bootam */}
 
-            <div className=' h-[100%] w-[50%] bg-white mt-14 ml-16 lg:ml-3 rounded-bl-2xl'>
+          <div className='flex bg-pink-500'>
+
+            {/* bootam-Right */}
+
+            <div className=' h-[100%] w-[80%] bg-white mt-14 ml-16 lg:ml-3 rounded-bl-2xl'>
               <img
                 src={appdevelopment}
                 alt="graphicdesigner"
-                className='h-[80%] w-[80%] object-contain ml-5 '
+                className='h-[100%] w-[100%] object-contain '
               />
             </div>
 
-            <div className='w-[50%] h-[100%]  flex flex-col'>
-              <img
-                src={rupees}
-                alt="graphicdesigner"
-                className='h-[35%] w-[50%] object-contain bg-white mt-14 ml-20'
-              />
+            {/* bootam-Left */}
 
-              <img
-                src={sale}
-                alt="graphicdesigner"
-                className='h-[35%] w-[50%] object-contain bg-white mt-3 ml-20 rounded-br-2xl'
-              />
+            <div className='flex flex-col'>
+
+              <div className='w-[50%] h-[100%]'>
+                <img
+                  src={rupees}
+                  alt="graphicdesigner"
+                  className='h-[35%] w-[50%] object-contain bg-white mt-14 ml-20'
+                />
+              </div>
+
+              <div className='w-[50%] h-[100%]'>
+                <img
+                  src={sale}
+                  alt="graphicdesigner"
+                  className='h-[35%] w-[50%] object-contain bg-white mt-3 ml-20 rounded-br-2xl'
+                />
+              </div>
             </div>
           </div>
         </div>
