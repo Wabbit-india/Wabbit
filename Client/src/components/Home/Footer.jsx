@@ -5,7 +5,7 @@ import { FaXTwitter, FaYoutube } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    <div className="bg-black text-white font-nunito">
+    <div className="bg-black text-white font-nunito cursor-pointer">
       <div className="flex flex-wrap gap-6 items-start justify-center p-8 w-full">
         {/* Category Section */}
         <div className="flex  w-[300px] flex-col  px-[50px] text-base sm:text-lg md:text-xl lg:text-2xl">

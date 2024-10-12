@@ -6,7 +6,7 @@ export default function Topeditors() {
       <div className="max-w-[90%] flex flex-row items-center justify-between gap-4 overflow-hidden">
         <div className="bg-black h-[350px] min-w-[270px] rounded-xl overflow-hidden relative">
           <img
-            className="w-[100%] h-[100%] object-cover  grayscale"
+            className="w-[100%] h-[100%] object-cover   "
             src="https://cdn.pixabay.com/photo/2022/03/11/06/14/indian-man-7061278_960_720.jpg"
             alt=""
           />
@@ -32,7 +32,7 @@ export default function Topeditors() {
         </div>
         <div className="bg-black h-[350px] min-w-[270px] rounded-xl overflow-hidden relative">
           <img
-            className="w-[100%] h-[100%] object-cover  grayscale"
+            className="w-[100%] h-[100%] object-cover   "
             src="https://img.freepik.com/free-photo/portrait-handsome-serious-man_23-2149022626.jpg"
             alt=""
           />
@@ -58,7 +58,7 @@ export default function Topeditors() {
         </div>
         <div className="bg-black h-[350px] min-w-[270px] rounded-xl overflow-hidden relative">
           <img
-            className="w-[100%] h-[100%] object-cover  grayscale"
+            className="w-[100%] h-[100%] object-cover   "
             src="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg"
             alt=""
           />
@@ -84,7 +84,7 @@ export default function Topeditors() {
         </div>
         <div className="bg-black h-[350px] min-w-[270px] rounded-xl overflow-hidden relative">
           <img
-            className="w-[100%] h-[100%] object-cover  grayscale"
+            className="w-[100%] h-[100%] object-cover   "
             src="https://img.freepik.com/premium-photo/smiling-bearded-man_1030879-40664.jpg"
             alt=""
           />
@@ -110,7 +110,7 @@ export default function Topeditors() {
         </div>
         <div className="bg-black h-[350px] min-w-[270px] rounded-xl overflow-hidden relative">
           <img
-            className="w-[100%] h-[100%] object-cover  grayscale"
+            className="w-[100%] h-[100%] object-cover   "
             src="https://t3.ftcdn.net/jpg/04/97/66/28/360_F_497662812_7rGW6PMBJR9AbrKcGgN5S1luXYTjH92i.jpg"
             alt=""
           />
@@ -136,7 +136,7 @@ export default function Topeditors() {
         </div>
         <div className="bg-black h-[350px] min-w-[270px] rounded-xl overflow-hidden relative">
           <img
-            className="w-[100%] h-[100%] object-cover  grayscale"
+            className="w-[100%] h-[100%] object-cover   "
             src="https://t3.ftcdn.net/jpg/04/97/66/28/360_F_497662812_7rGW6PMBJR9AbrKcGgN5S1luXYTjH92i.jpg"
             alt=""
           />

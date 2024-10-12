@@ -3,7 +3,8 @@ import ulogo from "../../assets/Home/star.png";
 
 export default function Abourus2() {
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center py-8 px-4  cursor-pointer">
+    <div className="min-h-screen w-full flex flex-col items-center justify-center py-8 px-4  cursor-pointer font-nunito mt-16
+    ">
       {/* Header */}
 
       <h1 className="lg:w-[65%] text-center font-bold text-3xl lg:text-5xl md:text-3xl  sm:text-xl  max-sm:text-[25px] w-[100%]">
