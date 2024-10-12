@@ -13,11 +13,11 @@ import Abourus2 from '../components/Home/Abourus2'
 
 
 export default function Home() {
-    const isnavbar = useContext(Mycontext);
+    const {isnavbar} = useContext(Mycontext);
     return (
         <div className='flex flex-col h-auto justify-between'>
             <Navbar />
-            {/* {isnavbar && <MobileNav />} */}
+            {isnavbar && <MobileNav />}
             <FindFreelance />
             <Category />
             <Topeditors />

@@ -8,12 +8,13 @@ function App() {
 
 
   return (
-    <div className=' h-auto max-w-lvw box-border m-0 p-0'>
+    <div className=' h-auto max-w-[l00
+    vw] box-border m-0 p-0 overflow-x-hidden'>
       <Contextprovider>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About/>} />
+            <Route path="/about" element={<About />} />
             {/* <Route path="/auth" element={<Auth/>} /> */}
           </Routes>
         </BrowserRouter>

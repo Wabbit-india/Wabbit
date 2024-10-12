@@ -10,13 +10,12 @@ const Navbar = () => {
   const { isModal, setIsModal } = useContext(Mycontext);
 
   // Log isnavbar whenever it changes
-  useEffect(() => {
-    console.log("isnavbar state:", isnavbar);
-  }, [isnavbar]);
+  // useEffect(() => {
+  //   console.log("isnavbar state:", isnavbar);
+  // }, [isnavbar]);
 
   useEffect(() => {
-    console.log("isnavbar state:", isnavbar);
-
+   
     if (isModal) {
       document.body.classList.add('overflow-hidden');
     } else {
@@ -41,7 +40,6 @@ const Navbar = () => {
           className="fa-solid fa-bars text-[25px]"
           onClick={() => {
             setIsnavbar((prevState) => !prevState);
-            alert("hello");
           }}
         ></i>
       </div>
