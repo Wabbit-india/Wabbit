@@ -11,7 +11,7 @@ function App() {
 
 
   return (
-    <div className=' h-auto max-w-lvw box-border m-0 p-0 overflow-hidden'>
+    <div className=' h-auto  box-border m-0 p-0 overflow-x-hidden'>
       <Contextprovider>
         <BrowserRouter>
           <Routes>
@@ -19,8 +19,6 @@ function App() {
             <Route path="/about" element={<About/>} />
             {/* <Route path="/auth" element={<Auth/>} /> */}
             <Route path="/profile" element={<Profile/>}/>
-            <Route path="/profiledet" element={<Profiledet/>}/>
-            <Route path="/freelancerprl" element={<Freelancerprl/>}/>
           </Routes>
         </BrowserRouter>
       </Contextprovider>

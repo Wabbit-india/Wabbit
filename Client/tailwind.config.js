@@ -8,7 +8,8 @@ export default {
     extend: {
       screens:{
         "375":"375px",
-        "425":"425px"
+        "425":"425px",
+        "320":"320px"
       },
       fontFamily: {
         'nunito': ['Nunito', 'sans-serif'],
