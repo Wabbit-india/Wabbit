@@ -24,7 +24,7 @@ const Content = () => {
   }, []);
 
   return (
-    <div className="pt-[70px] w-[100vw] flex flex-col items-center justify-center font-nunito">
+    <div className="pt-[70px] w-[100vw] flex flex-col items-center justify-center font-nunito z-0">
       <div className="w-[60%] h-[300px] pt-8 bg-cover relative">
         <img
           className={`w-[100%] h-[100%] object-cover transition-opacity duration-500 ${fade ? 'opacity-100' : 'opacity-0'}`}

@@ -44,11 +44,11 @@ export default function Fordesigner() {
 
         <div className='flex mx-auto px-4 flex-col lg:flex-row justify-center lg:justify-evenly items-center w-full max-w-[90%] lg:max-w-[50%] my-6 space-y-4 lg:space-y-0'>
 
-          <button className='py-3 px-5 w-full max-w-[170px] rounded-3xl bg-black text-white text-center'>
+          <button className='py-3 px-4 w-full max-w-[170px] rounded-3xl bg-black text-white text-center'>
             Get started now
           </button>
 
-          <button className='py-3 px-5 w-full max-w-[170px] rounded-3xl bg-white text-black text-center'>
+          <button className='py-3 px-4 w-full max-w-[170px] rounded-3xl bg-white text-black text-center'>
             Learn about hiring
           </button>
 
