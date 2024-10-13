@@ -7,7 +7,7 @@ import Login from "../../Auth/Login";
 import Register from "../../Auth/Register";
 
 const Navbar = () => {
-  const { isnavbar, setIsnavbar,createAccount, setcreateAccount, setLoginStep } = useContext(Mycontext);
+  const { isnavbar, setIsnavbar,createAccount, setcreateAccount, setLoginStep, setRegisterStep} = useContext(Mycontext);
   const { isModal, setIsModal } = useContext(Mycontext);
 
   // Log isnavbar whenever it changes
@@ -32,6 +32,7 @@ const Navbar = () => {
     setIsModal(false);
     setLoginStep(0);
     setcreateAccount(false);
+    setRegisterStep(0);
 	};
 
   return (

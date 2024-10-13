@@ -1,12 +1,13 @@
-import React, { useContext, useState } from "react";
-import { Mycontext } from "../../../context/Mycontext";
+import React, { useContext, useState } from 'react'
+
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
+import { Mycontext } from '../../../context/Mycontext';
 
-const LoginStep1 = () => {
-  const { setLoginStep } = useContext(Mycontext);
-  const [show, setshow] = useState(false);
+const RegisterStep1 = () => {
+  const {setRegisterStep} = useContext(Mycontext);
+  const [show, setshow] = useState(false)
   return (
     <div className="flex flex-col  gap-3 h-[100%]">
       <div className="absolute top-6">
@@ -14,7 +15,7 @@ const LoginStep1 = () => {
       <button
         className="text-start font-bold text-sm flex gap-2 flex-row items-center justify-start"
         onClick={() => {
-          setLoginStep(0);
+          setRegisterStep(0);
         }}
         >
         <FaArrowLeftLong />
@@ -24,7 +25,7 @@ const LoginStep1 = () => {
 
       <form className="h-[85%] flex flex-col gap-3" onSubmit="">
         <div className="text-[22px] md:text-3xl text-start font-nunito font-bold">
-          Continue with your email or username{" "}
+          Continue with your email{" "}
         </div>
         <div className="flex flex-col gap-3">
           <label htmlFor="email" className="font-bold w-fit">
@@ -63,10 +64,7 @@ const LoginStep1 = () => {
             )}
           </div>
         </div>
-        <div className="text-end underline cursor-pointer text-maincolor hover:transition">
-          Forgot Password?
-        </div>
-        <button className="py-3 text-center w-full cursor-pointer border rounded-xl border-[rgb(0,0,0,0.2)] font-bold flex-row flex items-center justify-center gap-[5%] bg-black">
+        <button className="py-3 text-center w-full cursor-pointer border rounded-xl border-[rgb(0,0,0,0.2)] font-bold flex-row flex items-center justify-center gap-[5%] bg-black mt-6">
           <p className="text-[16px] text-white">Continue</p>
         </button>
       </form>
@@ -83,7 +81,7 @@ const LoginStep1 = () => {
         to learn how we use your personal data.
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default LoginStep1;
+export default RegisterStep1
