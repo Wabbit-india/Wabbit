@@ -19,14 +19,24 @@ export default function Profile() {
 
   return (
     <>
+      {/* NavbarFor All Component */}
+
       <div className='w-full h-[70px]'>
         <Navbar />
       </div>
-      <div className="bg-bgmain w-full min-h-screen flex flex-col sm:flex-row">
-        {/* The "aside" section will appear at the top on small screens */}
-        <aside className="w-full sm:w-[400px] flex justify-center p-5 m-3">
+
+      {/* MainDiv */}
+
+      <div className="bg-bgmain w-full min-h-[91vh] flex flex-col sm:flex-row">
+
+        {/* The "aside-Bar */}
+
+        <aside className="w-full sm:w-[400px] h-[50%] flex justify-center p-5 m-3">
+
           {/* Responsive inner div */}
-          <div className="bg-white shadow-lg w-full max-w-[380px] h-[400px] flex flex-col justify-center items-center rounded-lg p-4">
+
+          <div className="bg-white shadow-lg w-full max-w-[380px] h-[400px] flex flex-col justify-center items-center rounded-lg p-4 ">
+
             <img className="w-28 rounded-full max-w-full" src={img} alt="Profile" />
             <h1 className="text-2xl">Harsh Teja</h1>
             <div className="flex items-center">
@@ -45,10 +55,11 @@ export default function Profile() {
           </div>
         </aside>
 
-        {/* Responsive Content */}
+        {/* Datial-Div */}
+
         <div className="flex flex-col w-full sm:w-2/3">
           {/* Navbar always at the top */}
-            <nav className="bg-white lg:text-xl  lg:w-[90%] lg:mx-auto rounded shadow-lg my-8 flex-shrink-0 h-16 flex items-center justify-around">
+          <nav className="bg-white lg:text-xl  lg:w-[90%] lg:mx-auto rounded shadow-lg my-8 flex-shrink-0 h-16 flex items-center justify-around">
             <button
               className={`text-black ${getButtonStyle('Profile1')}`}
               onClick={() => setActiveProfile('Profile1')}
@@ -76,6 +87,9 @@ export default function Profile() {
           </nav>
 
           {/* Main content always below the navbar */}
+
+          {/* Modal */}
+
           <main className="p-4 bg-bgmain flex-grow overflow-y-auto mx-4 sm:mx-8">
             {activeProfile === 'Profile1' && <Profile1 />}
             {activeProfile === 'Profile2' && <Profile2 />}

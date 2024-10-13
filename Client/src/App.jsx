@@ -9,14 +9,14 @@ function App() {
 
 
   return (
-    <div className=' h-auto box-border m-0 p-0 overflow-x-hidden'>
+    <div className=' h-auto  box-border m-0 p-0 overflow-x-hidden'>
       <Contextprovider>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/about" element={<About />} /> */}
-            {/* <Route path="/auth" element={<Auth/>} /> */}
-            {/* <Route path="/profile" element={<Profile/>}/> */}
+            <Route path="/about" element={<About />} />
+            {/* <Route path="/auth" element={<Auth />} /> */}
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </BrowserRouter>
       </Contextprovider>
