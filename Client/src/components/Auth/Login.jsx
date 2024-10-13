@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { MdEmail } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF,FaApple } from "react-icons/fa";
+import { Mycontext } from "../../context/Mycontext";
 
 const Login = () => {
+  const {setcreateAccount} = useContext(Mycontext)
   return (
     <div className="w-[90%] 2xl:w-[80%] h-[100%] flex flex-col pt-[10%] pb-[5%] font-nunito gap-5">
       <div className="flex flex-col  gap-3 h-[20%]">
@@ -12,9 +14,9 @@ const Login = () => {
         </div>
         <div className="text-[20px] md:text-xl text-start font-nunito">
           Don’t have an account?
-          <a href="" className=" underline underline-offset-2 text-maincolor">
+          <span className=" underline underline-offset-2 text-maincolor cursor-pointer" onClick={()=>{setcreateAccount(true)}}>
             Join here
-          </a>
+          </span>
         </div>
       </div>
 
