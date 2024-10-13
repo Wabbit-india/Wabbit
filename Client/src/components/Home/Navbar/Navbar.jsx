@@ -7,7 +7,7 @@ import Login from "../../Auth/Login";
 import Register from "../../Auth/Register";
 
 const Navbar = () => {
-  const { isnavbar, setIsnavbar,createAccount, setcreateAccount } = useContext(Mycontext);
+  const { isnavbar, setIsnavbar,createAccount, setcreateAccount, setLoginStep } = useContext(Mycontext);
   const { isModal, setIsModal } = useContext(Mycontext);
 
   // Log isnavbar whenever it changes
@@ -30,6 +30,8 @@ const Navbar = () => {
 
   const handleClickAway = () => {
     setIsModal(false);
+    setLoginStep(0);
+    setcreateAccount(false);
 	};
 
   return (
@@ -94,7 +96,7 @@ const Navbar = () => {
             <div className="hidden xl:flex w-[40%] h-full">
               <img className="h-full w-full object-cover" src="https://fiverr-res.cloudinary.com/npm-assets/layout-service/standard.0638957.png" alt="" />
             </div>
-            <div className="w-[100%] xl:w-[60%] h-full flex flex-col items-center justify-center">
+            <div className="w-[100%] xl:w-[60%] h-full flex flex-col items-center justify-center relative">
               {createAccount?<Register/>:<Login/>}
             </div>
           </div>

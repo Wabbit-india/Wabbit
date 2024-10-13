@@ -7,7 +7,7 @@ import { Mycontext } from '../../../context/Mycontext';
 
 const Content = () => {
     
-  const {setcreateAccount} = useContext(Mycontext)
+  const {setcreateAccount, setLoginStep} = useContext(Mycontext)
   return (
     <>
       <div className="flex flex-col  gap-3 h-[20%]">
@@ -27,7 +27,7 @@ const Content = () => {
           <FcGoogle className="text-[16px] " />
           <p className="text-[16px]">Continue With Google</p>
         </div>
-        <div className="py-2 text-center w-full cursor-pointer border rounded-xl border-[rgb(0,0,0,0.2)] font-bold flex-row flex items-center justify-center gap-[5%]">
+        <div className="py-2 text-center w-full cursor-pointer border rounded-xl border-[rgb(0,0,0,0.2)] font-bold flex-row flex items-center justify-center gap-[5%]" onClick={()=>{setLoginStep(1)}}>
           <MdEmail className="text-[16px]"/>
           <p className="text-[16px]">Continue With Username/Email</p>
         </div>
