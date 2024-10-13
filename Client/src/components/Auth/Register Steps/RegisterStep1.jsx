@@ -64,7 +64,7 @@ const RegisterStep1 = () => {
             )}
           </div>
         </div>
-        <button className="py-3 text-center w-full cursor-pointer border rounded-xl border-[rgb(0,0,0,0.2)] font-bold flex-row flex items-center justify-center gap-[5%] bg-black mt-6">
+        <button disabled className="py-3 text-center w-full cursor-pointer border rounded-xl border-[rgb(0,0,0,0.2)] font-bold flex-row flex items-center justify-center gap-[5%] bg-black mt-6">
           <p className="text-[16px] text-white">Continue</p>
         </button>
       </form>

@@ -66,7 +66,7 @@ const LoginStep1 = () => {
         <div className="text-end underline cursor-pointer text-maincolor hover:transition">
           Forgot Password?
         </div>
-        <button className="py-3 text-center w-full cursor-pointer border rounded-xl border-[rgb(0,0,0,0.2)] font-bold flex-row flex items-center justify-center gap-[5%] bg-black">
+        <button disabled className="py-3 text-center w-full cursor-pointer border rounded-xl border-[rgb(0,0,0,0.2)] font-bold flex-row flex items-center justify-center gap-[5%] bg-black">
           <p className="text-[16px] text-white">Continue</p>
         </button>
       </form>
