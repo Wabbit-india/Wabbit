@@ -3,7 +3,6 @@ import logo from "../../../../src/assets/Home/navlogo.png";
 import { Mycontext } from "../../../context/Mycontext";
 import { Link } from "react-router-dom";
 // import ClickAwayListener from 'react-click-away-listener';
-import Login from "../../../page/Login";
 import ClickAwayListener from 'react-click-away-listener';
 import Login from "../../Auth/Login";
 import Register from "../../Auth/Register";
