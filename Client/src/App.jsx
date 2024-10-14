@@ -4,6 +4,8 @@ import { Contextprovider } from '../src/context/Contextprovider';
 import Home from './page/Home';
 import About from './page/About';
 import Profile from './page/Profile';
+import Profiledet from './page/Profiledet';
+import Freelancerprl from './page/Freelancerprl';
 
 function App() {
 
@@ -14,9 +16,9 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            {/* <Route path="/auth" element={<Auth />} /> */}
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/about" element={<About/>} />
+            {/* <Route path="/auth" element={<Auth/>} /> */}
+            <Route path="/profile" element={<Profile/>}/>
           </Routes>
         </BrowserRouter>
       </Contextprovider>
