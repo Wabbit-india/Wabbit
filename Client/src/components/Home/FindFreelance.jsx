@@ -47,7 +47,7 @@ export default function Workwithus() {
 
         {/* Heading Dev */}
 
-        <h1 className=' pt-3 font-nunito max-sm:text-[17px] sm:text-[35px] xl:text-[50px] '>
+        <h1 className=' pt-3 font-nunito font-bold max-sm:text-[17px] sm:text-[35px] xl:text-[50px] '>
           Instantly Connect with the Perfect
         </h1>
 
@@ -57,17 +57,17 @@ export default function Workwithus() {
             Freelance
           </h2>
 
-          <h2 className='text-[20px] font-nunito sm:text-[35px] xl:text-[50px]'>
+          <h2 className='text-[20px] font-nunito font-bold sm:text-[35px] xl:text-[50px]'>
             Service for
           </h2>
         </div>
 
         <div className='flex gap-2 pt-1  sm:gap-6'>
-          <h3 className='font-[500] text-[20px] font-nunito sm:text-[35px] xl:text-[50px]'>
+          <h3 className='font-bold text-[20px] font-nunito sm:text-[35px] xl:text-[50px]'>
             Your
           </h3>
 
-          <h3 className='text-maincolor font-[500] text-[20px] sm:text-[35px] xl:text-[50px]'>
+          <h3 className='text-maincolor font-nunito font-[900] text-[20px] sm:text-[35px] xl:text-[50px]'>
             Needs!
           </h3>
         </div>
