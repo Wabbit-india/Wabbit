@@ -1,5 +1,5 @@
 import express from "express";
-
+import authRouter from "./Routes/auth.js"
 import cors from "cors";
 import dotenv from "dotenv";
 import connentTOdb from "./db/Db.js";
@@ -14,6 +14,8 @@ try {
   app.use(express.json());
   app.use(cors());
   await connentTOdb();
+
+  app.use("/auth" , authRouter);
 
   app.get("/", (req, res) => {
     res.send("healthy");
