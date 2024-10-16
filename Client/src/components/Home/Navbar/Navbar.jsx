@@ -94,11 +94,8 @@ const Navbar = () => {
       {isModal && (
         <div className="absolute h-[100vh] w-[100vw] top-0 z-50 left-0 bg-[rgb(0,0,0,0.8)] flex items-center justify-center ">
           <ClickAwayListener onClickAway={handleClickAway}>
-          <div className="w-[90vw] md:w-[60vw] bg-white h-[85vh] rounded-2xl flex flex-row overflow-hidden">
-            <div className="hidden xl:flex w-[40%] h-full">
-              <img className="h-full w-full object-cover" src="https://fiverr-res.cloudinary.com/npm-assets/layout-service/standard.0638957.png" alt="" />
-            </div>
-            <div className="w-[100%] xl:w-[60%] h-full flex flex-col items-center justify-center relative">
+          <div className="w-[90vw] md:w-[80vw] lg:w-[600px] xl:w-[550px] bg-white h-[85vh] rounded-2xl flex flex-row overflow-hidden">
+            <div className="w-[100%] xl:w-[100%] h-full flex flex-col items-center justify-center relative">
               {createAccount?<Register/>:<Login/>}
             </div>
           </div>
