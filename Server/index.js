@@ -1,11 +1,12 @@
 import express from "express";
-// import connentTOdb from "./config/config.js";
+
 import cors from "cors";
 import dotenv from "dotenv";
+import connentTOdb from "./db/Db.js";
 
 
 dotenv.config();
-const port = process.env.REACT_APP_SERVER_PORT;
+const port = process.env.PORT;
 
 try {
   const app = express();
