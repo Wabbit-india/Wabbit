@@ -12,9 +12,9 @@ const Navbar = () => {
   const { isModal, setIsModal } = useContext(Mycontext);
 
   // Log isnavbar whenever it changes
-  // useEffect(() => {
-  //   console.log("isnavbar state:", isnavbar);
-  // }, [isnavbar]);
+  useEffect(() => {
+    console.log("isnavbar state:", isnavbar);
+  }, [isnavbar]);
 
   useEffect(() => {
    

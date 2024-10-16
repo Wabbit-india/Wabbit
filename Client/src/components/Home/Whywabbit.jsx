@@ -35,7 +35,7 @@ export default function Whywabbit() {
 
           <div className='text-white mt-3 max-lg:pl-4'>
             <p className='font-nunito text-[18px] lg:text-[22px] md:px-5'>
-              Access the top 1% of talent on <span className='text-maincolor font-bold'>wabbit</span>, with the complete suite of hybrid workforce management tools.This is how innovation happens today.
+              Access the top 1% of talent on <span className='text-maincolor font-extrabold'>wabbit</span>, with the complete suite of hybrid workforce management tools.This is how innovation happens today.
             </p>
           </div>
 
@@ -69,7 +69,7 @@ export default function Whywabbit() {
               className="h-[6%] w-[6%] object-contain ml-5"
             />
             <p className='text-[15px] sm:text-[25px] lg:text-[20px] text-white font-nunito pl-2 lg:pl-4 pt-2'>
-              With <span className='text-maincolor'>Wabbit</span>, experience total support from start to finish.
+              With <span className='text-maincolor font-extrabold'>Wabbit</span>, experience total support from start to finish.
 
             </p>
           </div>
