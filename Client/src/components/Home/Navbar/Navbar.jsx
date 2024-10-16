@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import logo from "../../../../src/assets/Home/navlogo.png";
+import logo from "../../../assets/Home/Nav/navlogo.png";
 import { Mycontext } from "../../../context/Mycontext";
 import { Link } from "react-router-dom";
 // import ClickAwayListener from 'react-click-away-listener';

@@ -36,7 +36,7 @@ function Freelancer2() {
       {/* Conditional rendering: hide the div when a file is selected (modal is shown) */}
       {!isFileSelected && (
         <div className='w-full p-2 h-[300px] rounded-md shadow-lg'>
-          <div className='w-full h-full border border-2 border-black flex flex-col justify-center items-center'>
+          <div className='w-full h-full border-2 border-black flex flex-col justify-center items-center'>
             <div
               className='w-[60px] h-[60px] bg-blue-300 rounded-full flex justify-center items-center cursor-pointer'
               onClick={handleIconClick}

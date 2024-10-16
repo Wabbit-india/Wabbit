@@ -1,10 +1,10 @@
 import React from "react";
-import cameraImage from "../../assets/Home/animatedCamera.png";
+import cameraImage from "../../assets/Home/ForFreelance/img02.png";
 import canvaImage from "../../assets/Home/canvaCategoryImg.png";
 import webDeveloper from "../../assets/Home/webDeveloper.png";
 import graphicDesigner from "../../assets/Home/graphicDesigner.png";
 import blogwriter from "../../assets/Home/blogwriter.png";
-import star from "../../assets/Home/star.png";
+import star from "../../assets/Home/ForFreelance/img01.png";
 import photoeditor from "../../assets/Home/photoeditor.png";
 
 export default function Category() {

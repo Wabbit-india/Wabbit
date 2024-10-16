@@ -1,14 +1,14 @@
 import React from 'react'
-import img1 from '../../assets/Home/img01.png'
-import img2 from '../../assets/Home/img02.png'
-import img3 from '../../assets/Home/img03.png'
-import img4 from '../../assets/Home/img04.png'
-import Dudki from '../../assets/Home/Brand/lino.png'
-import timex from '../../assets/Home/Brand/timex.png'
+import img1 from '../../assets/Home/ForFreelance/img01.png'
+import img2 from '../../assets/Home/ForFreelance/img02.png'
+import img3 from '../../assets/Home/ForFreelance/img03.png'
+import img4 from '../../assets/Home/ForFreelance/img04.png'
+import lino from '../../assets/Home/Brand/lino.svg'
+import timex from '../../assets/Home/Brand/timex.svg'
 
 export default function Workwithus() {
   const Brand = [
-    { image: Dudki, altText: "Dudki" },
+    { image: lino, altText: "lino" },
     { image: timex, altText: "timex" },
     // { image: star, altText: "logo designer"},
   ];
@@ -85,7 +85,7 @@ export default function Workwithus() {
 
         {/* WorkWith */}
 
-        <div className=' max-sm:hidden w-[90%] bg-black h-14 rounded-3xl flex flex-row  items-center gap-36 my-12 text-white'>
+        <div className='max-sm:hidden w-[90%] bg-black h-14 rounded-3xl flex flex-row items-center gap-36 my-12 text-white'>
           <h1 className='pl-36 font-nunito font-bold'>
             hello world:
           </h1>
@@ -94,10 +94,11 @@ export default function Workwithus() {
               key={index}
               src={brandItem.image}
               alt={brandItem.altText}
-              className="h-[100%] w-auto object-contain rounded-2xl bg-yellow-600"
+              className="h-[%] w-auto object-contain rounded-2xl filter-red"
             />
           ))}
         </div>
+
       </div>
     </div>
   )
