@@ -11,7 +11,6 @@ import Fordesigner from '../components/Home/Fordesigner'
 import Footer from '../components/Home/Footer'
 import Abourus2 from '../components/Home/Abourus2'
 
-
 export default function Home() {
     const {isnavbar} = useContext(Mycontext);
     return (
