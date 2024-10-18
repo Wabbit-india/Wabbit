@@ -7,6 +7,45 @@ import { FaRegEyeSlash } from "react-icons/fa6";
 const LoginStep1 = () => {
   const { setLoginStep } = useContext(Mycontext);
   const [show, setshow] = useState(false);
+  const [data, setData] = useState("");
+  const [password, setpassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(""); 
+
+  const result = async(e) =>{
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+
+    try {
+      const response = await fetch("http://localhost:8000/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          data: data,
+          password: password,
+        }),
+      });
+
+      const result = await response.json();
+      setData("")
+      setpassword("")
+
+      if (result.success) {
+        console.log("Login successful", result);
+      } else {
+        // Handle error response
+        setError(result.message || "Login failed");
+      }
+    } catch (err) {
+      setError("An unexpected error occurred");
+    } finally {
+      setLoading(false);
+    }
+
+  }
   return (
     <div className="flex flex-col  gap-3 h-[100%]">
       <div className="absolute top-6">
@@ -22,7 +61,7 @@ const LoginStep1 = () => {
       </button>
         </div>
 
-      <form className="h-[85%] flex flex-col gap-3" onSubmit="">
+      <form onSubmit={result} className="h-[85%] flex flex-col gap-3">
         <div className="text-[22px] md:text-3xl text-start font-nunito font-bold">
           Continue with your email or username{" "}
         </div>
@@ -31,8 +70,10 @@ const LoginStep1 = () => {
             Email
           </label>
           <input
-            type="email"
+            type="text"
             id="email"
+            value={data}
+            onChange={(e)=>{setData(e.target.value)}}
             placeholder="name@email.com"
             className="border rounded-lg py-2 px-3 pr-10 border-[rgb(0,0,0,0.2)] focus:outline-[rgb(0,0,0,0.5)] "
           />
@@ -46,6 +87,8 @@ const LoginStep1 = () => {
               type={show ? "text" : "password"}
               id="password"
               placeholder="passowrd"
+              value={password}
+              onChange={(e)=>{setpassword(e.target.value)}}
               className="border rounded-lg py-2 px-3 pr-10 border-[rgb(0,0,0,0.2)] w-full focus:outline-[rgb(0,0,0,0.5)]"
             />
             {!show ? (
@@ -66,7 +109,7 @@ const LoginStep1 = () => {
         <div className="text-end underline cursor-pointer text-maincolor hover:transition">
           Forgot Password?
         </div>
-        <button disabled className="py-3 text-center w-full cursor-pointer border rounded-xl border-[rgb(0,0,0,0.2)] font-bold flex-row flex items-center justify-center gap-[5%] bg-black">
+        <button type="submit" className="py-3 text-center w-full cursor-pointer border rounded-xl border-[rgb(0,0,0,0.2)] font-bold flex-row flex items-center justify-center gap-[5%] bg-black">
           <p className="text-[16px] text-white">Continue</p>
         </button>
       </form>

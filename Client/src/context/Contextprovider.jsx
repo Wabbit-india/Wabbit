@@ -7,6 +7,9 @@ export const Contextprovider = ({ children }) => {
   const [createAccount, setcreateAccount] = useState(false);
   const [LoginStep, setLoginStep] = useState(0);
   const [RegisterStep, setRegisterStep] = useState(0);
+  const [registerEmail, setRegisterEmail] = useState("");
+  const [registerPassword, setRegisterPassword] = useState("");
+  const [registerUsername, setRegisterUsername] = useState("");
 
   return (
     <Mycontext.Provider
@@ -21,6 +24,12 @@ export const Contextprovider = ({ children }) => {
         setLoginStep,
         RegisterStep,
         setRegisterStep,
+        registerEmail,
+        setRegisterEmail,
+        registerPassword,
+        setRegisterPassword,
+        registerUsername,
+        setRegisterUsername,
       }}
     >
       {children}

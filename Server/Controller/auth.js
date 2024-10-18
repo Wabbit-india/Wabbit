@@ -38,7 +38,7 @@ export const createUser = async (req, res) => {
     res.status(200).send({
       authToken,
       _id: newUser._id,
-      res: "User created successfully",
+      message: "User created successfully",
       success: true,
     });
   } catch (error) {
