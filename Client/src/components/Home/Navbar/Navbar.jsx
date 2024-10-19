@@ -1,15 +1,25 @@
 import React, { useContext, useEffect } from "react";
 import logo from "../../../assets/Home/Nav/navlogo.png";
 import { Mycontext } from "../../../context/Mycontext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import ClickAwayListener from 'react-click-away-listener';
-import ClickAwayListener from 'react-click-away-listener';
+import ClickAwayListener from "react-click-away-listener";
 import Login from "../../Auth/Login";
 import Register from "../../Auth/Register";
 
 const Navbar = () => {
-  const { isnavbar, setIsnavbar,createAccount, setcreateAccount, setLoginStep, setRegisterStep} = useContext(Mycontext);
+  const navigate = useNavigate()
+  const name = localStorage.getItem("username")
+  const {
+    isnavbar,
+    setIsnavbar,
+    createAccount,
+    setcreateAccount,
+    setLoginStep,
+    setRegisterStep,
+  } = useContext(Mycontext);
   const { isModal, setIsModal } = useContext(Mycontext);
+  const token = localStorage.getItem("token");
 
   // Log isnavbar whenever it changes
   useEffect(() => {
@@ -17,15 +27,14 @@ const Navbar = () => {
   }, [isnavbar]);
 
   useEffect(() => {
-   
     if (isModal) {
-      document.body.classList.add('overflow-hidden');
+      document.body.classList.add("overflow-hidden");
     } else {
-      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove("overflow-hidden");
     }
 
     return () => {
-      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove("overflow-hidden");
     };
   }, [isModal]);
 
@@ -34,7 +43,7 @@ const Navbar = () => {
     setLoginStep(0);
     setcreateAccount(false);
     setRegisterStep(0);
-	};
+  };
 
   return (
     <div className="bg-white h-[70px] text-black flex items-center flex-row md:px-[30px] fixed top-0 w-[100%] z-20">
@@ -81,24 +90,37 @@ const Navbar = () => {
           </li>
         </div>
 
-        <button
-          className="text-nowrap w-[95%] px-4 py-2 border-[1px] bg-black  text-white text-[17px] font-[500] rounded-xl md:w-[150px]"
-          onClick={() => {
-            setIsModal(true);
-          }}
-        >
-          Get Started
-        </button>
+        {!token ? (
+          <button
+            className="text-nowrap w-[95%] px-4 py-2 border-[1px] bg-black  text-white text-[17px] font-[500] rounded-xl md:w-[150px]"
+            onClick={() => {
+              setIsModal(true);
+            }}
+          >
+            Get Started
+          </button>
+        ) : (
+          <button
+            className="bg-maincolor rounded-full w-[40px] h-[40px] text-white text-center uppercase font-bold"
+            onClick={() => {
+              // localStorage.removeItem("token");
+              // localStorage.removeItem("_id");
+              navigate("/myprofile");
+            }}
+          >
+            {name[0]}
+          </button>
+        )}
       </div>
 
       {isModal && (
         <div className="absolute h-[100vh] w-[100vw] top-0 z-50 left-0 bg-[rgb(0,0,0,0.8)] flex items-center justify-center ">
           <ClickAwayListener onClickAway={handleClickAway}>
-          <div className="w-[90vw] md:w-[80vw] lg:w-[600px] xl:w-[550px] bg-white h-[85vh] rounded-2xl flex flex-row overflow-hidden">
-            <div className="w-[100%] xl:w-[100%] h-full flex flex-col items-center justify-center relative">
-              {createAccount?<Register/>:<Login/>}
+            <div className="w-[90vw] md:w-[80vw] lg:w-[600px] xl:w-[550px] bg-white h-[85vh] rounded-2xl flex flex-row overflow-hidden">
+              <div className="w-[100%] xl:w-[100%] h-full flex flex-col items-center justify-center relative">
+                {createAccount ? <Register /> : <Login />}
+              </div>
             </div>
-          </div>
           </ClickAwayListener>
         </div>
       )}

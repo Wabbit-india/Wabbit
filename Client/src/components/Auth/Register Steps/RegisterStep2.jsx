@@ -5,16 +5,18 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 const RegisterStep2 = () => {
   const {
     setRegisterStep,
-    setshow,
     registerEmail,
     setRegisterEmail,
     registerPassword,
     setRegisterPassword,
     registerUsername,
     setRegisterUsername,
+    setIsModal,
+    setcreateAccount,
+    setLoginStep,
   } = useContext(Mycontext);
 
-  const register = async(e) =>{
+  const register = async (e) => {
     e.preventDefault();
     try {
       const response = await fetch("http://localhost:8000/auth/register", {
@@ -25,19 +27,27 @@ const RegisterStep2 = () => {
         body: JSON.stringify({
           email: registerEmail,
           password: registerPassword,
-          username : registerUsername
+          username: registerUsername,
         }),
       });
       const result = await response.json();
-      console.log(result) 
+      console.log(result);
+      const token = result.authToken;
+      localStorage.setItem("token", token);
+      localStorage.setItem("_id", result._id);
+      localStorage.setItem("username", result.username);
       setRegisterUsername("");
-      setRegisterEmail("")
-      setRegisterPassword("")
-      setshow(false)     
+      setRegisterEmail("");
+      setRegisterPassword("");
+      setRegisterStep(0);
+      setcreateAccount(false);
+      setLoginStep(0);
+      setIsModal(false);
     } catch (error) {
-      console.log("an error occured in registering")
+      console.log(error);
+      console.log("an error occured in registering");
     }
-  }
+  };
 
   return (
     <div className="flex flex-col  gap-3 h-[100%]">
