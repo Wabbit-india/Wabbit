@@ -90,3 +90,45 @@ export const loginUser = async (req, res) => {
     return res.status(500).json({ error: "Internal server error" });
   }
 };
+
+
+export const setinfo = async(req,res) =>{
+  try {
+    const {
+      userId,
+      freelancerType,
+      freelancingPurpose,
+      companySize,
+      purpose,
+      sellingPurpose,
+      experienceMode,
+    } = req.body;
+
+    // Update user information based on user ID
+    const updatedUser = await UserSchema.findByIdAndUpdate(
+      userId,
+      {
+        freelancerType,
+        freelancingPurpose,
+        companySize,
+        purpose,
+        sellingPurpose,
+        experienceMode,
+      },
+      { new: true } // To return the updated document
+    );
+
+    if (!updatedUser) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    res.status(200).json({
+      message: "User information updated successfully",
+      userType: updatedUser.freelancerType,
+      success: true,
+    });
+  }  catch (error) {
+    console.log("Intrenal server error at setinfo auth controller🔴 ", error);
+    return res.status(500).json({ error: "Internal server error" });
+  }
+}

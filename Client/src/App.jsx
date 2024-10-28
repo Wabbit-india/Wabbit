@@ -6,6 +6,7 @@ import About from './page/About';
 import Profile from './page/Profile';
 // import Profiledet from './page/Profiledet';
 import Freelancerprl from './page/Freelancerprl';
+import GetinfoPage from './components/getinfo/getinfoPage';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
             <Route path="/about" element={<About/>} />
             <Route path="/profile" element={<Profile/>}/>
             <Route path="/myprofile" element={<Freelancerprl/>}/>
+            <Route path="/getinfo" element={<GetinfoPage/>}/>
           </Routes>
         </BrowserRouter>
       </Contextprovider>

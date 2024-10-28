@@ -8,6 +8,7 @@ import { GoDot } from "react-icons/go";
 import { GoDotFill } from "react-icons/go";
 import Footer from "../components/Home/Footer";
 import { Mycontext } from "../context/Mycontext";
+import { useNavigate } from "react-router-dom";
 
 const images = [image1, image2, image3];
 
@@ -15,6 +16,17 @@ export default function About() {
   const { isnavbar } = useContext(Mycontext);
   const [selected, setSelected] = useState(0);
   const [fade, setFade] = useState(true);
+  const navigate = useNavigate();
+    useEffect(() => {
+        const _id = localStorage.getItem("_id");
+        const authtoken = localStorage.getItem("token");
+        const username = localStorage.getItem("username");
+        const userType = localStorage.getItem("userType");
+    
+        if (_id && authtoken && username && !userType) {
+          navigate("/getinfo"); // Redirect to "/getinfo" if userType is missing
+        }
+    }, [])
 
   useEffect(() => {
     const interval = setInterval(() => {
