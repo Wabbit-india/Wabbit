@@ -6,6 +6,12 @@ import About from './page/About';
 import Profile from './page/Profile';
 // import Profiledet from './page/Profiledet';
 import Freelancerprl from './page/Freelancerprl';
+import RegisterStep1 from './components/Auth/Register Steps/RegisterStep1';
+import RegisterStep2 from './components/Auth/Register Steps/RegisterStep2';
+import Freelancer1 from './components/freelancer/Freelancer1';
+import Freelancer2 from './components/freelancer/Freelancer2';
+import Freelancer3 from './components/freelancer/Freelancer3';
+import Profile1 from './components/Profile/Profile1';
 
 function App() {
 
@@ -16,9 +22,9 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About/>} />
-            <Route path="/profile" element={<Profile/>}/>
-            <Route path="/myprofile" element={<Freelancerprl/>}/>
+            <Route path="/about" element={<About />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/myprofile" element={<Freelancerprl />} />
           </Routes>
         </BrowserRouter>
       </Contextprovider>

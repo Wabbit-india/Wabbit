@@ -10,6 +10,9 @@ import Whywabbit from '../components/Home/Whywabbit'
 import FreelancersSlide from '../components/Home/FreelancersSlide'
 import Fordesigner from '../components/Home/Fordesigner'
 import Footer from '../components/Home/Footer'
+import Content from '../components/Auth/Register Steps/Content'
+import RegisterStep1 from '../components/Auth/Register Steps/RegisterStep1'
+import RegisterStep2 from '../components/Auth/Register Steps/RegisterStep2'
 
 
 
@@ -27,6 +30,8 @@ export default function Home() {
             <FreelancersSlide/>
             <Fordesigner />
             <Footer/>
+            
+           
         </div>
     )
 }
