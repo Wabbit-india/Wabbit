@@ -10,12 +10,14 @@ import Whywabbit from '../components/Home/Whywabbit'
 import FreelancersSlide from '../components/Home/FreelancersSlide'
 import Fordesigner from '../components/Home/Fordesigner'
 import Footer from '../components/Home/Footer'
+import { useNavigate } from 'react-router-dom'
 
 
 
 export default function Home() {
     const {isnavbar} = useContext(Mycontext);
     const navigate = useNavigate();
+    
     useEffect(() => {
         const _id = localStorage.getItem("_id");
         const authtoken = localStorage.getItem("token");
