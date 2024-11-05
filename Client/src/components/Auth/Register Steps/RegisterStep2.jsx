@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { Mycontext } from "../../../context/Mycontext";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 const RegisterStep2 = () => {
+  const navigate = useNavigate();
   const {
     setRegisterStep,
     registerEmail,
@@ -43,6 +45,7 @@ const RegisterStep2 = () => {
       setcreateAccount(false);
       setLoginStep(0);
       setIsModal(false);
+      navigate("/getinfo")
     } catch (error) {
       console.log(error);
       console.log("an error occured in registering");

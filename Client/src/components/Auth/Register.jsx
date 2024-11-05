@@ -5,7 +5,7 @@ import RegisterStep1 from "./Register Steps/RegisterStep1";
 import RegisterStep2 from "./Register Steps/RegisterStep2";
 
 const Register = () => {
-  const { setcreateAccount, RegisterStep } = useContext(Mycontext);
+  const { setcreateAccount, RegisterStep,freelance, normaluser} = useContext(Mycontext);
   return (
     <div className="w-[80%] 2xl:w-[70%] h-[100%] flex flex-col pt-[10%] pb-[5%] font-nunito gap-5">
       {RegisterStep == 0 && <Content />}
