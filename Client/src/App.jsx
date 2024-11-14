@@ -4,7 +4,6 @@ import { Contextprovider } from '../src/context/Contextprovider';
 import Home from './page/Home';
 import About from './page/About';
 import Profile from './page/Profile';
-// import Profiledet from './page/Profiledet';
 import Freelancerprl from './page/Freelancerprl';
 import GetinfoPage from './components/getinfo/getinfoPage';
 

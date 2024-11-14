@@ -17,14 +17,11 @@ const Navbar = () => {
     setLoginStep,
     setRegisterStep,
   } = useContext(Mycontext);
+
   const { isModal, setIsModal } = useContext(Mycontext);
   const token = localStorage.getItem("token");
 
   const [sideModal, setSideModal] = useState(false);
-
-  useEffect(() => {
-    console.log("isnavbar state:", isnavbar);
-  }, [isnavbar]);
 
   useEffect(() => {
     if (isModal) {
@@ -91,9 +88,11 @@ const Navbar = () => {
           >
             About
           </Link>
+
           <li className="list-none text-2xl text-nowrap font-semibold md:text-xl hover:text-hovercolor hover:cursor-pointer transition-all">
             Monetize Your Skill
           </li>
+
         </div>
 
         {!token ? (
@@ -107,7 +106,7 @@ const Navbar = () => {
           </button>
         ) : (
           <button
-            className="bg-maincolor rounded-full w-[40px] h-[40px] text-white text-center uppercase font-bold"
+            className="bg-maincolor rounded-full w-[40px] h-[40px] text-white text-center uppercase font-bold ml-8"
             onClick={() => {
               setSideModal(true);
             }}
@@ -142,12 +141,14 @@ const Navbar = () => {
               >
                 Profile
               </li>
+
               <li
                 className="text-lg font-medium py-2 hover:bg-gray-100 cursor-pointer"
                 onClick={handleLogout}
               >
                 Logout
               </li>
+
             </ul>
           </div>
         </ClickAwayListener>

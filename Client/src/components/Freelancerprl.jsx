@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import img from '../../src/assets/Home/webDeveloper.png';
 import { IoLocationOutline } from "react-icons/io5";
-import Navbar from '../components/Home/Navbar/Navbar';
-import Freelancer1 from '../components/freelancer/Freelancer1';
-import Freelancer2 from '../components/freelancer/Freelancer2';
-import Freelancer3 from '../components/freelancer/Freelancer3';
+import Navbar from './Home/Navbar/Navbar';
+import Freelancer1 from './freelancer/Freelancer1';
+import Freelancer2 from './freelancer/Freelancer2';
+import Freelancer3 from './freelancer/Freelancer3';
 import { useNavigate } from 'react-router-dom';
 
 export default function Profile() {
