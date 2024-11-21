@@ -1,7 +1,7 @@
 import React from "react";
-import ulogo from "../../assets/Home/star.png";
+import ulogo from "../../assets/Home/ForFreelance/img01.png";
 
-export default function Aboutus() {
+export default function BusinessesSlide() {
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-center py-8 px-4 cursor-pointer">
       {/* Header */}

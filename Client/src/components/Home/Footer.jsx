@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../../src/assets/Home/navlogo.png";
+import logo from "../../assets/Home/Nav/navlogo.png";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter, FaYoutube } from "react-icons/fa6";
 

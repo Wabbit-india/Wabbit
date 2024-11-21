@@ -25,9 +25,9 @@ const Content = () => {
 
   return (
     <div className="pt-[70px] w-[100vw] flex flex-col items-center justify-center font-nunito z-0">
-      <div className="w-[60%] h-[300px] pt-8 bg-cover relative">
+      <div className="w-[80%] h-[200px] bg-contain lg:w-[60%] lg:h-[300px] pt-8 lg:bg-cover relative">
         <img
-          className={`w-[100%] h-[100%] object-cover transition-opacity duration-500 ${fade ? 'opacity-100' : 'opacity-0'}`}
+          className={`w-[100%] h-[100%] lg:object-cover transition-opacity duration-500 ${fade ? 'opacity-100' : 'opacity-0'}`}
           src={images[selected]}
           alt=""
         />
@@ -49,17 +49,17 @@ const Content = () => {
           ))}
         </div>
       </div>
-      <div className="w-[70%] flex flex-col gap-8 pb-28">
+      <div className="w-[90%] lg:w-[70%] flex flex-col gap-8 pb-28">
         <div className="text-center text-maincolor text-[60px] font-[700]">
           About Us
         </div>
-        <div className="text-[28px] ">
+        <div className="text-[22px] lg:text-[28px] ">
           Wabbit began with a vision to revolutionize how businesses grow and
           how talent can thrive. Our mission is to bridge the gap between
           creativity and innovation, empowering companies to move faster and
           giving talent a platform to unlock their true potential.
         </div>
-        <div className="text-[28px] ">
+        <div className="text-[22px] lg:text-[28px] ">
           For us, it’s all about creating meaningful opportunities. Wabbit is
           where businesses of all sizes and ambitious individuals come together
           to achieve extraordinary things. I’ve witnessed firsthand how this
@@ -67,7 +67,7 @@ const Content = () => {
           beyond projects and transactions, enabling growth on both sides.
         </div>
         <div className="text-[29px] font-[700]">We see what you do</div>
-        <div className="text-[28px] ">
+        <div className="text-[22px] lg:text-[28px] ">
           Every project, whether it’s a quick UI design or an expansive
           development cycle, reflects the dedication and passion of Wabbit's
           users. We’ve designed Wabbit to align the goals of our clients with
@@ -77,7 +77,7 @@ const Content = () => {
         <div className="text-[29px] font-[700]">
           Wabbit is your innovation engine
         </div>
-        <div className="text-[28px] ">
+        <div className="text-[22px] lg:text-[28px] ">
           For clients, Wabbit is where you find the talent that accelerates your
           vision. For independent creators, this is where you expand your
           potential, knowing you are a critical part of a larger team. We aim to
@@ -87,13 +87,13 @@ const Content = () => {
         <div className="text-[29px] font-[700]">
           We’re building your future, together
         </div>
-        <div className="text-[28px] ">
+        <div className="text-[22px] lg:text-[28px] ">
           We see your goals, and our platform is built to help you achieve them.
           Wabbit helps you build your network of trusted professionals,
           transforming the way you work. Whether you’re here for short-term wins
           or long-term growth, we’re with you every step of the way.
         </div>
-        <div className="text-[28px] ">
+        <div className="text-[22px] lg:text-[28px]">
           At Wabbit, we’re still driven by our mission to create impactful
           economic opportunities worldwide, and that includes you. We can’t wait
           to see how far you’ll go.

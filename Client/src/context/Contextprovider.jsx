@@ -6,6 +6,7 @@ export const Contextprovider = ({ children }) => {
   const [isModal, setIsModal] = useState(false);
   const [createAccount, setcreateAccount] = useState(false);
   const [LoginStep, setLoginStep] = useState(0);
+  const [RegisterStep, setRegisterStep] = useState(0);
 
   return (
     <Mycontext.Provider
@@ -18,6 +19,8 @@ export const Contextprovider = ({ children }) => {
         setcreateAccount,
         LoginStep,
         setLoginStep,
+        RegisterStep,
+        setRegisterStep,
       }}
     >
       {children}

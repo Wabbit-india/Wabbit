@@ -1,16 +1,16 @@
 import React from "react";
-import cameraImage from "../../assets/Home/animatedCamera.png";
+import cameraImage from "../../assets/Home/ForFreelance/img02.png";
 import canvaImage from "../../assets/Home/canvaCategoryImg.png";
 import webDeveloper from "../../assets/Home/webDeveloper.png";
 import graphicDesigner from "../../assets/Home/graphicDesigner.png";
 import blogwriter from "../../assets/Home/blogwriter.png";
-import star from "../../assets/Home/star.png";
+import star from "../../assets/Home/ForFreelance/img01.png";
 import photoeditor from "../../assets/Home/photoeditor.png";
 
 export default function Category() {
   const categories = [
     { image: canvaImage, altText: "canva expert", label: "Canva Expert" },
-    { image: cameraImage, altText: "video editor", label: "Video Editor" },
+    { image: cameraImage, altText: "video editor", label: "Video Editor", link:'./videoeditor' },
     { image: star, altText: "logo designer", label: "Logo Designer" },
     { image: photoeditor, altText: "photo editor", label: "Photo Editor" },
     { image: webDeveloper, altText: "web developer", label: "Web Developer" },
@@ -43,6 +43,7 @@ export default function Category() {
             className="w-[45%] h-[16vh] lg:w-[20%] my-2 lg:h-[20vh] bg-bgmain rounded-2xl lg:my-5 p-2 flex items-center justify-center flex-col cursor-pointer hover:scale-105 shadow-custom-complex transition duration-300"
           >
             <div className="h-[50%] w-[50%] flex items-center justify-center">
+              
               <img
                 src={category.image}
                 alt={category.altText}

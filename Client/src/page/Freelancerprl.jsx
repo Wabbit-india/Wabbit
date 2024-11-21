@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import img from '../../src/assets/Home/webDeveloper.png';
 import { IoLocationOutline } from "react-icons/io5";
 import Navbar from '../components/Home/Navbar/Navbar';
-import Freelancer1 from '../components/Home/freelancer/Freelancer1';
-import Freelancer2 from '../components/Home/freelancer/Freelancer2';
-import Freelancer3 from '../components/Home/freelancer/Freelancer3';
+import Freelancer1 from '../components/freelancer/Freelancer1';
+import Freelancer2 from '../components/freelancer/Freelancer2';
+import Freelancer3 from '../components/freelancer/Freelancer3';
 
 export default function Profile() {
   const [activeProfile, setActiveProfile] = useState('Freelancer1'); // Initial state to display Profile1

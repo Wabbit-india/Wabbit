@@ -8,6 +8,7 @@ import Profile4 from '../components/Profile/Profile4';
 import Navbar from '../components/Home/Navbar/Navbar';
 
 export default function Profile() {
+  
   const [activeProfile, setActiveProfile] = useState('Profile1'); // Initial state to display Profile1
 
   // Helper function to set the underline for the active button

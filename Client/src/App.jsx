@@ -11,6 +11,9 @@ import Logocard from './page/Logocard';
 import Mockupcard from './page/Mockupcard';
 import Invitioncard from './page/Invititioncard';
 import Canvacard from './page/Canvacard'
+import Personalnav from './components/personalinfo/Personalnav';
+import Chat from './page/Chat';
+import Chatmain from './page/Chatmain';
 const  App = ()=> {
   return (
     <div className=' h-auto  box-border m-0 p-0 overflow-x-hidden'>
@@ -19,10 +22,14 @@ const  App = ()=> {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About/>} />
-            {/* <Route path="/auth" element={<Auth/>} /> */}
             <Route path="/profile" element={<Profile/>}/>
             <Route path="/freelancerprl" element={<Freelancerprl/>}/>
-            <Route path="/professioncard" element={<Canvacard/>}/>
+            <Route path="/canvacard" element={<Canvacard/>}/>
+            <Route path="/personalnav" element={<Personalnav/>}/>
+            <Route path="/chat" element={<Chat/>}/>
+            <Route path="/chatpage" element={<Chatmain/>}/>
+            <Route path="/photocard" element={<Photocard/>}/>
+            
           </Routes>
         </BrowserRouter>
       </Contextprovider>
