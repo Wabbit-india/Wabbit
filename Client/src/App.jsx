@@ -19,8 +19,14 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About/>} />
             <Route path="/profile" element={<Profile/>}/>
+<<<<<<< HEAD
             <Route path='/editor' element={<Photocard/>}/>
             <Route path='/myprofile' element={<Freelancerprl/>}/>
+=======
+            <Route path="/getinfo" element={<GetinfoPage/>}/>
+            
+
+>>>>>>> 910f6fae61b39fda73ff02ce733b7533b3d45a0b
           </Routes>
         </BrowserRouter>
       </Contextprovider>
