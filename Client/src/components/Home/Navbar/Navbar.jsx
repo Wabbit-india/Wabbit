@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import ClickAwayListener from "react-click-away-listener";
 import Login from "../../Auth/Login";
 import Register from "../../Auth/Register";
-import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
