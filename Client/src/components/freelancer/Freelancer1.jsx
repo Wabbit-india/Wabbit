@@ -6,6 +6,7 @@ function Freelancer1() {
       <div className="w-full sm:w-full lg:w-full flex flex-col   p-6   rounded-lg shadow-lg">
         {/* First Name and Last Name */}
         <div className="flex flex-col sm:flex-row justify-between mb-4">
+
           <div className="w-full sm:w-[48%] mb-4 sm:mb-0">
             <label htmlFor="firstName" className="block mb-2 text-sm sm:text-base lg:text-lg">First Name</label>
             <input type="text" id="firstName" className="w-full lg:h-10 sm:h-8 p-2 border border-gray-300 rounded-md" />

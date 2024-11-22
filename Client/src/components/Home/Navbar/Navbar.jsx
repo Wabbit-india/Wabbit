@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import logo from "../../../assets/Home/Nav/navlogo.png";
 import { Mycontext } from "../../../context/Mycontext";
-import { Link } from "react-router-dom";
-// import ClickAwayListener from 'react-click-away-listener';
-import ClickAwayListener from 'react-click-away-listener';
+import { Link, useNavigate } from "react-router-dom";
+import ClickAwayListener from "react-click-away-listener";
 import Login from "../../Auth/Login";
 import Register from "../../Auth/Register";
 import { useNavigate } from "react-router-dom";

@@ -1,13 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import img from '../../src/assets/Home/webDeveloper.png';
 import { IoLocationOutline } from "react-icons/io5";
-import Navbar from '../components/Home/Navbar/Navbar';
-import Freelancer1 from '../components/freelancer/Freelancer1';
-import Freelancer2 from '../components/freelancer/Freelancer2';
-import Freelancer3 from '../components/freelancer/Freelancer3';
+import Navbar from './Home/Navbar/Navbar';
+import Freelancer1 from './freelancer/Freelancer1';
+import Freelancer2 from './freelancer/Freelancer2';
+import Freelancer3 from './freelancer/Freelancer3';
+import { useNavigate } from 'react-router-dom';
 
 export default function Profile() {
   const [activeProfile, setActiveProfile] = useState('Freelancer1'); // Initial state to display Profile1
+  const username = localStorage.getItem("username")
+  const navigate = useNavigate()
+  const token = localStorage.getItem("token")
+  useEffect(() => { 
+      if (!token) {
+          navigate("/");      
+      }
+  }, [token , navigate])
+  
 
   // Helper function to set the underline for the active button
   const getButtonStyle = (Freelancer1) => {
@@ -21,17 +31,17 @@ export default function Profile() {
       <div className='w-full h-[70px]'>
         <Navbar />
       </div>
-      <div className="bg-bgmain w-full h-screen flex flex-col sm:flex-row">
+      <div className="bg-bgmain w-full h-screen flex flex-col justify-center sm:flex-row">
         {/* The "aside" section will appear at the top on small screens */}
         <aside className="w-full sm:w-[400px] flex justify-center p-5 m-3">
           {/* Responsive inner div */}
           <div className="bg-white shadow-lg w-full max-w-[380px] h-[400px] flex flex-col justify-center items-center rounded-lg p-4">
             <img className="w-28 rounded-full max-w-full" src={img} alt="Profile" />
-            <h1 className="text-2xl">Harsh Teja</h1>
+            <h1 className="text-2xl">{username}</h1>
             <div className="flex items-center">
               <IoLocationOutline className="mr-2" /> India
             </div>
-            <button className="bg-maincolor w-full rounded-lg p-2 mt-4">Contact me</button>
+            <button className="bg-maincolor w-full rounded-lg p-2 mt-4 text-white font-semibold">Preview wabbit profile</button>
             <hr className="w-full h-[2px] bg-bgmain my-4" />
             <div className="flex justify-between w-full">
               <h1>Member since</h1>
