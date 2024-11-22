@@ -1,4 +1,3 @@
-import React from 'react'
 import { TiHome } from "react-icons/ti";
 import { BiMessageSquareDetail } from "react-icons/bi";
 import { GoBell } from "react-icons/go";
@@ -6,9 +5,34 @@ import img from '../../public/vite.svg'
 import { FiSearch } from "react-icons/fi";
 import Chatmain from './Chatmain';
 import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Chatposter from "./Chatposter";
 function Chat() {
-  const navigate =useNavigate();
+  const navigate = useNavigate();
+
+  // Check screen size on initial load and window resize
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 640px)');
+    setIsSmallScreen(mediaQuery.matches);
+
+    // Listen for screen resize changes
+    const handleResize = (e) => setIsSmallScreen(e.matches);
+    mediaQuery.addEventListener('change', handleResize);
+
+    return () => mediaQuery.removeEventListener('change', handleResize);
+  }, []);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [showchat, setShowchat] = useState(false);
+
+  const handleClick = () => {
+    if (isSmallScreen) {
+      navigate('../chatpage'); // Navigate to the chat page on small screens
+    } else {
+      setShowchat(true); // Show the Chatmain component on larger screens
+    }
+  };
+
     const value=10;
   return (
     <div className='h-screen w-full overflow-hidden   '>
@@ -41,7 +65,7 @@ function Chat() {
             <div className='min-h-screen overflow-hidden  '>
             {[...Array(20)].map((_, index) => (
             
-                <div className='cursor-pointer'onClick={()=>navigate('../chatpage')}>
+                <div className='cursor-pointer'onClick={()=>handleClick()}>
                 <div className='flex  gap-3 px-3 overflow-hidden cursor-pointer  border-t border-gray-400  py-1 '>
                 <img src="" className='rounded-full h-10 w-10' alt="" />
                     <h1 className='' >Mohammed Hussain</h1>
@@ -53,7 +77,8 @@ function Chat() {
             </div>
       </aside>
       <main className='w-full hidden sm:block'>
-        <Chatmain/></main>
+      {showchat === true ? <Chatmain /> : <Chatposter/>}
+      </main>
       </div>
     </div>
   )

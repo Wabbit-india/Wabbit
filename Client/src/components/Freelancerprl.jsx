@@ -18,12 +18,10 @@ export default function Profile() {
 
   return (
     <>
-      {/* <div className='w-full h-[70px]'> */}
+      <div className='w-full h-[70px]'>
         <Navbar />
-
-      {/* </div> */}
-      
-      <div className="bg-bgmain mt-16 w-full h-[90vh] flex flex-col sm:flex-row ">
+      </div>
+      <div className="bg-bgmain w-full h-screen flex flex-col sm:flex-row">
         {/* The "aside" section will appear at the top on small screens */}
         <aside className="w-full sm:w-[400px] flex justify-center p-5 m-3">
           {/* Responsive inner div */}

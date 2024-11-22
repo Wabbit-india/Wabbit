@@ -1,6 +1,14 @@
-import React from "react";
+import {useEffect} from "react";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Photocard() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+
   const videoCategories = [
     "Social Media Photo’s",
     "Product Photo Editing",
@@ -130,7 +138,9 @@ export default function Photocard() {
                   {editor.rating}
                 </h1>
                 <button className="py-2 px-4 bg-maincolor text-white rounded-full hover:bg-opacity-90 transition">
+                  <Link to='../userneedform'>
                   Hire Me
+                  </Link>
                 </button>
               </div>
             </div>

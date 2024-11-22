@@ -1,29 +1,34 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState } from "react";
 
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
-import { Mycontext } from '../../../context/Mycontext';
+import { Mycontext } from "../../../context/Mycontext";
 
 const RegisterStep1 = () => {
-  const {setRegisterStep} = useContext(Mycontext);
-  const [show, setshow] = useState(false)
+  const {
+    setRegisterStep,
+    registerEmail,
+    setRegisterEmail,
+    registerPassword,
+    setRegisterPassword,
+  } = useContext(Mycontext);
+  const [show, setshow] = useState(false);
   return (
     <div className="flex flex-col  gap-3 h-[100%]">
       <div className="absolute top-6">
-
-      <button
-        className="text-start font-bold text-sm flex gap-2 flex-row items-center justify-start"
-        onClick={() => {
-          setRegisterStep(0);
-        }}
+        <button
+          className="text-start font-bold text-sm flex gap-2 flex-row items-center justify-start"
+          onClick={() => {
+            setRegisterStep(0);
+          }}
         >
-        <FaArrowLeftLong />
-        Back
-      </button>
-        </div>
+          <FaArrowLeftLong />
+          Back
+        </button>
+      </div>
 
-      <form className="h-[85%] flex flex-col gap-3" onSubmit="">
+      <div className="h-[85%] flex flex-col gap-3">
         <div className="text-[22px] md:text-3xl text-start font-nunito font-bold">
           Continue with your email{" "}
         </div>
@@ -34,6 +39,10 @@ const RegisterStep1 = () => {
           <input
             type="email"
             id="email"
+            value={registerEmail}
+            onChange={(e) => {
+              setRegisterEmail(e.target.value);
+            }}
             placeholder="name@email.com"
             className="border rounded-lg py-2 px-3 pr-10 border-[rgb(0,0,0,0.2)] focus:outline-[rgb(0,0,0,0.5)] "
           />
@@ -47,6 +56,10 @@ const RegisterStep1 = () => {
               type={show ? "text" : "password"}
               id="password"
               placeholder="passowrd"
+              value={registerPassword}
+              onChange={(e) => {
+                setRegisterPassword(e.target.value);
+              }}
               className="border rounded-lg py-2 px-3 pr-10 border-[rgb(0,0,0,0.2)] w-full focus:outline-[rgb(0,0,0,0.5)]"
             />
             {!show ? (
@@ -64,11 +77,21 @@ const RegisterStep1 = () => {
             )}
           </div>
         </div>
-        <button disabled className="py-3 text-center w-full cursor-pointer border rounded-xl border-[rgb(0,0,0,0.2)] font-bold flex-row flex items-center justify-center gap-[5%] bg-black mt-6">
+        <button
+          disabled={
+            registerEmail.length === 0 && registerPassword.length === 0
+              ? true
+              : false
+          }
+          onClick={() => {
+            setRegisterStep(2);
+          }}
+          className="py-3 text-center w-full cursor-pointer border rounded-xl border-[rgb(0,0,0,0.2)] font-bold flex-row flex items-center justify-center gap-[5%] bg-black mt-6"
+        >
           <p className="text-[16px] text-white">Continue</p>
         </button>
-      </form>
-      
+      </div>
+
       <div className="w-full h-[20%] text-[12px]">
         By joining, you agree to the Wabbit{" "}
         <a href="" className="underline">
@@ -81,7 +104,7 @@ const RegisterStep1 = () => {
         to learn how we use your personal data.
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default RegisterStep1
+export default RegisterStep1;
