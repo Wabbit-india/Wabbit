@@ -22,13 +22,13 @@ export default function Profile() {
     <>
       {/* NavbarFor All Component */}
 
-      <div className='w-full h-[70px]'>
+      {/* <div className='w-full h-[70px]'> */}
         <Navbar />
-      </div>
+      {/* </div> */}
 
       {/* MainDiv */}
 
-      <div className="bg-bgmain w-full min-h-[91vh] flex flex-col sm:flex-row">
+      <div className="mt-16 bg-bgmain w-full min-h-[91vh] flex flex-col sm:flex-row">
 
         {/* The "aside-Bar */}
 

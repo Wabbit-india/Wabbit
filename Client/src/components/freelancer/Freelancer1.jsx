@@ -2,8 +2,8 @@ import React from 'react';
 
 function Freelancer1() {
   return (
-    <div className="flex w-full min-h-screen p-4">
-      <div className="w-full sm:w-full lg:w-full flex flex-col  p-6 rounded-lg shadow-lg">
+    <div className="flex w-full min-h-screen 320:p-0 p-4">
+      <div className="w-full sm:w-full lg:w-full flex flex-col   p-6   rounded-lg shadow-lg">
         {/* First Name and Last Name */}
         <div className="flex flex-col sm:flex-row justify-between mb-4">
 

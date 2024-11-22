@@ -6,17 +6,17 @@ import graphicDesigner from "../../assets/Home/graphicDesigner.png";
 import blogwriter from "../../assets/Home/blogwriter.png";
 import star from "../../assets/Home/ForFreelance/img01.png";
 import photoeditor from "../../assets/Home/photoeditor.png";
-
+import { Link } from "react-router-dom";
 export default function Category() {
   const categories = [
-    { image: canvaImage, altText: "canva expert", label: "Canva Expert" },
-    { image: cameraImage, altText: "video editor", label: "Video Editor" },
-    { image: star, altText: "logo designer", label: "Logo Designer" },
-    { image: photoeditor, altText: "photo editor", label: "Photo Editor" },
-    { image: webDeveloper, altText: "web developer", label: "Web Developer" },
-    { image: cameraImage, altText: "animator", label: "Animator" },
-    { image: blogwriter, altText: "content writer", label: "Content Writer" },
-    { image: graphicDesigner, altText: "graphic designer", label: "Graphic Designer" }
+    { image: canvaImage, altText: "canva expert", label: "Canva Expert", link: "/canvacard" },
+    { image: cameraImage, altText: "video editor", label: "Video Editor", link: "/photocard" },
+    { image: star, altText: "logo designer", label: "Logo Designer", link: "/logocard" },
+    { image: photoeditor, altText: "photo editor", label: "Photo Editor", link: "/photoeditor" },
+    { image: webDeveloper, altText: "web developer", label: "Web Developer", link: "/webdeveloper" },
+    { image: cameraImage, altText: "animator", label: "Animator", link: "/animator" },
+    { image: blogwriter, altText: "content writer", label: "Content Writer", link: "/contentwriter" },
+    { image: graphicDesigner, altText: "graphic designer", label: "Graphic Designer", link: "/graphicdesigner" }
   ];
 
   return (
@@ -38,19 +38,21 @@ export default function Category() {
 
       <div className="flex flex-row flex-wrap min-h-[70vh] justify-evenly lg:w-[90vw] lg:gap-[5%]">
         {categories.map((category, index) => (
-          <div
-            key={index}
-            className="w-[45%] h-[16vh] lg:w-[20%] my-2 lg:h-[20vh] bg-bgmain rounded-2xl lg:my-5 p-2 flex items-center justify-center flex-col cursor-pointer hover:scale-105 shadow-custom-complex transition duration-300"
-          >
-            <div className="h-[50%] w-[50%] flex items-center justify-center">
-              <img
-                src={category.image}
-                alt={category.altText}
-                className="h-[100%] w-[100%] object-contain"
-              />
-            </div>
-            <p className="text-[11px] sm:text-[22px] lg:text-2xl font-semibold">{category.label}</p>
-          </div>
+                    <Link
+                    key={index}
+                    to={category.link} // Use "to" instead of "href"
+                    className="w-[45%] h-[16vh] lg:w-[20%] my-2 lg:h-[20vh] bg-bgmain rounded-2xl lg:my-5 p-2 flex items-center justify-center flex-col cursor-pointer hover:scale-105 shadow-custom-complex transition duration-300"
+                  >
+                    <div className="h-[50%] w-[50%] flex items-center justify-center">
+                      <img
+                        src={category.image}
+                        alt={category.altText}
+                        className="h-[100%] w-[100%] object-contain"
+                      />
+                    </div>
+                    <p className="text-[11px] sm:text-[22px] lg:text-2xl font-semibold">{category.label}</p>
+                  </Link>
+        // </div>
         ))}
       </div>
     </div>

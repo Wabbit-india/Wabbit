@@ -13,7 +13,6 @@ import Footer from '../components/Home/Footer'
 import { useNavigate } from 'react-router-dom'
 
 
-
 export default function Home() {
     const {isnavbar} = useContext(Mycontext);
     const navigate = useNavigate();
