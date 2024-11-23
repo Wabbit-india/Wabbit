@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import img from "../../src/assets/Home/webDeveloper.png";
+import img from "../../src/assets/Home/Cards/webDeveloper.png";
 import { IoLocationOutline } from "react-icons/io5";
 import Navbar from "./Home/Navbar/Navbar";
 import Freelancer1 from "./freelancer/Freelancer1";

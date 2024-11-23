@@ -97,7 +97,7 @@ const Navbar = () => {
 
         {!token ? (
           <button
-            className="text-nowrap w-[95%] px-4 py-2 border-[1px] bg-black text-white text-[17px] font-[500] rounded-xl md:w-[150px]"
+            className="text-nowrap w-[95%] px-4 py-2 border-[1px] flex items-center justify-center sm:left-[0px]  sm:text-lg 320:relative right-1 320:text-sm bg-black text-white text-[17px] font-[500] rounded-xl md:w-[150px]"
             onClick={() => {
               setIsModal(true);
             }}
