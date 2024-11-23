@@ -20,7 +20,6 @@ const Navbar = () => {
 
   const { isModal, setIsModal } = useContext(Mycontext);
   const token = localStorage.getItem("token");
-
   const [sideModal, setSideModal] = useState(false);
 
   useEffect(() => {
@@ -117,7 +116,7 @@ const Navbar = () => {
       </div>
 
       {isModal && (
-        <div className="absolute h-[100vh] w-[100vw] top-0 z-50 left-0 bg-[rgb(0,0,0,0.8)] flex items-center justify-center">
+        <div className="fixed h-[100vh] w-[100vw] top-0 z-50 left-0 bg-[rgb(0,0,0,0.8)] flex items-center justify-center">
           <ClickAwayListener onClickAway={handleClickAway}>
             <div className="w-[90vw] md:w-[80vw] lg:w-[600px] xl:w-[550px] bg-white h-[85vh] rounded-2xl flex flex-row overflow-hidden">
               <div className="w-[100%] xl:w-[100%] h-full flex flex-col items-center justify-center relative">

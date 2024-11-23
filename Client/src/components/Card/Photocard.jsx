@@ -1,9 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import ClickAwayListener from "react-click-away-listener";
-import FAQContent from "../components/FAQ/FAQContent";
+import { Mycontext } from "../../context/Contextprovider";
+// import FAQContent from "../components/FAQ/FAQContent";
 import { RxCross2 } from "react-icons/rx";
-import { Mycontext } from "../context/Mycontext";
+
 
 export default function Photocard() {
   const { pathname } = useLocation();

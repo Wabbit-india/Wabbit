@@ -2,9 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import img from "../../src/assets/Home/Cards/webDeveloper.png";
 import { IoLocationOutline } from "react-icons/io5";
 import Navbar from "./Home/Navbar/Navbar";
-import Freelancer1 from "./freelancer/Freelancer1";
-import Freelancer2 from "./freelancer/Freelancer2";
-import Freelancer3 from "./freelancer/Freelancer3";
+import Freelancer1 from "./freelancer/Steps/Freelancer1";
+import Freelancer2 from "./freelancer/Steps/Freelancer2";
+import Freelancer3 from "./freelancer/Steps/Freelancer3";
 import { useNavigate } from "react-router-dom";
 
 export default function Profile() {

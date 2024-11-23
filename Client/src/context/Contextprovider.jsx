@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mycontext } from "./Mycontext";
+import { Mycontext } from "./Mycontext"; 
 
 export const Contextprovider = ({ children }) => {
   const [isnavbar, setIsnavbar] = useState(false);
