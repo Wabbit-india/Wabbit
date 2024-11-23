@@ -3,10 +3,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Contextprovider } from '../src/context/Contextprovider';
 import Home from './page/Home';
 import About from './page/About';
-// import Profile from './page/Profile';
-// import Photocard from './page/Photocard'
-// import Profiledet from './page/Profiledet';
-// import Freelancerprl from "./components/Freelancerprl"
+import Profile from './page/Profile';
+import Photocard from './page/Photocard'
+import Profiledet from './page/Profiledet';
+import Freelancerprl from "./components/Freelancerprl"
 
 // import Photocard from './components/Card/Photocard'
 // import Profiledet from './page/Profiledet';
