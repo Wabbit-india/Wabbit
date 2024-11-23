@@ -6,39 +6,19 @@ import Freelancer1 from "./freelancer/Freelancer1";
 import Freelancer2 from "./freelancer/Freelancer2";
 import Freelancer3 from "./freelancer/Freelancer3";
 import { useNavigate } from "react-router-dom";
-import ClickAwayListener from "react-click-away-listener";
-import FAQContent from "./FAQ/FAQContent";
-import { RxCross2 } from "react-icons/rx";
-import { Mycontext } from "../context/Mycontext";
 
 export default function Profile() {
   const [activeProfile, setActiveProfile] = useState("Freelancer1"); // Initial state to display Profile1
   const username = localStorage.getItem("username");
-  const [isModal, setisModal] = useState(false);
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
-  const { progressbar, setfaqQuestion,setprogressbar } = useContext(Mycontext);
   useEffect(() => {
     if (!token) {
       navigate("/");
     }
   }, [token, navigate]);
 
-  const handleClickAway = () => {
-    setisModal(false);
-  };
 
-  useEffect(() => {
-    if (isModal) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
-    }
-
-    return () => {
-      document.body.classList.remove("overflow-hidden");
-    };
-  }, [isModal]);
 
   // Helper function to set the underline for the active button
   const getButtonStyle = (Freelancer1) => {
@@ -68,9 +48,7 @@ export default function Profile() {
             </div>
             <button
               className="bg-maincolor w-full rounded-lg p-2 mt-4 text-white font-semibold"
-              onClick={() => {
-                setisModal(true);
-              }}
+              
             >
               Preview wabbit profile
             </button>
@@ -119,37 +97,6 @@ export default function Profile() {
           </main>
         </div>
       </div>
-      {isModal && (
-        <div className="absolute h-[100vh] w-[100vw] top-0 z-50 left-0 bg-[rgb(0,0,0,0.8)] flex items-center justify-center">
-          <ClickAwayListener onClickAway={handleClickAway}>
-            <div className="w-[90vw] md:w-[80vw] lg:w-[600px] xl:w-[550px] bg-white h-[85vh] rounded-2xl flex flex-row overflow-hidden">
-              <div className="w-[100%] xl:w-[100%] h-full flex flex-col items-center justify-center relative">
-                <div className="h-[10%] border w-full absolute top-0 flex px-7 items-center justify-between">
-                  <div className="w-[95%] h-auto flex items-center justify-center">
-                    <div className="w-[80%] h-[7px] bg-gray-100 rounded-lg ">
-                      <div
-                        style={{ width: `${progressbar}%` }}
-                        className="h-full bg-maincolor rounded-lg"
-                      ></div>
-                    </div>
-                  </div>
-                  <div
-                    className="w-[5%] text-lg text-center cursor-pointer"
-                    onClick={() => {
-                      setisModal(false);
-                      setfaqQuestion(1);
-                      setprogressbar(16.66)
-                    }}
-                  >
-                    <RxCross2 />
-                  </div>
-                </div>
-                <FAQContent />
-              </div>
-            </div>
-          </ClickAwayListener>
-        </div>
-      )}
     </>
   );
 }

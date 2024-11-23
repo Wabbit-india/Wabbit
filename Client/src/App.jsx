@@ -4,6 +4,9 @@ import { Contextprovider } from '../src/context/Contextprovider';
 import Home from './page/Home';
 import About from './page/About';
 import Profile from './page/Profile';
+import Photocard from './page/Photocard'
+import Profiledet from './page/Profiledet';
+import Freelancerprl from "./components/Freelancerprl"
 // import Profiledet from './page/Profiledet';
 // import Freelancerprl from './page/Freelancerprl';
 
@@ -18,6 +21,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About/>} />
             <Route path="/profile" element={<Profile/>}/>
+            <Route path='/editor' element={<Photocard/>}/>
+            <Route path='/myprofile' element={<Freelancerprl/>}/>
           </Routes>
         </BrowserRouter>
       </Contextprovider>

@@ -94,7 +94,7 @@ export default function Workwithus() {
               key={index}
               src={brandItem.image}
               alt={brandItem.altText}
-              className="h-[%] w-auto object-contain rounded-2xl filter-red"
+              className="h-[50%] w-auto object-contain rounded-2xl filter-red"
             />
           ))}
         </div>
