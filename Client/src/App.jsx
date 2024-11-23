@@ -3,12 +3,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Contextprovider } from '../src/context/Contextprovider';
 import Home from './page/Home';
 import About from './page/About';
-import Profile from './page/Profile';
-import Photocard from './page/Photocard'
-import Profiledet from './page/Profiledet';
-import Freelancerprl from "./components/Freelancerprl"
+// import Profile from './page/Profile';
+// import Photocard from './page/Photocard'
+// import Profiledet from './page/Profiledet';
+// import Freelancerprl from "./components/Freelancerprl"
 
-import Photocard from './components/Card/Photocard'
+// import Photocard from './components/Card/Photocard'
 // import Profiledet from './page/Profiledet';
 // import GetinfoPage from './page/GetinfoPage';
 function App() {
@@ -20,10 +20,13 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About/>} />
-            <Route path="/profile" element={<Profile/>}/>
-            <Route path='/editor' element={<Photocard/>}/>
-            <Route path='/myprofile' element={<Freelancerprl/>}/>
+            <Route path="/about" element={<About />} />
+            {/* <Route path="/profile" element={<Profile/>}/> */}
+
+            {/* Browse professionals by category  */}
+          
+            {/* <Route path='/editor' element={<Photocard/>}/> */}
+            {/* <Route path='/myprofile' element={<Freelancerprl/>}/> */}
             {/* <Route path="/photocard" element={<Photocard/>}/> */}
             {/* <Route path="/getinfo" element={<GetinfoPage/>}/> */}
           </Routes>
