@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import img from '../../src/assets/Home/webDeveloper.png';
+import img from '../../src/assets/Home/Cards/webDeveloper.png';
 import { IoLocationOutline } from "react-icons/io5";
 import Profile1 from '../components/Profile/Profile1';
 import Profile2 from '../components/Profile/Profile2';

@@ -23,6 +23,7 @@ export default function Workwithus() {
         <img
           src={img1}
           alt="img01"
+          className='max-sm:hidden  absolute object-cover  md:h-24 md:left-2 md:top-3 xl:h-32 xl:left-10'
           className='max-sm:hidden absolute object-cover md:h-16 md:left-[-1px] md:top-3 xl:h-32 xl:left-10'
         />
 
