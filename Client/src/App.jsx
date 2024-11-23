@@ -4,9 +4,9 @@ import { Contextprovider } from '../src/context/Contextprovider';
 import Home from './page/Home';
 import About from './page/About';
 import Profile from './page/Profile';
-import Profiledet from './page/Profiledet';
-import Freelancerprl from './page/Freelancerprl';
-
+import Photocard from './components/Card/Photocard'
+// import Profiledet from './page/Profiledet';
+// import GetinfoPage from './page/GetinfoPage';
 function App() {
 
 
@@ -18,9 +18,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About/>} />
             <Route path="/profile" element={<Profile/>}/>
-            <Route path="/getinfo" element={<GetinfoPage/>}/>
-            
-
+            {/* <Route path="/photocard" element={<Photocard/>}/> */}
+            {/* <Route path="/getinfo" element={<GetinfoPage/>}/> */}
           </Routes>
         </BrowserRouter>
       </Contextprovider>
