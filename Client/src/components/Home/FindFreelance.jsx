@@ -14,7 +14,7 @@ export default function Workwithus() {
   ];
 
   return (
-    <div className='w-full  h-auto mt-[100px] cursor-pointer flex justify-center items-center'>
+    <div className='w-full   h-auto mt-[100px] cursor-pointer flex justify-center items-center'>
 
       <div className='w-[90%] h-[95%] rounded-2xl  flex flex-col items-center relative bg-bgmain overflow-hidden'>
 

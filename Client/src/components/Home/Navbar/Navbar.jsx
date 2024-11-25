@@ -97,7 +97,7 @@ const Navbar = () => {
 
         {!token ? (
           <button
-            className="text-nowrap w-[95%] px-4 py-2 border-[1px] flex items-center justify-center sm:left-[0px]  sm:text-lg 320:relative right-1 320:text-sm bg-black text-white text-[17px] font-[500] rounded-xl md:w-[150px]"
+            className="text-nowrap  w-[95%] px-4 py-2 border-[1px] flex items-center justify-center sm:left-[0px]  sm:text-lg 320:relative right-1 320:text-sm bg-black text-white text-[17px] font-[500] rounded-xl md:w-[150px]"
             onClick={() => {
               setIsModal(true);
             }}
@@ -117,16 +117,16 @@ const Navbar = () => {
       </div>
 
       {isModal && (
-        <div className="absolute h-[100vh] w-[100vw] top-0 z-50 left-0 bg-[rgb(0,0,0,0.8)] flex items-center justify-center">
-          <ClickAwayListener onClickAway={handleClickAway}>
-            <div className="w-[90vw] md:w-[80vw] lg:w-[600px] xl:w-[550px] bg-white h-[85vh] rounded-2xl flex flex-row overflow-hidden">
-              <div className="w-[100%] xl:w-[100%] h-full flex flex-col items-center justify-center relative">
-                {createAccount ? <Register /> : <Login />}
-              </div>
-            </div>
-          </ClickAwayListener>
+  <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+    <ClickAwayListener onClickAway={handleClickAway}>
+      <div className="w-[90vw] md:w-[80vw] lg:w-[600px] xl:w-[550px] bg-white h-[85vh] rounded-2xl flex flex-row overflow-hidden relative z-60">
+        <div className="w-[100%] xl:w-[100%] h-full flex flex-col items-center justify-center">
+          {createAccount ? <Register /> : <Login />}
         </div>
-      )}
+      </div>
+    </ClickAwayListener>
+  </div>
+)}
 
       {sideModal && (
         <ClickAwayListener onClickAway={handleSideModalClose}>

@@ -1,103 +1,100 @@
+import React from 'react'
 import { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import ClickAwayListener from "react-click-away-listener";
 import Navbar from "../Home/Navbar/Navbar";
-// import FAQContent from "../components/FAQ/FAQContent";
-// import { RxCross2 } from "react-icons/rx";
-// import { Mycontext } from "../context/Mycontext";
 
-export default function Photocard() {
-  const { pathname } = useLocation();
-  const [isModal, setisModal] = useState(false);
-  // const { progressbar, setfaqQuestion, setprogressbar } = useContext(Mycontext);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  const handleClickAway = () => {
-    setisModal(false);
-  };
-
-  useEffect(() => {
-    if (isModal) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
-    }
-
-    return () => {
-      document.body.classList.remove("overflow-hidden");
+function Webdevloper() {
+    const { pathname } = useLocation();
+    const [isModal, setisModal] = useState(false);
+    // const { progressbar, setfaqQuestion, setprogressbar } = useContext(Mycontext);
+  
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+  
+    const handleClickAway = () => {
+      setisModal(false);
     };
-  }, [isModal]);
-
-  const videoCategories = [
-    "Social Media Photo’s",
-    "Product Photo Editing",
-    "Photo Manipulation",
-    "Youtube Thumbnail",
-    "Portraits Retouching",
-  ];
-
-  const editors = [
-    {
-      name: "Harsh Vaishnav",
-      profession: "Video Editor",
-      country: "India",
-      deliveryTime: "24 Hour's",
-      price: "From ₹441",
-      rating: "⭐4.3",
-      image: "https://via.placeholder.com/100",
-    },
-    {
-      name: "John Doe",
-      profession: "Video Editor",
-      country: "USA",
-      deliveryTime: "48 Hour's",
-      price: "From ₹500",
-      rating: "⭐4.8",
-      image: "https://via.placeholder.com/100",
-    },
-    {
-      name: "Jane Smith",
-      profession: "Video Editor",
-      country: "Canada",
-      deliveryTime: "12 Hour's",
-      price: "From ₹350",
-      rating: "⭐4.5",
-      image: "https://via.placeholder.com/100",
-    },
-    {
-      name: "Michael Scott",
-      profession: "Video Editor",
-      country: "USA",
-      deliveryTime: "36 Hour's",
-      price: "From ₹650",
-      rating: "⭐4.7",
-      image: "https://via.placeholder.com/100",
-    },
-    {
-      name: "Rachel Green",
-      profession: "Video Editor",
-      country: "UK",
-      deliveryTime: "24 Hour's",
-      price: "From ₹600",
-      rating: "⭐4.9",
-      image: "https://via.placeholder.com/100",
-    },
-    {
-      name: "Monica Geller",
-      profession: "Video Editor",
-      country: "USA",
-      deliveryTime: "24 Hour's",
-      price: "From ₹700",
-      rating: "⭐4.6",
-      image: "https://via.placeholder.com/100",
-    },
-  ];
-
+  
+    useEffect(() => {
+      if (isModal) {
+        document.body.classList.add("overflow-hidden");
+      } else {
+        document.body.classList.remove("overflow-hidden");
+      }
+  
+      return () => {
+        document.body.classList.remove("overflow-hidden");
+      };
+    }, [isModal]);
+  
+    const videoCategories = [
+      "Social Media Photo’s",
+      "Product Photo Editing",
+      "Photo Manipulation",
+      "Youtube Thumbnail",
+      "Portraits Retouching",
+    ];
+  
+    const editors = [
+      {
+        name: "Harsh Vaishnav",
+        profession: "Video Editor",
+        country: "India",
+        deliveryTime: "24 Hour's",
+        price: "From ₹441",
+        rating: "⭐4.3",
+        image: "https://via.placeholder.com/100",
+      },
+      {
+        name: "John Doe",
+        profession: "Video Editor",
+        country: "USA",
+        deliveryTime: "48 Hour's",
+        price: "From ₹500",
+        rating: "⭐4.8",
+        image: "https://via.placeholder.com/100",
+      },
+      {
+        name: "Jane Smith",
+        profession: "Video Editor",
+        country: "Canada",
+        deliveryTime: "12 Hour's",
+        price: "From ₹350",
+        rating: "⭐4.5",
+        image: "https://via.placeholder.com/100",
+      },
+      {
+        name: "Michael Scott",
+        profession: "Video Editor",
+        country: "USA",
+        deliveryTime: "36 Hour's",
+        price: "From ₹650",
+        rating: "⭐4.7",
+        image: "https://via.placeholder.com/100",
+      },
+      {
+        name: "Rachel Green",
+        profession: "Video Editor",
+        country: "UK",
+        deliveryTime: "24 Hour's",
+        price: "From ₹600",
+        rating: "⭐4.9",
+        image: "https://via.placeholder.com/100",
+      },
+      {
+        name: "Monica Geller",
+        profession: "Video Editor",
+        country: "USA",
+        deliveryTime: "24 Hour's",
+        price: "From ₹700",
+        rating: "⭐4.6",
+        image: "https://via.placeholder.com/100",
+      },
+    ];
   return (
-    <>
+<>
     <div className="my-10">
     <Navbar/>
     </div>
@@ -105,7 +102,7 @@ export default function Photocard() {
       {
         <div className="max-w-7xl mx-auto px-4">
           <h1 className="text-3xl md:text-5xl font-nunito text-left">
-            Photo Editor
+            Web Devloper 
           </h1>
           <p className="text-lg md:text-xl text-left mt-2">
             Transform your Photo with professional editing services.{" "}
@@ -215,5 +212,7 @@ export default function Photocard() {
       )}
     </div>
     </>
-  );
+  )
 }
+
+export default Webdevloper

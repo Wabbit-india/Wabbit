@@ -12,10 +12,10 @@ import videoeditor from "../../assets/Home/Cards/video-editor.svg";
 import { Link } from "react-router-dom";
 export default function Category() {
   const categories = [
-    { image: videoeditor, altText: "video editor", label: "Video Editor", link: "/photocard" },
-    { image: photoeditor, altText: "photo editor", label: "Photo Editor", link: "/photoeditor" },
+    { image: videoeditor, altText: "video editor", label: "Video Editor", link: "/videoeditor" },
+    { image: photoeditor, altText: "photo editor", label: "Photo Editor", link: "/photocard" },
     { image: canvaImage, altText: "canva expert", label: "Canva Expert", link: "/canvacard" },
-    { image: weddingCard, altText: "Invitation Card", label: "Invitation Card", link: "/invitioncard" },
+    { image: weddingCard, altText: "Invitation Card", label: "Invitation Card", link: "/invititioncard" },
     { image: webDeveloper, altText: "web developer", label: "Web Developer", link: "/webdeveloper" },
     { image: cameraImage, altText: "UI/UX Designer", label: "UI/UX Designer", link: "/uiux" },
     { image: mockups, altText: "Mockups", label: "Mockups", link: "/mockup" },

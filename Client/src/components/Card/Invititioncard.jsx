@@ -1,5 +1,5 @@
 import React from "react";
-
+import Navbar from "../Home/Navbar/Navbar";
 export default function Invitioncard() {
   const videoCategories = [
     "Wedding Invitation",
@@ -67,6 +67,11 @@ export default function Invitioncard() {
   ];
 
   return (
+<>
+    <div className="my-10">
+    <Navbar/>
+  </div>
+
     <div className="w-full min-h-screen bg-gray-100 sm:p-8 md:p-14 font-nunito ">
       <div className="max-w-7xl mx-auto px-4">
         <h1 className="text-3xl md:text-5xl font-nunito text-left">
@@ -137,5 +142,6 @@ export default function Invitioncard() {
         </div>
       </div>
     </div>
+    </>
   );
 }

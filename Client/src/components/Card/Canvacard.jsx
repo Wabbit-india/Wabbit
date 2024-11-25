@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import {useEffect} from "react";
+import Navbar from "../Home/Navbar/Navbar";
 
     export default function Canvacard() {
       const { pathname } = useLocation();
@@ -20,6 +21,10 @@ import {useEffect} from "react";
       }
         
       return (
+        <>
+        <div className="my-10">
+          <Navbar/>
+        </div>
         <div className="w-full min-h-screen bg-gray-100 sm:p-8 md:p-10 font-nunito ">
           <div className="max-w-7xl mx-auto px-4">
             <h1 className="text-3xl md:text-5xl font-nunito text-left mx-6">
@@ -40,6 +45,7 @@ import {useEffect} from "react";
             </div>
           </div>
         </div>
+        </>
       );
     }
     

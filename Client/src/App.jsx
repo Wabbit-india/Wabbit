@@ -7,6 +7,15 @@ import Profile from './page/Profile';
 // import Photocard from './page/Photocard'
 // import Profiledet from './page/Profiledet';
 import Freelancerprl from "./components/Freelancerprl"
+import Photocard from './components/Card/Photocard';
+import Mockupcard from './components/Card/Mockupcard';
+import Logocard from './components/Card/GraphhicDesigner';
+import Invititioncard from './components/Card/Invititioncard'
+import Videoeditor from './components/Card/Videoeditor';
+import Canvacard from './components/Card/Canvacard';
+import Webdevloper from './components/Card/Webdevloper';
+import UIUX from './components/Card/UIUX';
+import NormalUser1 from './components/getinfo/normalUserComponents/normalUser1'
 
 // import Photocard from './components/Card/Photocard'
 // import Profiledet from './page/Profiledet';
@@ -25,10 +34,17 @@ function App() {
 
              {/* Browse professionals by category   */}
           
-             {/* <Route path='/editor' element={<Photocard/>}/>  */}
              <Route path='/myprofile' element={<Freelancerprl/>}/> 
-             {/* <Route path="/photocard" element={<Photocard/>}/>  */}
              {/* <Route path="/getinfo" element={<GetinfoPage/>}/>  */}
+             <Route path="/photocard"  element={<Photocard/>}/>
+             <Route path='/mockup' element={<Mockupcard/>}/>
+             <Route path='/invititioncard' element={<Invititioncard/>}/>
+             <Route path='/graphicdesigner' element={<Logocard/>}/>
+             <Route path='/videoeditor' element={<Videoeditor/>}/>
+             <Route path='/canvacard' element={<Canvacard/>}/>
+             <Route path='/webdeveloper' element={<Webdevloper/>}/>
+             <Route path='/uiux' element={<UIUX/>}/>
+             <Route path='/normalUser1' element={<NormalUser1 />}/>
           </Routes>
         </BrowserRouter>
       </Contextprovider>

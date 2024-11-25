@@ -1,5 +1,6 @@
 import {useEffect} from "react";
 import { useLocation } from "react-router-dom";
+import Navbar from "../Home/Navbar/Navbar";
 export default function Logocard() {
   const { pathname } = useLocation();
 
@@ -76,10 +77,14 @@ export default function Logocard() {
   ];
 
   return (
+    <>    
+    <div className="my-10">
+      <Navbar/>
+    </div>
     <div className="w-full min-h-screen bg-gray-100 sm:p-8 md:p-14 font-nunito ">
       <div className="max-w-7xl mx-auto px-4">
         <h1 className="text-3xl md:text-5xl font-nunito text-left">
-        Logo Designer        </h1>
+        Graphic Designer        </h1>
         <p className="text-lg md:text-xl text-left mt-2">
         Collaborate with designers who understand your industry and deliver tailored solutions.               </p>
 
@@ -146,5 +151,7 @@ export default function Logocard() {
         </div>
       </div>
     </div>
+    </>
+
   );
 }
