@@ -78,7 +78,7 @@ export default function Workwithus() {
           <input
             type="search"
             placeholder='what are you loocking for'
-            className=' h-14 pl-5 rounded-lg font-nunito text-[22px] bg-white max-sm:w-[285px] sm:w-[450px] lg:w-[700px] xl:w-[800px] 2xl:w-[900px] '
+            className=' h-14 pl-5 rounded-lg font-nunito max-sm:text-[18px] bg-white max-sm:w-[250px] sm:w-[450px] lg:w-[700px] xl:w-[800px] 2xl:w-[900px] '
           />
         </div>
 

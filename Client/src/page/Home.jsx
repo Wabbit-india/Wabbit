@@ -40,8 +40,6 @@ export default function Home() {
             <FreelancersSlide/>
             <Fordesigner />
             <Footer/>
-            
-           
         </div>
     )
 }

@@ -17,9 +17,6 @@ import Webdevloper from './components/Card/Webdevloper';
 import UIUX from './components/Card/UIUX';
 import NormalUser1 from './components/getinfo/normalUserComponents/normalUser1'
 
-// import Photocard from './components/Card/Photocard'
-// import Profiledet from './page/Profiledet';
-// import GetinfoPage from './page/GetinfoPage';
 function App() {
 
 
@@ -28,9 +25,10 @@ function App() {
       <Contextprovider>
         <BrowserRouter>
           <Routes>
+            <Route path='*' element={<h1 className='text-[50px] text-black text-center'>404 Not Found</h1>} />
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-             <Route path="/profile" element={<Profile/>}/> 
+            <Route path="/getinfo" element={<GetinfoPage />} />
 
              {/* Browse professionals by category   */}
           

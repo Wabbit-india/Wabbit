@@ -20,7 +20,6 @@ const Navbar = () => {
 
   const { isModal, setIsModal } = useContext(Mycontext);
   const token = localStorage.getItem("token");
-
   const [sideModal, setSideModal] = useState(false);
 
   useEffect(() => {
