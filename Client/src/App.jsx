@@ -28,7 +28,7 @@ function App() {
             <Route path='*' element={<h1 className='text-[50px] text-black text-center'>404 Not Found</h1>} />
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/getinfo" element={<GetinfoPage />} />
+            {/* <Route path="/getinfo" element={<GetinfoPage />} /> */}
 
              {/* Browse professionals by category   */}
           
