@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Contextprovider } from '../src/context/Contextprovider';
 import Home from './page/Home';
 import About from './page/About';
+import GetinfoPage from './components/getinfo/getinfoPage';
 
 function App() {
 
@@ -12,8 +13,11 @@ function App() {
       <Contextprovider>
         <BrowserRouter>
           <Routes>
+            <Route path='*' element={<h1 className='text-[50px] text-black text-center'>404 Not Found</h1>} />
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/getinfo" element={<GetinfoPage />} />
+
             {/* Browse professionals by category   */}
           </Routes>
         </BrowserRouter>
