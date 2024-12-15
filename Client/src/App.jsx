@@ -55,6 +55,21 @@ function App() {
             {/* for after */}
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            {/* <Route path="/getinfo" element={<GetinfoPage />} /> */}
+
+             {/* Browse professionals by category   */}
+          
+             <Route path='/myprofile' element={<Freelancerprl/>}/> 
+             {/* <Route path="/getinfo" element={<GetinfoPage/>}/>  */}
+             <Route path="/photocard"  element={<Photocard/>}/>
+             <Route path='/mockup' element={<Mockupcard/>}/>
+             <Route path='/invititioncard' element={<Invititioncard/>}/>
+             <Route path='/graphicdesigner' element={<Logocard/>}/>
+             <Route path='/videoeditor' element={<Videoeditor/>}/>
+             <Route path='/canvacard' element={<Canvacard/>}/>
+             <Route path='/webdeveloper' element={<Webdevloper/>}/>
+             <Route path='/uiux' element={<UIUX/>}/>
+             <Route path='/normalUser1' element={<NormalUser1 />}/>
             <Route path='/freelancePortfolio' element={<FreelancePortfolio />} />
             <Route path='/joinagency' element={<Joinagency />} />
           </Routes>
