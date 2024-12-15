@@ -45,7 +45,7 @@ const RegisterStep2 = () => {
       setcreateAccount(false);
       setLoginStep(0);
       setIsModal(false);
-      navigate("/getinfo")
+      navigate("/userInfo");
     } catch (error) {
       console.log(error);
       console.log("an error occured in registering");

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Mycontext } from "../../../context/Mycontext";
 
-const Question1 = () => {
+const Question3 = () => {
   const [selectedValue, setSelectedValue] = useState("");
   const { setfaqQuestion, setprogressbar } = useContext(Mycontext);
 
@@ -13,106 +13,107 @@ const Question1 = () => {
   return (
     <div className="h-full w-full flex items-center flex-col gap-5">
       <p className="text-2xl text-center font-semibold font-nunito w-[90%]">
-        What type of project required video editing?
+        How long do you want the final video to be?
       </p>
       <div className="min-h-[80%] border w-[90%] rounded-lg">
         <form className="flex flex-col gap-3 h-full w-full overflow-y-scroll">
           <label className="flex items-center gap-5 h-[12%] border-b p-4">
             <input
               type="radio"
-              name="projectType"
-              value="Commercial ad"
-              checked={selectedValue === "Commercial ad"}
+              name="videoDuration"
+              value="30_seconds"
+              checked={selectedValue === "30_seconds"}
               onChange={handleChange}
             />
-            Commercial ad
+            30 seconds
           </label>
           <label className="flex items-center gap-5 h-[12%] border-b p-4">
             <input
               type="radio"
-              name="projectType"
-              value="Event Video"
-              checked={selectedValue === "Event Video"}
+              name="videoDuration"
+              value="1_minute"
+              checked={selectedValue === "1_minute"}
               onChange={handleChange}
             />
-            Event Video
+            1 minute
           </label>
           <label className="flex items-center gap-5 h-[12%] border-b p-4">
             <input
               type="radio"
-              name="projectType"
-              value="Full length movie"
-              checked={selectedValue === "Full length movie"}
+              name="videoDuration"
+              value="5_minutes"
+              checked={selectedValue === "5_minutes"}
               onChange={handleChange}
             />
-            Full length movie
+            5 minutes
           </label>
           <label className="flex items-center gap-5 h-[12%] border-b p-4">
             <input
               type="radio"
-              name="projectType"
-              value="Home video"
-              checked={selectedValue === "Home video"}
+              name="videoDuration"
+              value="10_minutes"
+              checked={selectedValue === "10_minutes"}
               onChange={handleChange}
             />
-            Home video
+            10 minutes
           </label>
           <label className="flex items-center gap-5 h-[12%] border-b p-4">
             <input
               type="radio"
-              name="projectType"
-              value="Music video"
-              checked={selectedValue === "Music video"}
+              name="videoDuration"
+              value="30_minutes"
+              checked={selectedValue === "30_minutes"}
               onChange={handleChange}
             />
-            Music video
+            30 minutes
           </label>
           <label className="flex items-center gap-5 h-[12%] border-b p-4">
             <input
               type="radio"
-              name="projectType"
-              value="Short film"
-              checked={selectedValue === "Short film"}
+              name="videoDuration"
+              value="1_hour"
+              checked={selectedValue === "1_hour"}
               onChange={handleChange}
             />
-            Short film
+            1 hour
           </label>
           <label className="flex items-center gap-5 h-[12%] border-b p-4">
             <input
               type="radio"
-              name="projectType"
-              value="Social Media - Reel"
-              checked={selectedValue === "Social Media - Reel"}
+              name="videoDuration"
+              value="2_hours"
+              checked={selectedValue === "2_hours"}
               onChange={handleChange}
             />
-            Social Media - Reel
-          </label>
-          <label className="flex items-center gap-5 h-[12%] border-b p-4">
-            <input
-              type="radio"
-              name="projectType"
-              value="Social Media - Video"
-              checked={selectedValue === "Social Media - Video"}
-              onChange={handleChange}
-            />
-            Social Media - Video
+            2 hours
           </label>
         </form>
+
+        <div className="h-[10%]  absolute bottom-28 w-[40%] flex items-center gap-20 px-7">
+          <button
+            className="bg-white text-black border w-[30%] h-[70%] rounded-lg disabled:cursor-not-allowed disabled:bg-[#ccc]"
+            onClick={() => {
+              setprogressbar(33.32);
+              setfaqQuestion(2);
+            }}
+          >
+            Back
+          </button>
+          <button
+            className="bg-maincolor text-white w-[30%] h-[70%] rounded-lg disabled:cursor-not-allowed disabled:bg-[#00bf63ae]"
+            disabled={selectedValue === ""} // Disable next button if no options selected
+            onClick={() => {
+              setfaqQuestion(4);
+              setprogressbar(66.64);
+            }}
+          >
+            Next
+          </button>
+        </div>
       </div>
-      <div className="h-[10%] border absolute bottom-0 w-full flex items-center justify-end px-7">
-        <button
-          className="bg-maincolor text-white w-[20%] h-[70%] rounded-lg disabled:cursor-not-allowed disabled:bg-[#00bf63ae]"
-          disabled={selectedValue === "" ? true : false}
-          onClick={() => {
-            setfaqQuestion(2);
-            setprogressbar(33.32);
-          }}
-        >
-          Next
-        </button>
-      </div>
+
     </div>
   );
 };
 
-export default Question1;
+export default Question3;

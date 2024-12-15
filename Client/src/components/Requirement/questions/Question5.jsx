@@ -86,28 +86,30 @@ const Question5 = () => {
             />
           </label>
         </form>
+        <div className="h-[10%]  absolute bottom-28 w-[40%] flex items-center gap-20 px-7">
+          <button
+            className="bg-white text-black border w-[30%] h-[70%] rounded-lg disabled:cursor-not-allowed disabled:bg-[#ccc]"
+            onClick={() => {
+              setprogressbar(66.64);
+              setfaqQuestion(4);
+            }}
+          >
+            Back
+          </button>
+          <button
+            className="bg-maincolor text-white w-[30%] h-[70%] rounded-lg disabled:cursor-not-allowed disabled:bg-[#00bf63ae]"
+            disabled={selectedValue === "" || (selectedValue === "E" && otherValue.trim() === "")} // Validate for "Other"
+            onClick={() => {
+              setfaqQuestion(6);
+              setprogressbar(99);
+            }}
+          >
+            Next
+          </button>
+        </div>
       </div>
-      <div className="h-[10%] border absolute bottom-0 w-full flex items-center justify-between px-7">
-        <button
-          className="bg-white text-black border w-[20%] h-[70%] rounded-lg disabled:cursor-not-allowed disabled:bg-[#ccc]"
-          onClick={() => {
-            setprogressbar(66.64);
-            setfaqQuestion(4);
-          }}
-        >
-          Back
-        </button>
-        <button
-          className="bg-maincolor text-white w-[20%] h-[70%] rounded-lg disabled:cursor-not-allowed disabled:bg-[#00bf63ae]"
-          disabled={selectedValue === "" || (selectedValue === "E" && otherValue.trim() === "")} // Validate for "Other"
-          onClick={() => {
-            setfaqQuestion(6);
-            setprogressbar(99);
-          }}
-        >
-          Next
-        </button>
-      </div>
+
+
     </div>
   );
 };

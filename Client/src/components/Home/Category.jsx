@@ -1,12 +1,10 @@
 import React from "react";
-import cameraImage from "../../assets/Home/ForFreelance/img02.png";
+import cameraImage from "../../assets/Home/FindFreelance/img02.png";
 import canvaImage from "../../assets/Home/Cards/canvaCategoryImg.png";
 import webDeveloper from "../../assets/Home/Cards/webDeveloper.png";
 import weddingCard from "../../assets/Home/Cards/weddingcard.png"
 import mockups from "../../assets/Home/Cards/mockupcards.png"
 import graphicDesigner from "../../assets/Home/Cards/graphicDesigner.png";
-import blogwriter from "../../assets/Home/Cards/blogwriter.png";
-import star from "../../assets/Home/ForFreelance/img01.png";
 import photoeditor from "../../assets/Home/Cards/photoeditor.png";
 import videoeditor from "../../assets/Home/Cards/video-editor.svg";
 import { Link } from "react-router-dom";

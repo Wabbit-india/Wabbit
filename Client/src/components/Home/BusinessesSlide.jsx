@@ -1,5 +1,5 @@
 import React from "react";
-import ulogo from "../../assets/Home/ForFreelance/img01.png";
+import ulogo from "../../assets/Home/FindFreelance/img01.png";
 
 export default function BusinessesSlide() {
   return (

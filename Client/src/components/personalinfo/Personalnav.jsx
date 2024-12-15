@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import Personalinfo from './component/Personalinfo1';
-import Personalinfo2 from './component/Personalinfo2';
-import Personalinf3 from './component/Personalinfo3';
+import Personalinfo from './Modals/Personalinfo1';
+import Personalinfo2 from './Modals/Personalinfo2';
+import Personalinf3 from './Modals/Personalinfo3';
 import { AiOutlineUser, AiOutlinePhone, AiOutlineAccountBook } from "react-icons/ai";
 
 function Personalnav() {

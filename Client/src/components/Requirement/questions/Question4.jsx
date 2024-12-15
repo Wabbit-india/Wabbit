@@ -26,7 +26,7 @@ const Question4 = () => {
             />
             ASAP
           </label>
-          
+
           <label className="flex items-center gap-5 h-[12%] border-b p-4">
             <input
               type="radio"
@@ -68,28 +68,31 @@ const Question4 = () => {
             Within 3 months
           </label>
         </form>
+
+        <div className="h-[10%]  absolute bottom-28 w-[40%] flex items-center gap-20 px-7">
+          <button
+            className="bg-white text-black border w-[30%] h-[70%] rounded-lg disabled:cursor-not-allowed disabled:bg-[#ccc]"
+            onClick={() => {
+              setprogressbar(49.98);
+              setfaqQuestion(3);
+            }}
+          >
+            Back
+          </button>
+          <button
+            className="bg-maincolor text-white w-[30%] h-[70%] rounded-lg disabled:cursor-not-allowed disabled:bg-[#00bf63ae]"
+            disabled={selectedValue === ""} // Disable next button if no options selected
+            onClick={() => {
+              setfaqQuestion(5);
+              setprogressbar(83.33);
+            }}
+          >
+            Next
+          </button>
+        </div>
       </div>
-      <div className="h-[10%] border absolute bottom-0 w-full flex items-center justify-between px-7">
-        <button
-          className="bg-white text-black border w-[20%] h-[70%] rounded-lg disabled:cursor-not-allowed disabled:bg-[#ccc]"
-          onClick={() => {
-            setprogressbar(49.98);
-            setfaqQuestion(3);
-          }}
-        >
-          Back
-        </button>
-        <button
-          className="bg-maincolor text-white w-[20%] h-[70%] rounded-lg disabled:cursor-not-allowed disabled:bg-[#00bf63ae]"
-          disabled={selectedValue === ""} // Disable next button if no options selected
-          onClick={() => {
-            setfaqQuestion(5);
-            setprogressbar(83.33);
-          }}
-        >
-          Next
-        </button>
-      </div>
+
+
     </div>
   );
 };

@@ -22,11 +22,11 @@ const Question6 = () => {
   return (
     <div className="h-full w-full flex items-center flex-col gap-5">
       <p className="text-2xl text-center font-semibold font-nunito w-[90%]">
-      Please provide the references.
+        Please provide the references.
       </p>
       <div className="min-h-[80%] border w-[90%] rounded-lg">
         <form className="flex flex-col gap-3 h-full w-full overflow-y-scroll">
-          
+
           <label className="flex items-center gap-5 h-[12%] border-b p-4">
             <input
               type="radio"
@@ -35,7 +35,7 @@ const Question6 = () => {
               checked={selectedValue === "E"}
               onChange={handleChange}
             />
-            Other
+            If Any
             <input
               type="text"
               name="otherMusic"
@@ -43,31 +43,44 @@ const Question6 = () => {
               value={otherValue}
               disabled={selectedValue !== "E"}
               onChange={handleOtherChange}
-              className="border p-2 rounded-md w-full ml-4"
+              className="border p-2 rounded-md w-[70%] ml-4"
             />
           </label>
+          <label className="flex items-center gap-5 h-[12%] border-b p-4">
+            <input
+              type="radio"
+              name="musicType"
+              value="D"
+              checked={selectedValue === "D"}
+              onChange={handleChange}
+            />
+            No I Don't Have Any
+          </label>
         </form>
+
+        <div className="h-[10%]  absolute bottom-28 w-[40%] flex items-center gap-20 px-7">
+          <button
+            className="bg-white text-black border w-[30%] h-[70%] rounded-lg disabled:cursor-not-allowed disabled:bg-[#ccc]"
+            onClick={() => {
+              setprogressbar(83.33);
+              setfaqQuestion(5);
+            }}
+          >
+            Back
+          </button>
+          <button
+            className="bg-maincolor text-white w-[30%] h-[70%] rounded-lg disabled:cursor-not-allowed disabled:bg-[#00bf63ae]"
+            disabled={selectedValue === "" || (selectedValue === "E" && otherValue.trim() === "")} // Validate for "Other"
+            onClick={() => {
+              setprogressbar(100);
+              alert("Thank you for submitting your requirements.");
+            }}
+          >
+            Finish
+          </button>
+        </div>
       </div>
-      <div className="h-[10%] border absolute bottom-0 w-full flex items-center justify-between px-7">
-        <button
-          className="bg-white text-black border w-[20%] h-[70%] rounded-lg disabled:cursor-not-allowed disabled:bg-[#ccc]"
-          onClick={() => {
-            setprogressbar(83.33);
-            setfaqQuestion(5);
-          }}
-        >
-          Back
-        </button>
-        <button
-          className="bg-maincolor text-white w-[20%] h-[70%] rounded-lg disabled:cursor-not-allowed disabled:bg-[#00bf63ae]"
-          disabled={selectedValue === "" || (selectedValue === "E" && otherValue.trim() === "")} // Validate for "Other"
-          onClick={() => {
-            setprogressbar(100);
-          }}
-        >
-          Next
-        </button>
-      </div>
+
     </div>
   );
 };

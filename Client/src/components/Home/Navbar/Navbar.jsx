@@ -10,7 +10,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const name = localStorage.getItem("username");
   const {
-    isnavbar,
+    isnavbar, 
     setIsnavbar,
     createAccount,
     setcreateAccount,
@@ -116,20 +116,20 @@ const Navbar = () => {
       </div>
 
       {isModal && (
-  <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
-    <ClickAwayListener onClickAway={handleClickAway}>
-      <div className="w-[90vw] md:w-[80vw] lg:w-[600px] xl:w-[550px] bg-white h-[85vh] rounded-2xl flex flex-row overflow-hidden relative z-60">
-        <div className="w-[100%] xl:w-[100%] h-full flex flex-col items-center justify-center">
-          {createAccount ? <Register /> : <Login />}
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+          <ClickAwayListener onClickAway={handleClickAway}>
+            <div className="w-[90vw] md:w-[80vw] lg:w-[600px] xl:w-[550px] bg-white h-[85vh] rounded-2xl flex flex-row overflow-hidden relative z-60">
+              <div className="w-[100%] xl:w-[100%] h-full flex flex-col items-center justify-center">
+                {createAccount ? <Register /> : <Login />}
+              </div>
+            </div>
+          </ClickAwayListener>
         </div>
-      </div>
-    </ClickAwayListener>
-  </div>
-)}
+      )}
 
       {sideModal && (
         <ClickAwayListener onClickAway={handleSideModalClose}>
-          <div className="absolute top-[70px] right-0 w-[250px] bg-white shadow-lg rounded-lg z-50">
+          <div className="fixed top-[70px] right-0 w-[250px] bg-white shadow-lg rounded-lg z-50">
             <ul className="p-4">
               <li
                 className="text-lg font-medium py-2 hover:bg-gray-100 cursor-pointer"

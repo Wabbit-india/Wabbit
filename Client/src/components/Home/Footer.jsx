@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../../assets/Home/Nav/navlogo.png";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter, FaYoutube } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -29,7 +30,7 @@ export default function Footer() {
             <li>Helpdesk for Client</li>
             <li><strong>For Freelancer</strong></li>
             <li className="text-[17px]">Become a Wabbit Freelancer</li>
-            <li className="text-[17px]">Join as an Agency</li>
+            <Link className="text-[17px]" to='/Joinagency'>Join as an Agency</Link>
             <li className="text-[17px]">Helpdesk for Freelancer</li>
           </ul>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import img from '../../assets/Home/Cards/webDeveloper.png'
+import img from '../../../assets/Home/Cards/webDeveloper.png';
 export default function Profile1() {
   return (
     <div>
