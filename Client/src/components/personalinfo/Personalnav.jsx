@@ -6,7 +6,7 @@ import Personalinf3 from './Modals/Personalinfo3';
 import { AiOutlineUser, AiOutlinePhone, AiOutlineAccountBook } from "react-icons/ai";
 
 function Personalnav() {
-  const [index, setIndex] = useState(2); // Default to "Account Info"
+  const [index, setIndex] = useState(0); // Default to "Account Info"
 
   // Handle index change
   const handleIndexChange = (newIndex) => {

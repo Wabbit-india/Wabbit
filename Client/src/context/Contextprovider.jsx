@@ -24,10 +24,32 @@ export const Contextprovider = ({ children }) => {
 
   const [faqQuestion, setfaqQuestion] = useState(1);
   const [progressbar, setprogressbar] = useState(16.66);
+  const [profileData, setProfileData] = useState({
+    firstname: "",
+    lastname: "",
+    profilePicture:"",
+    description: "",
+    region: "",
+    city: "",
+    languages: [],
+    skills: [],
+});
+const [profileData1,setProfileData1]=useState({
+  occuption: "",
+  fromdate: "",
+  todate: "",
+  skillschoose: "",
+  skillswork: "",
+  university: "",
+  portfoliolinks: "",
+})
 
   return (
     <Mycontext.Provider
       value={{
+        profileData1,setProfileData1,
+        profileData,
+        setProfileData,
         isnavbar,
         setIsnavbar,
         isModal,

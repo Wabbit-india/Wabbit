@@ -17,6 +17,7 @@ import Videoeditor from './components/Category-Card/Videoeditor';
 import Canvacard from './components/Category-Card/Canvacard';
 import Webdevloper from './components/Category-Card/Webdevloper';
 import UIUX from './components/Category-Card/UIUX';
+import PersonalNav from './components/personalinfo/Personalnav'
 
 
 
@@ -35,12 +36,13 @@ function App() {
 
             <Route path='/userinfo' element={<UserInfo />} />
             {/* <Route path='/normaluser1' element={<NormalUser1 />} /> */}
-            <Route path='/profile' element={<Profile />} />
+            {/* <Route path='/profile' element={<Profile />} /> */}
 
 
 
             {/* Browse professionals by category Route  */}
 
+            <Route path="/profile" element={<PersonalNav />} />
             <Route path="/photocard" element={<Photocard />} />
             <Route path='/mockup' element={<Mockupcard />} />
             <Route path='/invititioncard' element={<Invititioncard />} />
@@ -55,12 +57,6 @@ function App() {
             {/* for after */}
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            {/* <Route path="/getinfo" element={<GetinfoPage />} /> */}
-
-             {/* Browse professionals by category   */}
-          
-             <Route path='/myprofile' element={<Freelancerprl/>}/> 
-             {/* <Route path="/getinfo" element={<GetinfoPage/>}/>  */}
              <Route path="/photocard"  element={<Photocard/>}/>
              <Route path='/mockup' element={<Mockupcard/>}/>
              <Route path='/invititioncard' element={<Invititioncard/>}/>
@@ -69,7 +65,6 @@ function App() {
              <Route path='/canvacard' element={<Canvacard/>}/>
              <Route path='/webdeveloper' element={<Webdevloper/>}/>
              <Route path='/uiux' element={<UIUX/>}/>
-             <Route path='/normalUser1' element={<NormalUser1 />}/>
             <Route path='/freelancePortfolio' element={<FreelancePortfolio />} />
             <Route path='/joinagency' element={<Joinagency />} />
           </Routes>

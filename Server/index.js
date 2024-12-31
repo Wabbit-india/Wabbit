@@ -1,5 +1,6 @@
 import express from "express";
 import authRouter from "./Routes/auth.js"
+import profileRouter from "./Routes/profile.js"
 import cors from "cors";
 import dotenv from "dotenv";
 import connentTOdb from "./db/Db.js";
@@ -16,6 +17,7 @@ try {
   await connentTOdb();
 
   app.use("/auth" , authRouter);
+  app.use("/api", profileRouter)
 
   app.get("/", (req, res) => {
     res.send("healthy");
