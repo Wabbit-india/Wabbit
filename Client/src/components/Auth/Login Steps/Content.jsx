@@ -31,7 +31,7 @@ const Content = () => {
           <MdEmail className="text-[16px]"/>
           <p className="text-[16px]">Continue With Username/Email</p>
         </div>
-        <div className="text-center text-[14px] font-bold text-gray-400">OR</div>
+        {/* <div className="text-center text-[14px] font-bold text-gray-400">OR</div>
         <div className="w-full flex flex-row items-center justify-between">
         <div className="py-2 text-center w-[49%] cursor-pointer border rounded-xl border-[rgb(0,0,0,0.2)] font-bold flex-row flex items-center justify-center gap-[5%]">
           <FaApple className="text-[16px]"/>
@@ -41,7 +41,7 @@ const Content = () => {
           <FaFacebookF className="text-blue-700 text-[16px]"/>
           <p className="text-[16px]">Facebook</p>
         </div>
-        </div>
+        </div> */}
        
       </div>
 

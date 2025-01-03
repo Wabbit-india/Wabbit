@@ -17,27 +17,44 @@ const UserSchema = new Schema(
     },
     freelancerType: {
       type: String,
-      enum: ["buying", "selling"],
+      enum: ["Buying", "Selling"],
+      default: "",
     },
     freelancingPurpose: {
       type: [String],
-      enum: ["primary job", "side project", "personal use"],
+      enum: ["Primary job", "A side project", "Personal use", ""],
+      default: "",
     },
     companySize: {
       type: String,
-      enum: ["Just me", "2-10", "11-50", "51-500", "500+"],
+      enum: ["Just me", "2-10", "11-50", "51-500", "500+", ""],
     },
     purpose: {
       type: String,
-      enum: ["To start a project", "A specific project", "Just exploring"],
+      enum: ["To start a project", "A specific project", "Just exploring", ""],
+      default: "",
     },
     sellingPurpose: {
       type: String,
-      enum: ["A side hustle", "Solo freelancer", "Agency Employee", "Agency owner"],
+      enum: [
+        "A side hustle",
+        "Solo freelancer",
+        "Agency Employee",
+        "Agency owner",
+        "",
+      ],
+      default: "",
     },
     experienceMode: {
       type: String,
-      enum: ["I'm just getting started", "Freelancing online", "Freelancing offline", "Both online and offline"],
+      enum: [
+        "Getting started",
+        "Freelancing online",
+        "Freelancing offline",
+        "online and offline",
+        "",
+      ],
+      default: "",
     },
   },
   {

@@ -53,10 +53,6 @@ export default function Workwithus() {
 
         <div className='flex gap-2 pt-1 sm:gap-6'>
 
-          <h2 className='text-[31px] font-nunito font-bold sm:text-[35px] xl:text-[50px]'>
-            
-          </h2>
-
           <h2 className='text-maincolor font-[900]  font-nunito text-[31px] sm:text-[35px] xl:text-[50px]'>
             Freelance
           </h2>
@@ -67,10 +63,6 @@ export default function Workwithus() {
         </div>
 
         <div className='flex gap-2 pt-1  sm:gap-6'>
-
-          <h3 className='font-bold text-[31px] font-nunito sm:text-[35px] xl:text-[50px]'>
-           
-          </h3>
 
           <h3 className='font-bold text-[31px] font-nunito sm:text-[35px] xl:text-[50px]'>
             Your
