@@ -17,17 +17,6 @@ export default function Home() {
     const {isnavbar} = useContext(Mycontext);
     const navigate = useNavigate();
     
-    useEffect(() => {
-        const _id = localStorage.getItem("_id");
-        const authtoken = localStorage.getItem("token");
-        const username = localStorage.getItem("username");
-        const userType = localStorage.getItem("userType");
-    
-        if (_id && authtoken && username && !userType) {
-          navigate("/getinfo"); // Redirect to "/getinfo" if userType is missing
-        }
-    }, [])
-    
     return (
         <div className='flex flex-col h-auto justify-between'>
             <Navbar />
