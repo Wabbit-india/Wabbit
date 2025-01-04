@@ -18,7 +18,7 @@ import Canvacard from './components/Category-Card/Canvacard';
 import Webdevloper from './components/Category-Card/Webdevloper';
 import UIUX from './components/Category-Card/UIUX';
 import PersonalNav from './components/personalinfo/Personalnav'
-
+import Freelancer1 from './components/Profile/Modals/Freelancer1';
 
 
 function App() {
@@ -35,6 +35,7 @@ function App() {
 
 
             <Route path='/userinfo' element={<UserInfo />} />
+            <Route path='/freelancer' element={<Freelancer1 />} />
             {/* <Route path='/normaluser1' element={<NormalUser1 />} /> */}
             {/* <Route path='/profile' element={<Profile />} /> */}
 

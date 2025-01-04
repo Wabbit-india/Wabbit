@@ -1,9 +1,38 @@
 import { useLocation } from "react-router-dom";
-import {useEffect} from "react";
+import {useEffect,useState} from "react";
+import axios from "axios";
 import Navbar from "../Home/Navbar/Navbar";
 
     export default function Canvacard() {
-      const { pathname } = useLocation();
+      const [profiles, setProfiles] = useState([]);
+      const [error, setError] = useState(null);
+      const [loading, setLoading] = useState(false);
+    
+      const [skillswork, setSkillswork] = useState("Canva Expert"); // Default to "Photo Editing"
+    
+      // Fetch profiles based on skillswork
+      const fetchProfiles = async (skill) => {
+        setLoading(true);
+        setError(null);
+    
+        try {
+          const response = await axios.get(
+            `http://localhost:8000/api/getprofile?skillswork=${skill}`
+          );
+          setProfiles(response.data.data);
+        } catch (err) {
+          setError(err.response?.data?.error || "Error fetching profiles");
+        } finally {
+          setLoading(false);
+        }
+      };
+    
+      useEffect(() => {
+        if (skillswork) {
+          fetchProfiles(skillswork);
+        }
+      }, [skillswork]);
+          const { pathname } = useLocation();
 
       useEffect(() => {
         window.scrollTo(0, 0);

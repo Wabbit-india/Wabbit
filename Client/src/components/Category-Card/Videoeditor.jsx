@@ -3,8 +3,37 @@ import { useLocation } from "react-router-dom";
 import ClickAwayListener from "react-click-away-listener";
 import Navbar from "../Home/Navbar/Navbar";
 import FAQContent from "../Requirement/FAQContent";
-
+import axios from "axios";
 function Videoeditor() {
+  const [profiles, setProfiles] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const [skillswork, setSkillswork] = useState("Video Editor"); // Default to "Photo Editing"
+
+  // Fetch profiles based on skillswork
+  const fetchProfiles = async (skill) => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await axios.get(
+        `http://localhost:8000/api/getprofile?skillswork=${skill}`
+      );
+      setProfiles(response.data.data);
+    } catch (err) {
+      setError(err.response?.data?.error || "Error fetching profiles");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (skillswork) {
+      fetchProfiles(skillswork);
+    }
+  }, [skillswork]);
+
   const { pathname } = useLocation();
   const [isModal, setisModal] = useState(false);
 
@@ -101,7 +130,7 @@ function Videoeditor() {
 
           {/* Editor Cards */}
           <div className="flex flex-wrap justify-center gap-6 mt-8  w-full">
-            {editors.map((editor, index) => (
+            {profiles.map((editor, index) => (
               <div
                 key={index}
                 className="bg-white shadow-lg w-full md:w-[300px] lg:w-[400px] p-4 rounded-lg flex flex-col"
@@ -109,18 +138,18 @@ function Videoeditor() {
                 <div className="flex items-center">
                   <img
                     src={editor.image}
-                    alt={editor.name}
+                    alt={editor.firstname}
                     className="rounded-full w-15 h-15 sm:w-24 sm:h-24 object-cover "
                   />
                   <div className="ml-4">
                     <h1 className="text-lg sm:text-xl md:text-2xl text-left">
-                      {editor.name}
+                      {editor.firstname}{editor.lastname}
                     </h1>
                     <p className="text-left text-sm md:text-base">
-                      {editor.profession}
+                      {editor.skillswork}
                     </p>
                     <h2 className="text-left text-sm md:text-base">
-                      {editor.country}
+                      {editor.region}
                     </h2>
                   </div>
                 </div>
@@ -129,10 +158,10 @@ function Videoeditor() {
                 <div className="flex justify-between mt-4 text-sm md:text-base">
                   <div className="text-left">
                     <h1>Delivery Time</h1>
-                    <h2>{editor.deliveryTime}</h2>
+                    <h2>{"24 Hour's"}</h2>
                   </div>
                   <div className="text-left">
-                    <h1>{editor.price}</h1>
+                    <h1>{"100$"}</h1>
                   </div>
                 </div>
                 <hr className="w-[80%] mx-auto mt-4" />
@@ -140,7 +169,7 @@ function Videoeditor() {
                 {/* Rating & Hire Button Section */}
                 <div className="flex py-5 justify-between items-center">
                   <h1 className="text-left text-sm md:text-base">
-                    {editor.rating}
+                    {"⭐4.3"}
                   </h1>
                   <button
                     className="py-2 px-4 bg-maincolor text-white rounded-full hover:bg-opacity-90 transition"

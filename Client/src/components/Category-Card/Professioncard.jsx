@@ -1,6 +1,35 @@
-import React from "react";
-
+import React,{useState,useEffect} from "react";
+import axios from "axios";
 export default function ProfessionCard() {
+  const [profiles, setProfiles] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const [skillswork, setSkillswork] = useState("Photo Editor"); // Default to "Photo Editing"
+
+  // Fetch profiles based on skillswork
+  const fetchProfiles = async (skill) => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await axios.get(
+        `http://localhost:8000/api/getprofile?skillswork=${skill}`
+      );
+      setProfiles(response.data.data);
+    } catch (err) {
+      setError(err.response?.data?.error || "Error fetching profiles");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (skillswork) {
+      fetchProfiles(skillswork);
+    }
+  }, [skillswork]);
+
   const videoCategories = [
     "Social Media Videos",
     "Product Videos",
@@ -90,25 +119,25 @@ export default function ProfessionCard() {
         </div>
         {/* Editor Cards */}
         <div className="flex flex-wrap justify-center gap-6 mt-8  w-full">
-          {editors.map((editor, index) => (
+        {profiles.map((editor, index) => (
             <div
               key={index}
               className="bg-white shadow-lg w-full md:w-[300px] lg:w-[400px] p-4 rounded-lg flex flex-col">
               <div className="flex items-center">
                 <img
                   src={editor.image}
-                  alt={editor.name}
-                  className="rounded-full w-14 h-14 sm:w-24 sm:h-24"
+                  alt={editor.firstname}
+                  className="rounded-full shadow-lg w-14 h-14 sm:w-24 sm:h-24"
                 />
                 <div className="ml-4">
-                  <h1 className="text-lg sm:text-xl md:text-2xl text-left">
-                    {editor.name}
+                  <h1 className="text-lg capitalize sm:text-xl md:text-2xl text-left">
+                    {editor.firstname}{editor.lastname}
                   </h1>
-                  <p className="text-left text-sm md:text-base">
-                    {editor.profession}
+                  <p className="text-left capitalize text-sm md:text-base">
+                    {editor.skillswork}
                   </p>
-                  <h2 className="text-left text-sm md:text-base">
-                    {editor.country}
+                  <h2 className="text-left capitalize text-sm md:text-base">
+                    {editor.region}
                   </h2>
                 </div>
               </div>
@@ -117,10 +146,10 @@ export default function ProfessionCard() {
               <div className="flex justify-between mt-4 text-sm md:text-base">
                 <div className="text-left">
                   <h1>Delivery Time</h1>
-                  <h2>{editor.deliveryTime}</h2>
+                  <h2>{"24 Hour's"}</h2>
                 </div>
                 <div className="text-left">
-                  <h1>{editor.price}</h1>
+                  <h1>{"From ₹350"}</h1>
                 </div>
               </div>
               <hr className="w-[80%] mx-auto mt-4" />
@@ -128,7 +157,7 @@ export default function ProfessionCard() {
               {/* Rating & Hire Button Section */}
               <div className="flex py-5 justify-between items-center">
                 <h1 className="text-left text-sm md:text-base">
-                  {editor.rating}
+                  {"⭐4.5"}
                 </h1>
                 <button className="py-2 px-4 bg-maincolor text-white rounded-full hover:bg-opacity-90 transition">
                   Hire Me
