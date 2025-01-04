@@ -5,25 +5,29 @@ import { Link, useNavigate } from "react-router-dom";
 import ClickAwayListener from "react-click-away-listener";
 import Login from "../../Auth/Login";
 import Register from "../../Auth/Register";
+import LoginStepModal from "../../Auth/Register Steps/RegisterInfoModal";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const name = localStorage.getItem("username");
   const {
-    isnavbar, 
     setIsnavbar,
     createAccount,
     setcreateAccount,
     setLoginStep,
     setRegisterStep,
+    newModal,
+    setnewModal,
+    setRegisterEmail,
+    setRegisterUsername,
+    setRegisterPassword,
+    isModal, setIsModal,setUserData
   } = useContext(Mycontext);
-
-  const { isModal, setIsModal } = useContext(Mycontext);
   const token = localStorage.getItem("token");
   const [sideModal, setSideModal] = useState(false);
 
   useEffect(() => {
-    if (isModal) {
+    if (isModal || newModal) {
       document.body.classList.add("overflow-hidden");
     } else {
       document.body.classList.remove("overflow-hidden");
@@ -32,13 +36,25 @@ const Navbar = () => {
     return () => {
       document.body.classList.remove("overflow-hidden");
     };
-  }, [isModal]);
+  }, [isModal, newModal]);
 
   const handleClickAway = () => {
+    setRegisterEmail("");
+    setRegisterUsername("");
+    setRegisterPassword("");
     setIsModal(false);
-    setLoginStep(0);
-    setcreateAccount(false);
     setRegisterStep(0);
+    setcreateAccount(false);
+    setLoginStep(0);
+    setUserData({
+      freelancerType: "",
+      freelancingPurpose: [],
+      companySize: "",
+      purpose: "",
+      sellingPurpose: "",
+      experienceMode: "",
+    })
+    setnewModal(false);
   };
 
   const handleSideModalClose = () => {
@@ -91,7 +107,6 @@ const Navbar = () => {
           <li className="list-none text-2xl text-nowrap font-semibold md:text-xl hover:text-hovercolor hover:cursor-pointer transition-all">
             Monetize Your Skill
           </li>
-
         </div>
 
         {!token ? (
@@ -127,6 +142,17 @@ const Navbar = () => {
         </div>
       )}
 
+      {newModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+          <ClickAwayListener onClickAway={handleClickAway}>
+            <div className="w-[90vw] md:w-[80vw] lg:w-[600px] xl:w-[850px] bg-white h-[85vh] rounded-2xl flex flex-row overflow-hidden relative z-60">
+              {/* LoginStepModal content goes here */}
+              <LoginStepModal />
+            </div>
+          </ClickAwayListener>
+        </div>
+      )}
+
       {sideModal && (
         <ClickAwayListener onClickAway={handleSideModalClose}>
           <div className="fixed top-[70px] right-0 w-[250px] bg-white shadow-lg rounded-lg z-50">
@@ -147,7 +173,6 @@ const Navbar = () => {
               >
                 Logout
               </li>
-
             </ul>
           </div>
         </ClickAwayListener>

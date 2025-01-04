@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
 import { Mycontext } from "../../../context/Mycontext";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { useNavigate } from "react-router-dom";
 
 const RegisterStep2 = () => {
-  const navigate = useNavigate();
   const {
     setRegisterStep,
     registerEmail,
