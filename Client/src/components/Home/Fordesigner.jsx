@@ -46,7 +46,7 @@ export default function Fordesigner() {
 
         <div className='flex mx-auto px-4 flex-col lg:flex-row justify-center lg:justify-evenly items-center w-full max-w-[90%] lg:max-w-[50%] my-6 space-y-4 lg:space-y-0'>
 
-          <button className='py-3 px-4 w-full max-w-[170px] rounded-3xl bg-black text-white text-center' onClick={navigate('/')} >
+          <button className='py-3 px-4 w-full max-w-[170px] rounded-3xl bg-black text-white text-center' >
             Get started now
           </button>
               

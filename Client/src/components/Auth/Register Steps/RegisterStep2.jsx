@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
 import { Mycontext } from "../../../context/Mycontext";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { useNavigate } from "react-router-dom";
 
 const RegisterStep2 = () => {
-  const navigate = useNavigate();
   const {
     setRegisterStep,
     registerEmail,
@@ -15,42 +13,42 @@ const RegisterStep2 = () => {
     setRegisterUsername,
     setIsModal,
     setcreateAccount,
-    setLoginStep,
+    setLoginStep, setnewModal
   } = useContext(Mycontext);
 
-  const register = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch("http://localhost:8000/auth/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: registerEmail,
-          password: registerPassword,
-          username: registerUsername,
-        }),
-      });
-      const result = await response.json();
-      console.log(result);
-      const token = result.authToken;
-      localStorage.setItem("token", token);
-      localStorage.setItem("_id", result._id);
-      localStorage.setItem("username", result.username);
-      setRegisterUsername("");
-      setRegisterEmail("");
-      setRegisterPassword("");
-      setRegisterStep(0);
-      setcreateAccount(false);
-      setLoginStep(0);
-      setIsModal(false);
-      navigate("/userInfo");
-    } catch (error) {
-      console.log(error);
-      console.log("an error occured in registering");
-    }
-  };
+  // const register = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const response = await fetch("http://localhost:8000/auth/register", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         email: registerEmail,
+  //         password: registerPassword,
+  //         username: registerUsername,
+  //       }),
+  //     });
+  //     const result = await response.json();
+  //     console.log(result);
+  //     const token = result.authToken;
+  //     localStorage.setItem("token", token);
+  //     localStorage.setItem("_id", result._id);
+  //     localStorage.setItem("username", result.username);
+  //     setRegisterUsername("");
+  //     setRegisterEmail("");
+  //     setRegisterPassword("");
+  //     setRegisterStep(0);
+  //     setcreateAccount(false);
+  //     setLoginStep(0);
+  //     setIsModal(false);
+  //     navigate("/userInfo");
+  //   } catch (error) {
+  //     console.log(error);
+  //     console.log("an error occured in registering");
+  //   }
+  // };
 
   return (
     <div className="flex flex-col  gap-3 h-[100%]">
@@ -66,7 +64,7 @@ const RegisterStep2 = () => {
         </button>
       </div>
 
-      <form className="h-[85%] flex flex-col gap-3" onSubmit={register}>
+      <form className="h-[85%] flex flex-col gap-3">
         <div className="text-[22px] md:text-3xl text-start font-nunito font-bold">
           Get your profile started{" "}
         </div>
@@ -95,6 +93,10 @@ const RegisterStep2 = () => {
           </div>
         </div>
         <button
+        onClick={() => {
+          setIsModal(false);
+          setnewModal(true);
+        }}
           disabled={
             registerEmail.length === 0 &&
             registerPassword.length === 0 &&
@@ -105,7 +107,12 @@ const RegisterStep2 = () => {
           type="submit"
           className="py-3 text-center w-full cursor-pointer border rounded-xl border-[rgb(0,0,0,0.2)] font-bold flex-row flex items-center justify-center gap-[5%] bg-black mt-6"
         >
-          <p className="text-[16px] text-white">Continue</p>
+          <p
+            className="text-[16px] text-white"
+            
+          >
+            Continue
+          </p>
         </button>
       </form>
     </div>

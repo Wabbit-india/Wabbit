@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { Schema } from "mongoose";
-import User from "./UserSchema.js"; 
+import User from "./UserSchema.js";
 
 const FreelancerSchema = new Schema(
   {
@@ -24,15 +24,21 @@ const FreelancerSchema = new Schema(
       type: String,
       required: true,
     },
-    languages: [{
-      type: String,
-    }],
-    skills: [{
-      type: String,
-    }],
-    portfolioLinks: [{
-      type: String,
-    }],
+    languages: [
+      {
+        type: String,
+      },
+    ],
+    skills: [
+      {
+        type: String,
+      },
+    ],
+    portfolioLinks: [
+      {
+        type: String,
+      },
+    ],
     mobileNumber: {
       type: String,
       required: true,

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mycontext } from "./Mycontext"; 
+import { Mycontext } from "./Mycontext";
 
 export const Contextprovider = ({ children }) => {
   const [isnavbar, setIsnavbar] = useState(false);
@@ -13,8 +13,9 @@ export const Contextprovider = ({ children }) => {
   const [getInfostep, setgetInfostep] = useState(1);
   const [freelance, setfreelance] = useState(false);
   const [normaluser, setnormaluser] = useState(false);
+  const [newModal, setnewModal] = useState(false);
   const [userData, setUserData] = useState({
-    freelancerType: "buying",
+    freelancerType: "",
     freelancingPurpose: [],
     companySize: "",
     purpose: "",
@@ -78,6 +79,8 @@ const [profileData1,setProfileData1]=useState({
         setfaqQuestion,
         progressbar,
         setprogressbar,
+        newModal,
+        setnewModal,
       }}
     >
       {children}

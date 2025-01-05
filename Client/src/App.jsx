@@ -5,7 +5,6 @@ import Home from './page/Home';
 import About from './page/About';
 import UserInfo from './page/User-info';
 import FreelancePortfolio from "./page/Freelance-Portfolio"
-import Profile from './page/Profile';
 import Joinagency from './page/Joinagency';
 
 {/* Browse professionals by category Route  */ }
@@ -18,7 +17,11 @@ import Canvacard from './components/Category-Card/Canvacard';
 import Webdevloper from './components/Category-Card/Webdevloper';
 import UIUX from './components/Category-Card/UIUX';
 import PersonalNav from './components/personalinfo/Personalnav'
+<<<<<<< HEAD
 import Freelancer1 from './components/Profile/Modals/Freelancer1';
+=======
+
+>>>>>>> f183e0340e1b41b5df799d5b4fbb136cd2713a8c
 
 
 function App() {
@@ -33,7 +36,8 @@ function App() {
 
             {/* Normal Routeing */}
 
-
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
             <Route path='/userinfo' element={<UserInfo />} />
             <Route path='/freelancer' element={<Freelancer1 />} />
             {/* <Route path='/normaluser1' element={<NormalUser1 />} /> */}
@@ -56,6 +60,7 @@ function App() {
 
 
             {/* for after */}
+<<<<<<< HEAD
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
              <Route path="/photocard"  element={<Photocard/>}/>
@@ -66,6 +71,9 @@ function App() {
              <Route path='/canvacard' element={<Canvacard/>}/>
              <Route path='/webdeveloper' element={<Webdevloper/>}/>
              <Route path='/uiux' element={<UIUX/>}/>
+=======
+
+>>>>>>> f183e0340e1b41b5df799d5b4fbb136cd2713a8c
             <Route path='/freelancePortfolio' element={<FreelancePortfolio />} />
             <Route path='/joinagency' element={<Joinagency />} />
           </Routes>
