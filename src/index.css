@@ -1,0 +1,36 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: 00000; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #f9f9f9; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #f9f9f9; 
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.flex {
+  overflow-x: scroll; /* Allow horizontal scrolling */
+  -ms-overflow-style: none;  /* Internet Explorer and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* For Webkit browsers */
+.flex::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar */
+}
