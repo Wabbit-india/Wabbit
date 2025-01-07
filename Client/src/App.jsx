@@ -15,6 +15,7 @@ import Canvacard from './components/Category-Card/Canvacard';
 import Webdevloper from './components/Category-Card/Webdevloper';
 import UIUX from './components/Category-Card/UIUX';
 import PersonalNav from './components/personalinfo/Personalnav'
+import Freelancedashboard from '../src/page/Freelancedashboard';
 
 function App() {
 
@@ -31,7 +32,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/profile" element={<PersonalNav />} />
-
+            <Route path='/freelancedashboard' element={<Freelancedashboard />} />
 
             {/* Category Route */}
             <Route path="/photocard" element={<Photocard />} />
@@ -42,13 +43,13 @@ function App() {
             <Route path='/canvacard' element={<Canvacard />} />
             <Route path='/webdeveloper' element={<Webdevloper />} />
             <Route path='/uiux' element={<UIUX />} />
-            <Route path='/onboardingseller' element={<div>This is onboardingseller page</div>} />
+
 
             {/* for after */}
 
             {/* <Route path='/freelancePortfolio' element={<FreelancePortfolio />} />
             <Route path='/joinagency' element={<Joinagency />} /> */}
-            
+
           </Routes>
         </BrowserRouter>
       </Contextprovider>
