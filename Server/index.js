@@ -14,7 +14,7 @@ try {
 
   app.use(express.json());
   app.use(cors({ origin: "http://localhost:5173" })); // Replace with your frontend's URL
-  await connentTOdb();
+  await connectToDb();
 
   app.use("/auth" , authRouter);
   app.use("/api", profileRouter)

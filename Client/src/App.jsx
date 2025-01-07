@@ -44,6 +44,7 @@ function App() {
             <Route path='/canvacard' element={<Canvacard />} />
             <Route path='/webdeveloper' element={<Webdevloper />} />
             <Route path='/uiux' element={<UIUX />} />
+            <Route path='/onboardingseller' element={<div>This is onboardingseller page</div>} />
 
             {/* for after */}
 

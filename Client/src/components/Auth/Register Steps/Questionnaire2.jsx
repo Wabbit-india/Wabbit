@@ -2,8 +2,10 @@ import React, { useContext, useState } from "react";
 import { questionsData2 } from "../utils/ClientData";
 import { Mycontext } from "../../../context/Mycontext";
 import greatDesign from "../../../assets/Auth/For Freelancer/4th - Modal/greatDesign.png";
+import { useNavigate } from "react-router";
 
 const Questionnaire2 = ({ goBackToModal }) => {
+  const navigate = useNavigate();
   const {
     userData,
     setUserData,
@@ -131,7 +133,7 @@ const Questionnaire2 = ({ goBackToModal }) => {
         setIsCompleted(false);
         setIsModal(false); // Close modal
         setnewModal(false); // Close any other modals
-  
+        navigate("/onboardingseller");
         // Optionally, navigate to the user info page or perform other actions
       }
     } catch (error) {
