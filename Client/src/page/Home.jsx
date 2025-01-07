@@ -16,6 +16,12 @@ import { useNavigate } from 'react-router-dom'
 export default function Home() {
     const {isnavbar} = useContext(Mycontext);
     const navigate = useNavigate();
+    const accountType = localStorage.getItem('accountType');
+    useEffect(() => {
+        if(accountType === 'Selling'){
+            navigate('/onboardingseller')
+        }
+    }, [])
     
     return (
         <div className='flex flex-col h-auto justify-between'>

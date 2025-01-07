@@ -68,6 +68,7 @@ const Questionnaire = ({ goBackToModal }) => {
         localStorage.setItem("token", token);
         localStorage.setItem("_id", result._id);
         localStorage.setItem("username", result.username);
+        localStorage.setItem("accountType", result.accountType);
 
         // Reset the context values
         setRegisterStep(0);
