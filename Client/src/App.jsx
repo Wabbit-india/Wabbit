@@ -3,9 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Contextprovider } from '../src/context/Contextprovider';
 import Home from './page/Home';
 import About from './page/About';
-import UserInfo from './page/User-info';
-import FreelancePortfolio from "./page/Freelance-Portfolio"
-import Joinagency from './page/Joinagency';
+
 
 {/* Browse professionals by category Route  */ }
 import Photocard from './components/Category-Card/Photocard';
@@ -34,15 +32,12 @@ function App() {
 
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path='/userinfo' element={<UserInfo />} />
             {/* <Route path='/normaluser1' element={<NormalUser1 />} /> */}
-            {/* <Route path='/profile' element={<Profile />} /> */}
-
-
-
-            {/* Browse professionals by category Route  */}
-
+           
             <Route path="/profile" element={<PersonalNav />} />
+
+
+            {/* Category Route */}
             <Route path="/photocard" element={<Photocard />} />
             <Route path='/mockup' element={<Mockupcard />} />
             <Route path='/invititioncard' element={<Invititioncard />} />
@@ -52,12 +47,11 @@ function App() {
             <Route path='/webdeveloper' element={<Webdevloper />} />
             <Route path='/uiux' element={<UIUX />} />
 
-
-
             {/* for after */}
 
-            <Route path='/freelancePortfolio' element={<FreelancePortfolio />} />
-            <Route path='/joinagency' element={<Joinagency />} />
+            {/* <Route path='/freelancePortfolio' element={<FreelancePortfolio />} />
+            <Route path='/joinagency' element={<Joinagency />} /> */}
+            
           </Routes>
         </BrowserRouter>
       </Contextprovider>
