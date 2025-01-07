@@ -30,8 +30,6 @@ function App() {
 
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            {/* <Route path='/normaluser1' element={<NormalUser1 />} /> */}
-           
             <Route path="/profile" element={<PersonalNav />} />
 
 
@@ -44,12 +42,6 @@ function App() {
             <Route path='/canvacard' element={<Canvacard />} />
             <Route path='/webdeveloper' element={<Webdevloper />} />
             <Route path='/uiux' element={<UIUX />} />
-
-            {/* for after */}
-
-            {/* <Route path='/freelancePortfolio' element={<FreelancePortfolio />} />
-            <Route path='/joinagency' element={<Joinagency />} /> */}
-            
           </Routes>
         </BrowserRouter>
       </Contextprovider>
