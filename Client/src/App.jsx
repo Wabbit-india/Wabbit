@@ -42,6 +42,13 @@ function App() {
             <Route path='/canvacard' element={<Canvacard />} />
             <Route path='/webdeveloper' element={<Webdevloper />} />
             <Route path='/uiux' element={<UIUX />} />
+            <Route path='/onboardingseller' element={<div>This is onboardingseller page</div>} />
+
+            {/* for after */}
+
+            {/* <Route path='/freelancePortfolio' element={<FreelancePortfolio />} />
+            <Route path='/joinagency' element={<Joinagency />} /> */}
+            
           </Routes>
         </BrowserRouter>
       </Contextprovider>
