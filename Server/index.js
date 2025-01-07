@@ -1,5 +1,7 @@
 import express from "express";
-import authRouter from "./Routes/auth.js";
+import authRouter from "./Routes/auth.js"
+import profileRouter from "./Routes/profile.js"
+
 import cors from "cors";
 import dotenv from "dotenv";
 import connectToDb from "./db/Db.js";
@@ -11,11 +13,12 @@ try {
   const app = express();
 
   app.use(express.json());
-  app.use(cors());
+  app.use(cors({ origin: "http://localhost:5173" })); // Replace with your frontend's URL
+  await connentTOdb();
 
-  await connectToDb();
-
-  app.use("/auth", authRouter);
+  app.use("/auth" , authRouter);
+  app.use("/api", profileRouter)
+  
 
   app.get("/", (req, res) => {
     res.send("healthy");

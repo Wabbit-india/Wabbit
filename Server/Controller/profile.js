@@ -55,3 +55,35 @@ export  const profiledata = async (req, res) => {
     }
 };
 export default profiledata;
+
+//fetch data
+// Fetch profile data
+export const getprofile = async (req, res) => {
+    try {
+      const { id, skillswork } = req.query; // Retrieve 'skillswork' from query params
+  
+      let profiles;
+  
+      if (id) {
+        // Fetch a specific profile by ID
+        profiles = await ProfileSchema.findById(id);
+  
+        if (!profiles) {
+          return res.status(404).json({ error: "Profile not found" });
+        }
+      } else if (skillswork) {
+        // Fetch profiles where 'skillswork' matches
+        profiles = await ProfileSchema.find({ skillswork: { $regex: skillswork, $options: "i" } }); // Case-insensitive match
+      } else {
+        // Fetch all profiles
+        profiles = await ProfileSchema.find();
+      }
+  
+      // Send the fetched data
+      res.status(200).json({ data: profiles });
+    } catch (error) {
+      console.error("Internal server error at get profile data controller 🔴:", error);
+      res.status(500).json({ error: "Internal server error" });
+    }
+  };
+  
