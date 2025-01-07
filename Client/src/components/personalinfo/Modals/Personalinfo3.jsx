@@ -4,12 +4,9 @@ import { Mycontext } from "../../../context/Mycontext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios"
+
 function Personalinfo3() {
-<<<<<<< HEAD
-  const navigate =useNavigate();
-=======
   const navigate = useNavigate();
->>>>>>> f183e0340e1b41b5df799d5b4fbb136cd2713a8c
   const { profileData, setProfileData } = useContext(Mycontext);
   const { profileData1, setProfileData1 } = useContext(Mycontext);
 
@@ -18,15 +15,9 @@ function Personalinfo3() {
       ...profileData,
       ...profileData1,
     };
-<<<<<<< HEAD
-  
-    console.log("Payload to be sent:", payload);
-  
-=======
 
     console.log("Payload to be sent:", payload);
 
->>>>>>> f183e0340e1b41b5df799d5b4fbb136cd2713a8c
     try {
       const response = await axios.post("http://localhost:8000/api/profile", payload, {
 
@@ -34,11 +25,6 @@ function Personalinfo3() {
           "Content-Type": "application/json",
         },
       });
-<<<<<<< HEAD
-  
-=======
-
->>>>>>> f183e0340e1b41b5df799d5b4fbb136cd2713a8c
       console.log("Server Response:", response.data);
       alert("Submission successful!");
       setProfileData(" ");
@@ -61,11 +47,7 @@ function Personalinfo3() {
       }
     }
   };
-<<<<<<< HEAD
-    return (
-=======
   return (
->>>>>>> f183e0340e1b41b5df799d5b4fbb136cd2713a8c
     <div className="w-full min-h-screen p-4 sm:p-8 md:p-16 lg:p-20">
       <div>
         <h1 className="text-2xl md:text-3xl mb-2 md:mb-4">Professional Info</h1>

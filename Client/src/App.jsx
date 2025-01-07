@@ -15,12 +15,6 @@ import Canvacard from './components/Category-Card/Canvacard';
 import Webdevloper from './components/Category-Card/Webdevloper';
 import UIUX from './components/Category-Card/UIUX';
 import PersonalNav from './components/personalinfo/Personalnav'
-<<<<<<< HEAD
-import Freelancer1 from './components/Profile/Modals/Freelancer1';
-=======
-
->>>>>>> f183e0340e1b41b5df799d5b4fbb136cd2713a8c
-
 
 function App() {
 
