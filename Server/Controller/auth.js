@@ -71,6 +71,7 @@ export const createUser = async (req, res) => {
       message: "User created successfully",
       success: true,
       username: newUser.username,
+      accountType: newUser.freelancerType,
     });
   } catch (error) {
     console.log("Internal server error at register auth controller 🔴 ", error);
