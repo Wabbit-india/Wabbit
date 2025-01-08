@@ -1,11 +1,10 @@
 import React from 'react'
+import Navbar from '../components/Seller/Navbar'
 
 export default function Freelancedashboard() {
   return (
-    <div>
-      <h1>
-        hello from Freelancedash-board
-      </h1>
-    </div>
+   <>
+   <Navbar/>
+   </>
   )
 }
