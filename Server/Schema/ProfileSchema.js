@@ -7,16 +7,18 @@ const ProfileSchema = new Schema(
     userId: {
       type: Schema.Types.ObjectId,
       ref: User,
-      // required: true,
+      required: true,
     },
-    firstname: { type: String, required: true },
+        firstname: { type: String, required: true },
     lastname: { type: String, required: true },
     description: { type: Array, required: true },
     region:{type:String,required:true},
     city:{type:String,required:true},
     // prfilePicture:[String],
-    languages: [String],
-    skills: [String],
+    languages: [{
+      language: { type: String, required: true },
+      proficiency: { type: String, required: true }
+    }],
     occuption: { type: String },
     fromdate: { type: String },
     todate: { type: String },

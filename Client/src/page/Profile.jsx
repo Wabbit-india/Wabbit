@@ -29,9 +29,7 @@ export default function Profile() {
 
   return (
     <>
-      <div className="w-full h-[70px]">
-        <Navbar />
-      </div>
+      
       <div className="bg-bgmain w-full h-screen flex flex-col justify-center sm:flex-row">
 
         {/* Sidebar */}

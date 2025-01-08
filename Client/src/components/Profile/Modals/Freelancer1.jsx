@@ -1,12 +1,41 @@
-import React from 'react';
-
+import React,{useState,useEffect} from 'react';
+import axios from 'axios';
 function Freelancer1() {
+  const [profiles, setProfiles] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const userId = localStorage.getItem("_id");
+
+  const fetchProfiles = async (skill) => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await axios.get(
+        `http://localhost:8000/api/getprofile?userId=${userId}`
+      );
+      setProfiles(response.data.data);
+      console.log("Fetched Profiles:", response.data.data);
+    } catch (err) {
+      console.error("Error fetching profiles:", err.response?.data?.error || err.message);
+      setError(err.response?.data?.error || "Error fetching profiles");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (userId) {
+      fetchProfiles(userId);
+    }
+  }, [userId]);
+
   return (
     <div className="flex w-full min-h-screen 320:p-0 p-4">
       <div className="w-full sm:w-full lg:w-full flex flex-col   p-6   rounded-lg shadow-lg">
         {/* First Name and Last Name */}
         <div className="flex flex-col sm:flex-row justify-between mb-4">
-
+    
           <div className="w-full sm:w-[48%] mb-4 sm:mb-0">
             <label htmlFor="firstName" className="block mb-2 text-sm sm:text-base lg:text-lg">First Name</label>
             <input type="text" id="firstName" className="w-full lg:h-10 sm:h-8 p-2 border border-gray-300 rounded-md" />

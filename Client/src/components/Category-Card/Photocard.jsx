@@ -19,6 +19,7 @@ export default function Photocard() {
         `http://localhost:8000/api/getprofile?skillswork=${skill}`
       );
       setProfiles(response.data.data);
+      console.log(response.data.data)
     } catch (err) {
       setError(err.response?.data?.error || "Error fetching profiles");
     } finally {
