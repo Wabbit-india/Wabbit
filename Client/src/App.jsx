@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Contextprovider } from '../src/context/Contextprovider';
 import Home from './page/Home';
 import About from './page/About';
-import Onboardingseller from './page/Freelancedashboard'
+import Freelancedashboard from './page/Freelancedashboard'
+
 {/* Browse professionals by category Route  */ }
 import Photocard from './components/Category-Card/Photocard';
 import Mockupcard from './components/Category-Card/Mockupcard';
@@ -30,7 +31,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/profile" element={<PersonalNav />} />
-            <Route path='/onboardingseller' element={<Onboardingseller />} />
+            <Route path='/onboardingseller' element={<Freelancedashboard />} />
 
             {/* Category Route */}
             <Route path="/photocard" element={<Photocard />} />
