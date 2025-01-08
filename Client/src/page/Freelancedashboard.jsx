@@ -31,7 +31,7 @@ export default function Freelancedashboard() {
               key={item.id}
               onClick={() => changeHandler(item.id)}
               className={` cursor-pointer lg:text-2xl text-xl w-[80%] rounded-lg p-2 flex items-center  justify-evenly ${
-                activeId === item.id ? 'bg-green-400 ' : null
+                activeId === item.id ? 'bg-green-400 text-white' : 'text-black'
               }`}
             >
               <i className='lg:text-3xl text-xl'>{item.icons}</i>
