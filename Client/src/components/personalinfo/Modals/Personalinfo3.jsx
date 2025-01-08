@@ -6,47 +6,49 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios"
 
 function Personalinfo3() {
-  const navigate = useNavigate();
   const { profileData, setProfileData } = useContext(Mycontext);
   const { profileData1, setProfileData1 } = useContext(Mycontext);
+  const navigate=useNavigate();
+const submitHandler = async () => {
+  const userId = localStorage.getItem("_id");
+  if (!userId) {
+      alert("User ID not found. Please log in again.");
+      return;
+  }
 
-  const submitHandler = async () => {
-    const payload = {
+  const payload = {
+      userId,
       ...profileData,
       ...profileData1,
-    };
+  };
 
-    console.log("Payload to be sent:", payload);
+  console.log("Payload to be sent:", payload);
 
-    try {
+  try {
       const response = await axios.post("http://localhost:8000/api/profile", payload, {
-
-        headers: {
-          "Content-Type": "application/json",
-        },
+          headers: {
+              "Content-Type": "application/json",
+          },
       });
       console.log("Server Response:", response.data);
       alert("Submission successful!");
-      setProfileData(" ");
-      setProfileData1(" ");
-      navigate("/")
+      setProfileData({});
+      setProfileData1({});
+      navigate("/");
 
-    } catch (error) {
+  } catch (error) {
       if (error.response) {
-        // Server responded with a status other than 2xx
-        console.error("Error submitting data:", error.response.data);
-        alert(`Failed to submit data: ${error.response.data.message || error.response.statusText}`);
+          console.error("Error submitting data:", error.response.data);
+          alert(`Failed to submit data: ${error.response.data.message || error.response.statusText}`);
       } else if (error.request) {
-        // Request was made, but no response received
-        console.error("No response from server:", error.request);
-        alert("No response from server. Please try again later.");
+          console.error("No response from server:", error.request);
+          alert("No response from server. Please try again later.");
       } else {
-        // Something happened while setting up the request
-        console.error("Error:", error.message);
-        alert("An error occurred while submitting data.");
+          console.error("Error:", error.message);
+          alert("An error occurred while submitting data.");
       }
-    }
-  };
+  }
+};
   return (
     <div className="w-full min-h-screen p-4 sm:p-8 md:p-16 lg:p-20">
       <div>

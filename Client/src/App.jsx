@@ -3,8 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Contextprovider } from '../src/context/Contextprovider';
 import Home from './page/Home';
 import About from './page/About';
-
-
+import Onboardingseller from './page/Freelancedashboard'
 {/* Browse professionals by category Route  */ }
 import Photocard from './components/Category-Card/Photocard';
 import Mockupcard from './components/Category-Card/Mockupcard';
@@ -15,7 +14,6 @@ import Canvacard from './components/Category-Card/Canvacard';
 import Webdevloper from './components/Category-Card/Webdevloper';
 import UIUX from './components/Category-Card/UIUX';
 import PersonalNav from './components/personalinfo/Personalnav'
-import Freelancedashboard from '../src/page/Freelancedashboard';
 
 function App() {
 
