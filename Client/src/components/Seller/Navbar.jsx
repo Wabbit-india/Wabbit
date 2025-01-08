@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from "../../assets/Home/Nav/navlogo.png";
 export default function Navbar() {
+    const name = localStorage.getItem("username");
+
+    const [sideModal, setSideModal] = useState(false);
+
+    const handleSideModalClose = () => {
+        setSideModal(false);
+    };
+
+    const handleLogout = () => {
+        localStorage.clear();
+        navigate("/");
+        setSideModal(false);
+    };
+
     return (
-        <div className=" h-[85px] text-black flex items-center flex-row md:px-[30px] fixed top-0 w-[100%] z-20 border-b border-blue-500">
+        <div className=" h-[85px] text-black flex items-center flex-row md:px-[30px] fixed top-0 w-[100%] z-20 border-b border-maincolor">
             {/* three dot container */}
 
             {/* <div className="w-[20%] flex items-center justify-center h-full md:hidden">
@@ -32,7 +46,6 @@ export default function Navbar() {
                 </div>
 
                 <button
-                    onClick={alert("Switch to Buyer")}
                     className="text-nowrap  mr-[150px] w-[100%] px-4 py-2 flex items-center justify-center sm:left-[0px]  sm:text-lg 320:relative right-1 320:text-sm bg-maincolor text-white text-[30px] font-[500] rounded-xl md:w-[150px]"
                 >
                     Switch to Buyer
@@ -44,22 +57,30 @@ export default function Navbar() {
 
             <button
                 className="bg-maincolor rounded-full w-[65px] h-[60px] text-white text-center uppercase font-bold ml-8 text-[30px]"
+                onClick={() => {
+                    setSideModal(true);
+                }}
             >
-                A
+                {name[0]}
 
             </button>
 
-            {/* <div className="fixed top-[70px] right-0 w-[250px] bg-white shadow-lg rounded-lg z-50">
-                <ul className="p-4">
-                    <li
-                        className="text-lg font-medium py-2 hover:bg-gray-100 cursor-pointer"
+            {sideModal && (
 
-                    >
-                        Logout
-                    </li>
-                </ul>
-            </div> */}
+                <ClickAwayListener onClickAway={handleSideModalClose}>
+                    <div className="fixed top-[70px] right-0 w-[250px] bg-white shadow-lg rounded-lg z-50">
+                        <ul className="p-4">
+                            <li
+                                className="text-lg font-medium py-2 hover:bg-gray-100 cursor-pointer"
+                                onClick={handleLogout}
 
+                            >
+                                Logout
+                            </li>
+                        </ul>
+                    </div>
+                </ClickAwayListener>
+            )}
 
         </div>
     )

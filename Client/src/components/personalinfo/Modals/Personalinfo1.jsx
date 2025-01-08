@@ -115,7 +115,8 @@ function Personalinfo({ setIndex }) {
             <p className="text-sm">Add a profile picture so customers</p>
             <p className="text-sm">know who they'll be working with</p>
           </div>
-          <div className="sm:w-1/2 flex justify-center sm:justify-start">
+
+          <div className="sm:w-1/2 flex justify-center sm:justify-start bg-yellow-600">
             <div className="w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] rounded-full border-2 border-black flex justify-center items-center">
               <input
                 type="file"

@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Contextprovider } from '../src/context/Contextprovider';
 import Home from './page/Home';
 import About from './page/About';
-import Onboardingseller from './page/Freelancedashboard'
+import Freelancedashboard from './page/Freelancedashboard'
+
 {/* Browse professionals by category Route  */ }
 import Photocard from './components/Category-Card/Photocard';
 import Mockupcard from './components/Category-Card/Mockupcard';
