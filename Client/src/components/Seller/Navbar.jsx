@@ -53,6 +53,39 @@ export default function Navbar() {
 
             </div>
 
+
+            {
+                sideModal && (
+
+                    <ClickAwayListener onClickAway={handleSideModalClose}>
+
+                        <div className="fixed top-[70px] right-0 w-[250px] bg-white shadow-lg rounded-lg z-50">
+                            <ul className="p-4">
+                                <li
+                                    className="text-lg font-medium py-2 hover:bg-gray-100 cursor-pointer"
+                                    onClick={handleLogout}
+
+                                >
+                                    NO
+                                </li>
+
+                                <li
+                                    className="text-lg font-medium py-2 hover:bg-gray-100 cursor-pointer"
+                                    onClick={handleLogout}
+
+                                >
+                                    YES
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </ClickAwayListener>
+
+                )
+            }
+
+
             {/* Profile button */}
 
             <button
@@ -64,24 +97,6 @@ export default function Navbar() {
                 {name[0]}
 
             </button>
-
-            {sideModal && (
-
-                <ClickAwayListener onClickAway={handleSideModalClose}>
-                    <div className="fixed top-[70px] right-0 w-[250px] bg-white shadow-lg rounded-lg z-50">
-                        <ul className="p-4">
-                            <li
-                                className="text-lg font-medium py-2 hover:bg-gray-100 cursor-pointer"
-                                onClick={handleLogout}
-
-                            >
-                                Logout
-                            </li>
-                        </ul>
-                    </div>
-                </ClickAwayListener>
-            )}
-
-        </div>
+        </div >
     )
 }

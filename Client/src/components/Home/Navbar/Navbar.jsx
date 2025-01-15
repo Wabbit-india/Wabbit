@@ -21,7 +21,7 @@ const Navbar = () => {
     setRegisterEmail,
     setRegisterUsername,
     setRegisterPassword,
-    isModal, setIsModal,setUserData
+    isModal, setIsModal, setUserData
   } = useContext(Mycontext);
   const token = localStorage.getItem("token");
   const [sideModal, setSideModal] = useState(false);
@@ -87,6 +87,8 @@ const Navbar = () => {
           alt=""
         />
       </div>
+
+      {/* Normal User Navbar */}
 
       {/* Nav Lists container */}
       <div className="w-auto h-full flex items-center justify-end md:w-[85%] gap-[11%]">
@@ -177,6 +179,59 @@ const Navbar = () => {
           </div>
         </ClickAwayListener>
       )}
+
+      {/* for Seller */}'
+
+
+      {/* <div className="w-auto h-full flex items-center justify-end md:w-[85%] gap-[11%]">
+        <div className="hidden md:flex flex-row items-center h-[100%] justify-between gap-[9%]">
+
+          <li className="list-none text-3xl text-nowrap font-semibold md:text-xl hover:text-hovercolor hover:cursor-pointer transition-all">
+            Notification
+          </li>
+        </div>
+
+        <button
+          className="text-nowrap  mr-[150px] w-[100%] px-4 py-2 flex items-center justify-center sm:left-[0px]  sm:text-lg 320:relative right-1 320:text-sm bg-maincolor text-white text-[30px] font-[500] rounded-xl md:w-[150px]"
+        >
+          Switch to Buyer
+        </button>
+
+      </div>
+
+
+      {
+        sideModal && (
+
+          <ClickAwayListener onClickAway={handleSideModalClose}>
+
+            <div className="fixed top-[70px] right-0 w-[250px] bg-white shadow-lg rounded-lg z-50">
+              <ul className="p-4">
+                <li
+                  className="text-lg font-medium py-2 hover:bg-gray-100 cursor-pointer"
+                  onClick={handleLogout}
+
+                >
+                  NO
+                </li>
+
+                <li
+                  className="text-lg font-medium py-2 hover:bg-gray-100 cursor-pointer"
+                  onClick={handleLogout}
+
+                >
+                  YES
+                </li>
+
+
+              </ul>
+            </div>
+          </ClickAwayListener>
+
+        )
+      } */}
+
+
     </div>
   );
 };
