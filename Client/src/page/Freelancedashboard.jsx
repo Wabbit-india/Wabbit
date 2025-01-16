@@ -5,7 +5,12 @@ import { FaSackDollar } from "react-icons/fa6";
 import { MdSupportAgent, MdNewspaper, MdAccountBox } from "react-icons/md";
 import Chat from '../components/Seller/chat/chat';
 import Profile from '../components/Seller/Profile/Profile';
+import Support from '../components/Seller/Support';
+import Payout from '../components/Seller/Payout';
+import Projects from '../components/Seller/Projects';
+
 export default function Freelancedashboard() {
+
   const sidebutton = [
     { id: 1, icons: <MdAccountBox />, name: 'Profiles' },
     { id: 2, icons: <MdMessage />, name: 'Message' },
@@ -42,7 +47,7 @@ export default function Freelancedashboard() {
                 <h2>{item.name}</h2>
               </div>
             ))}
-
+            
           </aside>
         </div>
 
@@ -50,9 +55,9 @@ export default function Freelancedashboard() {
           <main className='w-[80%] h-screen'>
             {activeComponent === 1 ? <Profile /> : null}
             {activeComponent === 2 ? <Chat /> : null}
-            {/* {activeComponent === 3 ? <Profile /> : null}
-            {activeComponent === 4 ? <Profile /> : null}
-            {activeComponent === 5 ? <Profile /> : null} */}
+            {activeComponent === 3 ? <Projects /> : null}
+            {activeComponent === 4 ? <Payout/> : null}
+            {activeComponent === 5 ? <Support /> : null}
           </main>
         </div>
       </div>
