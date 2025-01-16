@@ -5,11 +5,11 @@ import ClickAwayListener from "react-click-away-listener";
 import Navbar from "../Home/Navbar/Navbar";
 import axios from 'axios';
 function Webdevloper() {
+  const [skills, setSkills] = useState("Web Developer"); // Default to "Photo Editing"
   const [profiles, setProfiles] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const [skillswork, setSkillswork] = useState("Web Developer"); // Default to "Photo Editing"
 
   // Fetch profiles based on skillswork
   const fetchProfiles = async (skill) => {
@@ -18,9 +18,10 @@ function Webdevloper() {
 
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/getprofile?skillswork=${skill}`
+        `http://localhost:8000/api/getprofile?skills=${skill}`
       );
       setProfiles(response.data.data);
+      console.log(response.data.data)
     } catch (err) {
       setError(err.response?.data?.error || "Error fetching profiles");
     } finally {
@@ -29,11 +30,10 @@ function Webdevloper() {
   };
 
   useEffect(() => {
-    if (skillswork) {
-      fetchProfiles(skillswork);
+    if (skills) {
+      fetchProfiles(skills);
     }
-  }, [skillswork]);
-
+  }, [skills]);
     const { pathname } = useLocation();
     const [isModal, setisModal] = useState(false);
     // const { progressbar, setfaqQuestion, setprogressbar } = useContext(Mycontext);
