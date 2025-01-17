@@ -49,12 +49,14 @@ const RegisterInfoModal = () => {
           </p>
 
           <div className="flex flex-col md:flex-row w-full gap-3 items-center px-2 md:px-4 flex-grow justify-evenly py-2">
+
             <SelectionCard
               text="Buying freelance services"
               image={Buying}
               isSelected={userData.freelancerType === "Buying"}
               onClick={() => handleSelection("Buying")}
             />
+            
             <SelectionCard
               text="Selling freelance services"
               image={hiring}

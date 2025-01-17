@@ -46,6 +46,7 @@ export default function Navbar() {
                 </div>
 
                 <button
+                
                     className="text-nowrap  mr-[150px] w-[100%] px-4 py-2 flex items-center justify-center sm:left-[0px]  sm:text-lg 320:relative right-1 320:text-sm bg-maincolor text-white text-[30px] font-[500] rounded-xl md:w-[150px]"
                 >
                     Switch to Buyer

@@ -1,9 +1,12 @@
-import React,{useState,useEffect} from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+import { Mycontext } from '../../../../context/Mycontext';
 function Freelancer1() {
   const [profiles, setProfiles] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  const { imageUrl } = useContext(Mycontext);
 
   const userId = localStorage.getItem("_id");
 
@@ -35,12 +38,12 @@ function Freelancer1() {
       <div className="w-full sm:w-full lg:w-full flex flex-col p-6 rounded-lg shadow-lg">
         {/* First Name and Last Name */}
         <div className="flex flex-col sm:flex-row justify-between mb-4">
-    
+
           <div className="w-full sm:w-[48%] mb-4 sm:mb-0">
             <label htmlFor="firstName" className="block mb-2 text-sm sm:text-base lg:text-lg">First Name</label>
             <input type="text" id="firstName" className="w-full lg:h-10 sm:h-8 p-2 border border-gray-300 rounded-md" />
           </div>
-          
+
           <div className="w-full sm:w-[48%]">
             <label htmlFor="lastName" className="block mb-2 text-sm sm:text-base lg:text-lg">Last Name</label>
             <input type="text" id="firstName" className="w-full lg:h-10 sm:h-8 p-2 border border-gray-300 rounded-md" />
@@ -50,11 +53,11 @@ function Freelancer1() {
         {/* Occupation */}
         <div className="mb-4">
           <label htmlFor="occupation" className="block mb-2 text-sm sm:text-base lg:text-lg">Occupation</label>
-          <input 
-            type="text" 
-            id="occupation" 
-            placeholder="Ex: Senior Designer, Art Director, Student" 
-            className="w-full p-2 border border-gray-300 rounded-md" 
+          <input
+            type="text"
+            id="occupation"
+            placeholder="Ex: Senior Designer, Art Director, Student"
+            className="w-full p-2 border border-gray-300 rounded-md"
           />
         </div>
 
@@ -120,7 +123,7 @@ function Freelancer1() {
 
         {/* Languages */}
         <div className="mb-4">
-        <label htmlFor="languages" className="block mb-2 text-sm sm:text-base lg:text-lg">Languages</label>
+          <label htmlFor="languages" className="block mb-2 text-sm sm:text-base lg:text-lg">Languages</label>
           <button className="mt- text-blue-500">+ Add Languages</button>
         </div>
         <div className="mb-6">
@@ -130,7 +133,9 @@ function Freelancer1() {
         <div className="mb-6">
           <label htmlFor="description" className="block  text-sm sm:text-base lg:text-lg">Email</label>
           <input id="description" className="w-full p-2 border border-gray-300 rounded-md "></input>
-          <button className='bg-maincolor text-white px-5 py-2 rounded-lg mt-2'>Submit</button>
+
+          <button className='bg-maincolor text-white px-5 py-2 rounded-lg mt-2'>Submit
+          </button>
         </div>
 
       </div>
@@ -139,3 +144,8 @@ function Freelancer1() {
 }
 
 export default Freelancer1;
+
+
+
+// Do console.log(imageUrl ) for print the img url 
+
