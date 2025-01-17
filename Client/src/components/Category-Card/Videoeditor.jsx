@@ -8,8 +8,8 @@ function Videoeditor() {
   const [profiles, setProfiles] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [skills, setSkills] = useState("Video Editor"); // Default to "Photo Editing"
 
-  const [skillswork, setSkillswork] = useState("Video Editor"); // Default to "Photo Editing"
 
   // Fetch profiles based on skillswork
   const fetchProfiles = async (skill) => {
@@ -18,9 +18,10 @@ function Videoeditor() {
 
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/getprofile?skillswork=${skill}`
+        `http://localhost:8000/api/getprofile?skills=${skill}`
       );
       setProfiles(response.data.data);
+      console.log(response.data.data)
     } catch (err) {
       setError(err.response?.data?.error || "Error fetching profiles");
     } finally {
@@ -29,11 +30,10 @@ function Videoeditor() {
   };
 
   useEffect(() => {
-    if (skillswork) {
-      fetchProfiles(skillswork);
+    if (skills) {
+      fetchProfiles(skills);
     }
-  }, [skillswork]);
-
+  }, [skills]);
   const { pathname } = useLocation();
   const [isModal, setisModal] = useState(false);
 
@@ -56,63 +56,6 @@ function Videoeditor() {
       document.body.classList.remove("overflow-hidden");
     };
   }, [isModal]);
-
-  const editors = [
-    {
-      name: "Harsh Vaishnav",
-      profession: "Video Editor",
-      country: "India",
-      deliveryTime: "24 Hour's",
-      price: "From ₹400",
-      rating: "⭐4.3",
-      image: "https://img.freepik.com/free-photo/portrait-handsome-serious-man_23-2149022626.jpg",
-    },
-    {
-      name: "Apoorv Sharma",
-      profession: "Video Editor",
-      country: "India",
-      deliveryTime: "24 Hour's",
-      price: "From ₹600",
-      rating: "⭐4.3",
-      image: "https://img.freepik.com/premium-photo/smiling-bearded-man_1030879-40664.jpg",
-    },
-    {
-      name: "Prateek Mathur",
-      profession: "Video Editor",
-      country: "India",
-      deliveryTime: "24 Hour's",
-      price: "From ₹500",
-      rating: "⭐4.3",
-      image: "https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg",
-    },
-    {
-      name: "Nidhi Kachhawa",
-      profession: "Video Editor",
-      country: "India",
-      deliveryTime: "24 Hour's",
-      price: "From ₹650",
-      rating: "⭐4.3",
-      image: "https://img.freepik.com/free-photo/smiling-brunette-woman-with-crossed-arms-looking-camera-gray_171337-987.jpg?t=st=1733208862~exp=1733212462~hmac=773e8a9a74fc2b2cdc3e1c92e4911c8c90c7ca6dcb46f79df43023ea714ec39a&w=1060",
-    },
-    {
-      name: "Komal Joshi",
-      profession: "Video Editor",
-      country: "India",
-      deliveryTime: "24 Hour's",
-      price: "From ₹550",
-      rating: "⭐4.3",
-      image: "https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg?t=st=1733208714~exp=1733212314~hmac=6a79a664c957117f397dc1360be940c7bb46eb3f21ba2a9edb5b6fc495ec69a3&w=1060",
-    },
-    {
-      name: "Nikhil sharma",
-      profession: "Video Editor",
-      country: "India",
-      deliveryTime: "24 Hour's",
-      price: "From ₹450",
-      rating: "⭐4.3",
-      image: "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?t=st=1733208542~exp=1733212142~hmac=d34f020d7fc88808ac3ead3efef003c7de783ccbd23f63500f322004a4a9eaaf&w=1060",
-    },
-  ];
 
   return (
     <>

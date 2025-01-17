@@ -9,23 +9,24 @@ const ProfileSchema = new Schema(
       ref: User,
       required: true,
     },
-        firstname: { type: String, required: true },
+    firstname: { type: String, required: true },
     lastname: { type: String, required: true },
-    description: { type: Array, required: true },
+    occuption: { type: String },
+    university: { type: String },
     region:{type:String,required:true},
     city:{type:String,required:true},
-    // prfilePicture:[String],
-    languages: [{
-      language: { type: String, required: true },
-      proficiency: { type: String, required: true }
-    }],
-    occuption: { type: String },
-    fromdate: { type: String },
-    todate: { type: String },
-    skillschoose: [String],
-    skillswork:[String],
     portfoliolinks: { type: String },
-    university: { type: String },
+    description: { type: Array, required: true },
+    // prfilePicture:[String],
+    skills: [String],
+    languages: [
+      {
+        language: { type: String, required: true },
+        proficiency: { type: String, required: true },
+      },
+    ],
+         contact:[String],
+    email:[String],
     },
 );
 

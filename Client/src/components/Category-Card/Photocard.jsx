@@ -7,7 +7,7 @@ export default function Photocard() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const [skillswork, setSkillswork] = useState("Photo Editor"); // Default to "Photo Editing"
+  const [skills, setSkills] = useState("Photo Editor"); // Default to "Photo Editing"
 
   // Fetch profiles based on skillswork
   const fetchProfiles = async (skill) => {
@@ -16,7 +16,7 @@ export default function Photocard() {
 
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/getprofile?skillswork=${skill}`
+        `http://localhost:8000/api/getprofile?skills=${skill}`
       );
       setProfiles(response.data.data);
       console.log(response.data.data)
@@ -28,10 +28,10 @@ export default function Photocard() {
   };
 
   useEffect(() => {
-    if (skillswork) {
-      fetchProfiles(skillswork);
+    if (skills) {
+      fetchProfiles(skills);
     }
-  }, [skillswork]);
+  }, [skills]);
 
   return (
     <>

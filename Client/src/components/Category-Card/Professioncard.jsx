@@ -4,8 +4,8 @@ export default function ProfessionCard() {
   const [profiles, setProfiles] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [skills, setSkills] = useState("Video Editor"); // Default to "Photo Editing"
 
-  const [skillswork, setSkillswork] = useState("Photo Editor"); // Default to "Photo Editing"
 
   // Fetch profiles based on skillswork
   const fetchProfiles = async (skill) => {
@@ -14,9 +14,10 @@ export default function ProfessionCard() {
 
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/getprofile?skillswork=${skill}`
+        `http://localhost:8000/api/getprofile?skills=${skill}`
       );
       setProfiles(response.data.data);
+      console.log(response.data.data)
     } catch (err) {
       setError(err.response?.data?.error || "Error fetching profiles");
     } finally {
@@ -25,11 +26,10 @@ export default function ProfessionCard() {
   };
 
   useEffect(() => {
-    if (skillswork) {
-      fetchProfiles(skillswork);
+    if (skills) {
+      fetchProfiles(skills);
     }
-  }, [skillswork]);
-
+  }, [skills]);
   const videoCategories = [
     "Social Media Videos",
     "Product Videos",

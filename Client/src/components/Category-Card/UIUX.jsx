@@ -5,8 +5,8 @@ export default function UIUX() {
   const [profiles, setProfiles] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [skills, setSkills] = useState("UI/UX"); // Default to "Photo Editing"
 
-  const [skillswork, setSkillswork] = useState("UI/UX Designer"); // Default to "Photo Editing"
 
   // Fetch profiles based on skillswork
   const fetchProfiles = async (skill) => {
@@ -15,9 +15,10 @@ export default function UIUX() {
 
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/getprofile?skillswork=${skill}`
+        `http://localhost:8000/api/getprofile?skills=${skill}`
       );
       setProfiles(response.data.data);
+      console.log(response.data.data)
     } catch (err) {
       setError(err.response?.data?.error || "Error fetching profiles");
     } finally {
@@ -26,10 +27,10 @@ export default function UIUX() {
   };
 
   useEffect(() => {
-    if (skillswork) {
-      fetchProfiles(skillswork);
+    if (skills) {
+      fetchProfiles(skills);
     }
-  }, [skillswork]);
+  }, [skills]);
 
   const videoCategories = [
     "T-shirts",
