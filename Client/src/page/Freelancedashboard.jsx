@@ -8,9 +8,10 @@ import Profile from '../components/Seller/Profile/Profile';
 import Support from '../components/Seller/Support';
 import Payout from '../components/Seller/Payout';
 import Projects from '../components/Seller/Projects';
+import { useNavigate } from 'react-router-dom';
 
 export default function Freelancedashboard() {
-
+  const navigate=useNavigate();
   const sidebutton = [
     { id: 1, icons: <MdAccountBox />, name: 'Profiles' },
     { id: 2, icons: <MdMessage />, name: 'Message' },
@@ -26,6 +27,11 @@ export default function Freelancedashboard() {
     setActiveId(id);
     setActiveComponent(id) // Set the clicked button as active
   };
+  const logoutHandler=()=>{
+    localStorage.clear();
+    navigate("/");
+
+  }
 
   return (
     <>
@@ -34,8 +40,8 @@ export default function Freelancedashboard() {
       <div className='overflow-hidden  flex flex-row w-full h-[89.30vh] mt-[85px]'>
         <div className="flex">
 
-          <aside className=" w-[300px] h-auto mt-8 shadow-lg flex flex-col gap-3 py-8 items-center">
-
+          <aside className=" w-[300px] h-auto  mt-8 shadow-lg flex flex-col gap-3 py-8 items-center">
+        
             {sidebutton.map((item) => (
               <div
                 key={item.id}
@@ -48,6 +54,7 @@ export default function Freelancedashboard() {
               </div>
             ))}
             
+            <div className='relative top-32 bg-maincolor cursor-pointer lg:text-2xl text-xl w-[80%] rounded-lg p-2 flex items-center  justify-evenly' onClick={logoutHandler}>Logout</div>
           </aside>
         </div>
 
@@ -59,6 +66,7 @@ export default function Freelancedashboard() {
             {activeComponent === 4 ? <Payout/> : null}
             {activeComponent === 5 ? <Support /> : null}
           </main>
+          
         </div>
       </div>
     </>

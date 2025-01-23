@@ -105,7 +105,7 @@ export default function Profile() {
         </aside>
         {/* TopSideNavbar */}
         <div className="flex flex-col w-full sm:w-2/3">
-          <nav className="bg-white lg:text-xl lg:w-[90%] lg:mx-auto rounded shadow-lg mt-8 flex-shrink-0 h-16 flex items-center justify-around">
+          <nav className="bg-white text-[13px] md:text-lg lg:w-[90%] lg:mx-auto rounded shadow-lg mt-8 flex-shrink-0 h-16 flex items-center justify-around">
             <button
               className={`text-black ${activeProfile === "Freelancer1" ? "underline" : ""}`}
               onClick={() => setActiveProfile("Freelancer1")}
