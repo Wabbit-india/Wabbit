@@ -15,7 +15,7 @@ import Canvacard from './components/Category-Card/Canvacard';
 import Webdevloper from './components/Category-Card/Webdevloper';
 import UIUX from './components/Category-Card/UIUX';
 import PersonalNav from './components/personalinfo/Personalnav'
-
+import Profileget from './components/Seller/Profile/Modals/Profileget';
 function App() {
 
 
@@ -31,6 +31,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/profile" element={<PersonalNav />} />
+            <Route path="/profileget" element={<Profileget />} />
             <Route path='/onboardingseller' element={<Freelancedashboard />} />
 
             {/* Category Route */}
