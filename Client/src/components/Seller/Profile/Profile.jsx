@@ -60,7 +60,8 @@ export default function Profile() {
 
   return (
     <>
-      <div className="bg-bgmain w-[81vw] h-screen flex flex-col justify-center sm:flex-row">
+      <div className=" lg:w-[81vw] bg-maincolor w-[100vw] h-screen flex flex-col justify-center sm:flex-row">
+        
         {/* Sidebar */}
         <aside className="w-full sm:w-[400px] flex justify-center p-5 m-3">
 
@@ -87,19 +88,6 @@ export default function Profile() {
                     )}
                   </div>
                 </div>
-
-                {/* "+" Button Outside the Div */}
-
-                {imagePreview && (
-                  <button
-                    onClick={handleIconClick}
-                    className="mt-3 bg-maincolor text-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer"
-                    title="Update Photo"
-                  >
-                    +
-                  </button>
-                )}
-
               </div>
 
 
