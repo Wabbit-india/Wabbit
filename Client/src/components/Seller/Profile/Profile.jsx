@@ -4,10 +4,12 @@ import Freelancer1 from "../Profile/Modals/Freelancer1";
 import Freelancer2 from "../Profile/Modals/Freelancer2";
 import Freelancer3 from "../Profile/Modals/Freelancer3";
 import { useNavigate } from "react-router-dom";
+import { Mycontext } from "../../../context/Mycontext";
 
 export default function Profile() {
+  const { setImageUrl } = useContext(Mycontext);
   const fileInputRef = useRef(null);
-  const [imagePreview, setImagePreview] = useState(null); // State to store preview image
+  const [imagePreview, setImagePreview] = useState(null);
   const [activeProfile, setActiveProfile] = useState("Freelancer1"); // Active tab state
   const username = localStorage.getItem("username");
   const navigate = useNavigate();
@@ -19,11 +21,36 @@ export default function Profile() {
     }
   }, [token, navigate]);
 
-  const handleFileChange = (event) => {
-    const file = event.target.files[0]; // Get selected file
+  const handleFileChange = async (event) => {
+    const file = event.target.files[0]; // Get the selected file
     if (file) {
-      const previewUrl = URL.createObjectURL(file); // Create preview URL
-      setImagePreview(previewUrl); // Update state for preview
+      const previewUrl = URL.createObjectURL(file); // Create a preview URL
+      setImagePreview(previewUrl); // Update the state for the preview
+
+      // Create FormData object
+      const data = new FormData();
+      data.append("file", file); // Append the actual file object
+      data.append("upload_preset", "ProfilePhoto"); // Your Cloudinary upload preset
+      data.append("cloud_name", "dvnrzuumg"); // Your Cloudinary cloud name
+
+      try {
+        const res = await fetch(
+          "https://api.cloudinary.com/v1_1/dvnrzuumg/image/upload",
+          {
+            method: "POST",
+            body: data,
+          }
+        );
+
+        if (!res.ok) {
+          throw new Error("Failed to upload image");
+        }
+
+        const result = await res.json();
+        console.log("Uploaded Image URL:", result.url); // Log the uploaded image URL
+      } catch (error) {
+        console.error("Error uploading the image:", error.message);
+      }
     }
   };
 
@@ -33,7 +60,8 @@ export default function Profile() {
 
   return (
     <>
-      <div className="bg-bgmain w-[81vw] h-screen flex flex-col justify-center sm:flex-row">
+      <div className=" lg:w-[81vw] bg-maincolor w-[100vw] h-screen flex flex-col justify-center sm:flex-row">
+        
         {/* Sidebar */}
         <aside className="w-full sm:w-[400px] flex justify-center p-5 m-3">
 
@@ -43,47 +71,23 @@ export default function Profile() {
 
               <div className="flex flex-col items-center relative">
                 <div className="w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] rounded-full border-2 border-black flex justify-center items-center">
+                  
                   <input
                     type="file"
-                    name="profilePicture"
                     ref={fileInputRef}
                     style={{ display: "none" }}
                     accept="image/*"
-                    onChange={handleFileChange} // Handle file change
+                    onChange={handleFileChange}
                   />
 
-                  {imagePreview ? (
-                    <img
-                      src={imagePreview}
-                      alt="Profile Preview"
-                      className="rounded-full"
-                      style={{
-                        width: "200px",
-                        height: "200px",
-                        objectFit: "cover",
-                      }}
-                    />
-                  ) : (
-
-                    <div
-                      onClick={handleIconClick}
-                      className="w-[80px] h-[80px] rounded-full bg-black flex items-center justify-center cursor-pointer"
-                    >
-                      <IoCameraOutline className="bg-white rounded-lg text-3xl sm:text-4xl" />
-                    </div>
-                  )}
+                  <div onClick={() => fileInputRef.current.click()}>
+                    {imagePreview ? (
+                      <img src={imagePreview} alt="Profile Preview" />
+                    ) : (
+                      <IoCameraOutline />
+                    )}
+                  </div>
                 </div>
-
-                {/* "+" Button Outside the Div */}
-                {imagePreview && (
-                  <button
-                    onClick={handleIconClick}
-                    className="mt-3 bg-maincolor text-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer"
-                    title="Update Photo"
-                  >
-                    +
-                  </button>
-                )}
               </div>
 
 

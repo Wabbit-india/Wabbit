@@ -10,6 +10,7 @@ function Freelancer1() {
   const [selectedLanguage, setSelectedLanguage] = useState("");
   const [selectedProficiency, setSelectedProficiency] = useState("");
 
+
   const [profiledata, setProfiledata] = useState({
     firstname: "",
     lastname: "",
@@ -164,6 +165,21 @@ function Freelancer1() {
                 />
               </div>
             </div>
+              <div className="w-full sm:w-[48%]">
+                <label
+                  htmlFor="lastname"
+                  className="block mb-2 text-sm sm:text-base lg:text-lg">
+                  Last Name
+                </label>
+                <input
+                  type="text"
+                  value={profiledata.lastname}
+                  id="lastname"
+                  onChange={handleChange}
+                  className="w-full lg:h-10 sm:h-8 p-2 border border-gray-300 rounded-md"
+                />
+              </div>
+            </div>
 
             {/* Occupation */}
             <div className="mb-4">
@@ -181,7 +197,38 @@ function Freelancer1() {
                 className="w-full p-2 border border-gray-300 rounded-md"
               />
             </div>
+            {/* Occupation */}
+            <div className="mb-4">
+              <label
+                htmlFor="occuption"
+                className="block mb-2 text-sm sm:text-base lg:text-lg">
+                Occupation
+              </label>
+              <input
+                value={profiledata.occuption}
+                onChange={handleChange}
+                type="text"
+                id="occuption"
+                placeholder="Ex: Senior Designer, Art Director, Student"
+                className="w-full p-2 border border-gray-300 rounded-md"
+              />
+            </div>
 
+            {/* University */}
+            <div className="mb-4">
+              <label
+                htmlFor="university"
+                className="block mb-2 text-sm sm:text-base lg:text-lg">
+                University
+              </label>
+              <input
+                type="text"
+                value={profiledata.university}
+                id="university"
+                onChange={handleChange}
+                className="w-full p-2 border border-gray-300 rounded-md"
+              />
+            </div>
             {/* University */}
             <div className="mb-4">
               <label
@@ -222,6 +269,24 @@ function Freelancer1() {
               </select>
             </div>
 
+            {/* City */}
+            <div className="mb-4">
+              <label
+                htmlFor="city"
+                className="block mb-2 text-sm sm:text-base lg:text-lg">
+                City
+              </label>
+              <select
+                id="city"
+                value={profiledata.city}
+                onChange={handleSelectChange}
+                className="w-full p-2 border border-gray-300 rounded-md">
+                <option value="">Select City</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Kolkata">Kolkata</option>
+              </select>
+            </div>
             {/* City */}
             <div className="mb-4">
               <label
@@ -340,6 +405,33 @@ function Freelancer1() {
                 {/* {item.skills} */}
               </div>
             </div>
+              {/* Display Added Skills */}
+              <div className="flex flex-wrap gap-2">
+                {profiledata.skills.length > 0 ? (
+                  profiledata.skills.map((skill, index) => (
+                    <span
+                      key={index}
+                      className="bg-gray-200 text-gray-800 px-3 py-1 rounded-lg text-sm">
+                      {skill}
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setProfiledata((prev) => ({
+                            ...prev,
+                            skills: prev.skills.filter((_, i) => i !== index),
+                          }))
+                        }
+                        className="ml-2 text-red-600 font-bold">
+                        &times;
+                      </button>
+                    </span>
+                  ))
+                ) : (
+                  <p className="text-gray-500">No skills added yet.</p>
+                )}
+                {/* {item.skills} */}
+              </div>
+            </div>
 
             {/* Languages */}
             <div className="flex flex-col sm:flex-row justify-between my-4">
@@ -406,6 +498,22 @@ function Freelancer1() {
                 className="w-full p-2 border border-gray-300 rounded-md"
               />
             </div>
+            {/* Phone Number */}
+            <div className="mb-6">
+              <label
+                htmlFor="contact"
+                className="block mb-2 text-sm sm:text-base lg:text-lg">
+                Phone Number
+              </label>
+              <input
+                type="text"
+                id="contact"
+                value={profiledata.contact}
+                onChange={handleChange}
+                placeholder="+91"
+                className="w-full p-2 border border-gray-300 rounded-md"
+              />
+            </div>
 
             {/* Email */}
             <div className="mb-6">
@@ -439,3 +547,8 @@ function Freelancer1() {
 }
 
 export default Freelancer1;
+
+
+
+// Do console.log(imageUrl ) for print the img url 
+

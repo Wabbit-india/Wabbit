@@ -5,7 +5,7 @@ export const profiledata = async (req, res) => {
           userId,
           firstname,
           lastname,
-          occuption,
+          occuption,  
           university,
           region,
           city,

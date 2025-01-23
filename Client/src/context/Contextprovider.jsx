@@ -14,6 +14,7 @@ export const Contextprovider = ({ children }) => {
   const [freelance, setfreelance] = useState(false);
   const [normaluser, setnormaluser] = useState(false);
   const [newModal, setnewModal] = useState(false);
+  const [imageUrl, setImageUrl] = useState(null);
   const [userData, setUserData] = useState({
     freelancerType: "",
     freelancingPurpose: [],
@@ -28,27 +29,27 @@ export const Contextprovider = ({ children }) => {
   const [profileData, setProfileData] = useState({
     firstname: "",
     lastname: "",
-    profilePicture:"",
+    profilePicture: "",
     description: "",
     region: "",
     city: "",
     languages: [],
     skills: [],
-});
-const [profileData1,setProfileData1]=useState({
-  occuption: "",
-  fromdate: "",
-  todate: "",
-  skillschoose: "",
-  skillswork: "",
-  university: "",
-  portfoliolinks: "",
-})
+  });
+  const [profileData1, setProfileData1] = useState({
+    occuption: "",
+    fromdate: "",
+    todate: "",
+    skillschoose: "",
+    skillswork: "",
+    university: "",
+    portfoliolinks: "",
+  })
 
   return (
     <Mycontext.Provider
       value={{
-        profileData1,setProfileData1,
+        profileData1, setProfileData1,
         profileData,
         setProfileData,
         isnavbar,
@@ -81,6 +82,8 @@ const [profileData1,setProfileData1]=useState({
         setprogressbar,
         newModal,
         setnewModal,
+        imageUrl,
+        setImageUrl
       }}
     >
       {children}
