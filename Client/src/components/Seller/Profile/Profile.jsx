@@ -47,7 +47,9 @@ export default function Profile() {
         }
 
         const result = await res.json();
-        console.log("Uploaded Image URL:", result.url); // Log the uploaded image URL
+        // console.log("Uploaded Image URL:", result.url); // Log the uploaded image URL
+        setImageUrl(result.url);
+        console.log('52',result.url)
       } catch (error) {
         console.error("Error uploading the image:", error.message);
       }
@@ -60,7 +62,7 @@ export default function Profile() {
 
   return (
     <>
-      <div className=" lg:w-[81vw] bg-maincolor w-[100vw] h-screen flex flex-col justify-center sm:flex-row">
+      <div className=" lg:w-[81vw] bg-bgmain w-[100vw] h-screen flex flex-col justify-center sm:flex-row">
         
         {/* Sidebar */}
         <aside className="w-full sm:w-[400px] flex justify-center p-5 m-3">
@@ -82,7 +84,7 @@ export default function Profile() {
 
                   <div onClick={() => fileInputRef.current.click()}>
                     {imagePreview ? (
-                      <img src={imagePreview} alt="Profile Preview" />
+                      <img src={imagePreview} alt="Profile Preview" className="w-full h-[200px] rounded-full" />
                     ) : (
                       <IoCameraOutline />
                     )}
