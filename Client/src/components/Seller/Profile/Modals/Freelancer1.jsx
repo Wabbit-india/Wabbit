@@ -1,13 +1,14 @@
-import React, { useState, useEffect, useContext } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import React, { useState, useEffect } from "react";
 import { countries } from "../../../../../public/data/country";
 import Profileget from "./Profileget";
 import axios from "axios";
 import { BiSolidEdit } from "react-icons/bi";
-import { Mycontext } from "../../../../context/Mycontext";
+import { ToastContainer, toast } from "react-toastify";
 
 function Freelancer1() {
   const notify = () => toast("Wow so easy!");
+  // const {imageUrl}=useContext(Mycontext);
+  // console.log('12',imageUrl)
   const [selectedLanguage, setSelectedLanguage] = useState("");
   const [selectedProficiency, setSelectedProficiency] = useState("");
   const{imageUrl}=useContext(Mycontext);
@@ -83,7 +84,7 @@ function Freelancer1() {
       return;
     }
 
-    const payload = { ...profiledata, userId , }; // Include userId in the payload
+    const payload = { ...profiledata, userId }; // Include userId in the payload
 
     console.log("Payload being sent:", payload);
 

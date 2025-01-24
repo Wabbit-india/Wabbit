@@ -138,7 +138,7 @@ const Navbar = () => {
               setSideModal(true);
             }}
           >
-            {name[0]}
+            {/* {name[0]} */}
 
           </button>
         </div>
