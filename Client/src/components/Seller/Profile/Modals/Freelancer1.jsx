@@ -44,7 +44,7 @@ function Freelancer1() {
           ],
         }));
       } else {
-        alert("This language is already added.");
+        toast("This language is already added.");
       }
     } else {
       alert("Please select both a language and a proficiency.");
@@ -71,13 +71,14 @@ function Freelancer1() {
   console.log(userId);
   let profileId = localStorage.getItem("profile_id");
   console.log('profiledid',profileId)
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const userId = localStorage.getItem("_id"); // Retrieve userId from local storage
     if (!userId) {
       console.error("User ID not found in localStorage");
-      alert("User not logged in. Please log in first."); // User-friendly message
+      toast("User not logged in. Please log in first."); // User-friendly message
       return;
     }
 
@@ -95,7 +96,7 @@ function Freelancer1() {
         if (profileId) {
           localStorage.setItem("profile_id", profileId);
           console.log("Profile ID saved to localStorage:", profileId);
-          alert("Profile saved successfully!");
+          toast("Profile saved successfully!");
         } else {
           console.warn("No profile_id received in the response.");
         }
@@ -118,7 +119,7 @@ function Freelancer1() {
       })
       .catch((error) => {
         console.error("Error submitting form:", error);
-        alert("An error occurred while saving the profile. Please try again.");
+        toast("An error occurred while saving the profile. Please try again.");
       });
   };
 
