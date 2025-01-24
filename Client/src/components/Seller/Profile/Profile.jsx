@@ -47,21 +47,24 @@ export default function Profile() {
         }
 
         const result = await res.json();
-        console.log("Uploaded Image URL:", result.url); // Log the uploaded image URL
+        // console.log("Uploaded Image URL:", result.url); // Log the uploaded image URL
+
+        setImageUrl(result.url); // Set the uploaded image URL in context
+        
       } catch (error) {
         console.error("Error uploading the image:", error.message);
       }
     }
   };
 
-  const handleIconClick = () => {
-    fileInputRef.current.click(); // Trigger file input on icon click
-  };
+  // const handleIconClick = () => {
+  //   fileInputRef.current.click(); // Trigger file input on icon click
+  // };
 
   return (
     <>
-      <div className=" lg:w-[81vw] bg-maincolor w-[100vw] h-screen flex flex-col justify-center sm:flex-row">
-        
+      <div className=" lg:w-[81vw] bg-maincolor w-[95vw] h-screen flex flex-col justify-center sm:flex-row">
+
         {/* Sidebar */}
         <aside className="w-full sm:w-[400px] flex justify-center p-5 m-3">
 
@@ -71,7 +74,7 @@ export default function Profile() {
 
               <div className="flex flex-col items-center relative">
                 <div className="w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] rounded-full border-2 border-black flex justify-center items-center">
-                  
+
                   <input
                     type="file"
                     ref={fileInputRef}

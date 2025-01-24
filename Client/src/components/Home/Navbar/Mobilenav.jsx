@@ -22,7 +22,7 @@ export default function Mobilenav() {
 
             <Link to="/about"
               className='font-nunito font-bold text-[20px]'>
-              About
+              About 
             </Link>
 
             <Link
@@ -31,6 +31,12 @@ export default function Mobilenav() {
             </Link>
 
           </ul>
+        </nav>
+
+
+
+        <nav>
+
         </nav>
       </div>
     </ClickAwayListener>

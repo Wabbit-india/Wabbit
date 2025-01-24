@@ -11,7 +11,7 @@ import Projects from '../components/Seller/Projects';
 import { useNavigate } from 'react-router-dom';
 
 export default function Freelancedashboard() {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const sidebutton = [
     { id: 1, icons: <MdAccountBox />, name: 'Profiles' },
     { id: 2, icons: <MdMessage />, name: 'Message' },
@@ -27,7 +27,8 @@ export default function Freelancedashboard() {
     setActiveId(id);
     setActiveComponent(id) // Set the clicked button as active
   };
-  const logoutHandler=()=>{
+
+  const logoutHandler = () => {
     localStorage.clear();
     navigate("/");
 
@@ -53,6 +54,13 @@ export default function Freelancedashboard() {
               </div>
             ))}
 
+            <button
+              onClick={logoutHandler}
+              className="mt-auto bg-maincolor text-white py-2 px-4 rounded-lg"
+            >
+              Logout
+            </button> 
+
 
           </aside>
         </div>
@@ -65,7 +73,7 @@ export default function Freelancedashboard() {
             {activeComponent === 4 ? <Payout /> : null}
             {activeComponent === 5 ? <Support /> : null}
           </main>
-          
+
         </div>
       </div>
     </>
