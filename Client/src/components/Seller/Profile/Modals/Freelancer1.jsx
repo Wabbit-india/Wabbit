@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import { countries } from "../../../../../public/data/country";
 import Profileget from "./Profileget";
 import axios from "axios";
@@ -7,12 +7,13 @@ import { ToastContainer, toast } from "react-toastify";
 
 function Freelancer1() {
   const notify = () => toast("Wow so easy!");
+  
   // const {imageUrl}=useContext(Mycontext);
   // console.log('12',imageUrl)
   const [selectedLanguage, setSelectedLanguage] = useState("");
   const [selectedProficiency, setSelectedProficiency] = useState("");
-  const{imageUrl}=useContext(Mycontext);
-  console.log(imageUrl)
+  // const{imageUrl}=useContext(Mycontext);
+  // console.log(imageUrl)
 
   const [profiledata, setProfiledata] = useState({
     firstname: "",
@@ -80,7 +81,7 @@ function Freelancer1() {
     // Retrieve userId from local storage
     if (!userId) {
       console.error("User ID not found in localStorage");
-      toast("User not logged in. Please log in first."); // User-friendly message
+      toast.error("User not logged in. Please log in first."); // User-friendly message
       return;
     }
 
@@ -91,16 +92,16 @@ function Freelancer1() {
     axios
       .post("http://localhost:8000/api/profile", payload)
       .then((response) => {
-        console.log("Form submitted successfully:", response.data);
+        toast.success("Form submitted successfully:", response.data);
 
         // Save the profile_id to local storage
         const profileId = response.data.profile_id;
         if (profileId) {
           localStorage.setItem("profile_id", profileId);
           console.log("Profile ID saved to localStorage:", profileId);
-          toast("Profile saved successfully!");
+          toast.success("Profile saved successfully!"); // Display success toast
         } else {
-          console.warn("No profile_id received in the response.");
+          toast.warn("Profile saved, but no ID received."); // Display warning toast
         }
 
         // Reset the form if necessary
@@ -135,7 +136,8 @@ function Freelancer1() {
 
           {/* -------------------data entry--------------------- */}
 
-          <div className="w-full   sm:w-full lg:w-full flex flex-col p-6 rounded-lg shadow-lg">
+          <div className="w-full sm:w-full lg:w-full flex flex-col p-6 rounded-lg shadow-lg">
+            <button className="bg-blue-400 w-16 p-1 rounded-full text-white" onClick={()=>setIndex(true)}>Back</button>
             <div className="flex  flex-col sm:flex-row justify-between mb-4">
               <div className="w-full sm:w-[48%] mb-4 sm:mb-0">
                 <label
@@ -434,7 +436,6 @@ function Freelancer1() {
               className="bg-maincolor text-white px-5 py-2 rounded-lg mt-3 mb-14">
               Submit
             </button>
-            <button onClick={notify}>Notify!</button>
           </div>
           <ToastContainer />
         </div>

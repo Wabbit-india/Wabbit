@@ -38,10 +38,10 @@ export default function Freelancedashboard() {
     <>
       <Navbar />
 
-      <div className='overflow-hidden  flex flex-row w-full h-[89.30vh] mt-[85px]'>
+      <div className='overflow-hidden   flex flex-row w-full h-[89.30vh] mt-[85px]'>
         <div className="flex">
 
-          <aside className=" w-[300px] h-auto  mt-8 shadow-lg flex flex-col gap-3 py-8 items-center">
+          <aside className=" w-[300px] h-auto lg:visible invisible   mt-8 shadow-lg flex flex-col gap-3 py-8 items-center">
         
             {sidebutton.map((item) => (
               <div
@@ -59,7 +59,7 @@ export default function Freelancedashboard() {
           </aside>
         </div>
             
-        <div className='w-[81%] h-screen'>
+        <div className='max-md:w-[100%] w-[81%] h-screen'>
           <main className='w-[80%] h-screen'>
             {activeComponent === 1 ? <Profile /> : null}
             {activeComponent === 2 ? <Chat /> : null}
