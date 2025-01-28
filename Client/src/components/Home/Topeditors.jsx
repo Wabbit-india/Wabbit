@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Topeditors() {
   return (
-    <div className="h-aut w-[100vw] flex items-center justify-center gap-10 ">
+    <div className="h-auto w-[100vw] flex items-center justify-center gap-10 ">
         {/* <marquee behavior="" direction="" scrollamount='30'> */}
 
       <div className="max-w-[90%] flex flex-row items-center justify-between gap-4 overflow-hidden">
@@ -58,6 +58,7 @@ export default function Topeditors() {
             </div>
           </div>
         </div>
+
         <div className="bg-black h-[350px] min-w-[270px] rounded-xl overflow-hidden relative">
           <img
             className="w-[100%] h-[100%] object-cover   "
