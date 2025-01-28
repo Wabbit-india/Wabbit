@@ -19,9 +19,9 @@ function profileget({ index,setIndex }) {
       console.log(error,'errorror') 
     }}
   }
-  useEffect(() => {
-    fetchdata(); // Fetch data on component mount
-  }, []);
+  // useEffect(() => {
+  //   fetchdata(); // Fetch data on component mount
+  // }, []);
 
   const updateHandle=()=>{
     setIndex(false)

@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { countries } from "../../../../../public/data/country";
 import Profileget from "./Profileget";
 import axios from "axios";
-import { BiSolidEdit } from "react-icons/bi";
 import { ToastContainer, toast } from "react-toastify";
+import { Mycontext } from "../../../../context/Mycontext";
 
 function Freelancer1() {
-  const notify = () => toast("Wow so easy!");
-  // const {imageUrl}=useContext(Mycontext);
-  // console.log('12',imageUrl)
   const [selectedLanguage, setSelectedLanguage] = useState("");
   const [selectedProficiency, setSelectedProficiency] = useState("");
   const{imageUrl}=useContext(Mycontext);
@@ -429,12 +426,11 @@ function Freelancer1() {
               />
             </div>
             <button
-              onClick={handleSubmit}
+              onSubmit={handleSubmit}
               type="submit"
               className="bg-maincolor text-white px-5 py-2 rounded-lg mt-3 mb-14">
               Submit
             </button>
-            <button onClick={notify}>Notify!</button>
           </div>
           <ToastContainer />
         </div>

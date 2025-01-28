@@ -6,11 +6,13 @@ import ClickAwayListener from "react-click-away-listener";
 import Login from "../../Auth/Login";
 import Register from "../../Auth/Register";
 import LoginStepModal from "../../Auth/Register Steps/RegisterInfoModal";
+import { use } from "react";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const name = localStorage.getItem("username");
-  const usertype =localStorage.getItem("accountType")
+  const usertype = localStorage.getItem("accountType")
+
   const {
     setIsnavbar,
     createAccount,
@@ -25,10 +27,15 @@ const Navbar = () => {
     isModal,
     setIsModal,
     setUserData,
+    isnavbar
   } = useContext(Mycontext);
 
   const token = localStorage.getItem("token");
   const [sideModal, setSideModal] = useState(false);
+
+  useEffect(() => {
+    console.log(isnavbar)
+  })
 
   useEffect(() => {
     if (isModal || newModal) {
@@ -138,7 +145,7 @@ const Navbar = () => {
               setSideModal(true);
             }}
           >
-            {/* {name[0]} */}
+            {name[0]}
 
           </button>
         </div>

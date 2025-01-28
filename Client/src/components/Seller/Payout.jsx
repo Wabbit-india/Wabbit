@@ -1,27 +1,31 @@
 import React from 'react';
 
 export default function Payout() {
-  const payoutData = [
-    { title: "Today", value: 20 },
-    { title: "This Month", value: 200 },
-    { title: "Total", value: 2000 },
-  ];
+  // const payoutData = [
+  //   { title: "Today", value: 20 },
+  //   { title: "This Month", value: 200 },
+  //   { title: "Total", value: 2000 },
+  // ];
 
-  const historyData = [
-    { date: "16-02-2025", time: "9:00 AM", client: "Heemesh", status: "Approved", amount: "₹499", help: true },
-    { date: "16-02-2025", time: "8:58 AM", client: "Heemesh", status: "Failed", amount: "₹499", help: true },
-    { date: "10-02-2025", time: "10:40 PM", client: "Sajid", status: "Failed", amount: "₹1000", help: true },
-    { date: "07-02-2025", time: "7:15 PM", client: "Harsh", status: "Approved", amount: "₹800", help: true },
-    { date: "06-02-2025", time: "12:40 PM", client: "Mahesh", status: "Approved", amount: "₹2200", help: true },
-    { date: "04-02-2025", time: "8:40 AM", client: "Yogita", status: "Approved", amount: "500", help: true },
-  ];
+  // const historyData = [
+  //   { date: "16-02-2025", time: "9:00 AM", client: "Heemesh", status: "Approved", amount: "₹499", help: true },
+  //   { date: "16-02-2025", time: "8:58 AM", client: "Heemesh", status: "Failed", amount: "₹499", help: true },
+  //   { date: "10-02-2025", time: "10:40 PM", client: "Sajid", status: "Failed", amount: "₹1000", help: true },
+  //   { date: "07-02-2025", time: "7:15 PM", client: "Harsh", status: "Approved", amount: "₹800", help: true },
+  //   { date: "06-02-2025", time: "12:40 PM", client: "Mahesh", status: "Approved", amount: "₹2200", help: true },
+  //   { date: "04-02-2025", time: "8:40 AM", client: "Yogita", status: "Approved", amount: "500", help: true },
+  // ];
 
   return (
     <div className="h-full w-[81vw] flex flex-col bg-bgmain">
 
+      <h1>
+        Work on it
+      </h1>
+
       {/* Top Section */}
 
-      <div className="h-[20%] flex justify-evenly items-center">
+      {/* <div className="h-[20%] flex justify-evenly items-center">
         {payoutData.map((data, index) => (
           <div key={index} className="w-[20%] h-28 bg-white rounded-lg flex flex-col justify-center shadow-md">
             <h1 className="text-xl pl-3 pt-2 font-semibold">
@@ -32,10 +36,10 @@ export default function Payout() {
             </p>
           </div>
         ))}
-      </div>
+      </div> */}
 
       {/* Table Section */}
-      <div className="h-[80%] bg-white overflow-y-scroll p-4 shadow-md">
+      {/* <div className="h-[80%] bg-white overflow-y-scroll p-4 shadow-md">
         <h2 className="text-xl font-semibold mb-4">History</h2>
         <table className="w-full text-left border-collapse">
           <thead>
@@ -47,8 +51,8 @@ export default function Payout() {
               <th className="p-3 text-sm font-semibold text-gray-700 border-b">Amount</th>
               <th className="p-3 text-sm font-semibold text-gray-700 border-b">Help</th>
             </tr>
-          </thead>
-          <tbody>
+          </thead> */}
+          {/* <tbody>
             {historyData.map((item, index) => (
               <tr key={index} className="hover:bg-gray-50">
                 <td className="p-3 text-sm border-b">{item.date}</td>
@@ -60,6 +64,7 @@ export default function Payout() {
                 >
                   {item.status}
                 </td>
+
                 <td className="p-3 text-sm border-b">{item.amount}</td>
                 <td className="p-3 text-sm border-b">
                   {item.help && (
@@ -70,9 +75,9 @@ export default function Payout() {
                 </td>
               </tr>
             ))}
-          </tbody>
-        </table>
-      </div>
+          </tbody> */}
+        {/* </table>
+      </div> */}
     </div>
   );
 }
