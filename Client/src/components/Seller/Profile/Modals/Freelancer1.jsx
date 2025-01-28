@@ -1,10 +1,9 @@
-import React, { useState, useEffect,useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { countries } from "../../../../../public/data/country";
 import Profileget from "./Profileget";
 import axios from "axios";
 import { BiSolidEdit } from "react-icons/bi";
 import { ToastContainer, toast } from "react-toastify";
-import { Mycontext } from "../../../../context/Mycontext";
 
 function Freelancer1() {
   const notify = () => toast("Wow so easy!");
@@ -12,6 +11,8 @@ function Freelancer1() {
   // console.log('12',imageUrl)
   const [selectedLanguage, setSelectedLanguage] = useState("");
   const [selectedProficiency, setSelectedProficiency] = useState("");
+  const{imageUrl}=useContext(Mycontext);
+  console.log(imageUrl)
 
   const [profiledata, setProfiledata] = useState({
     firstname: "",
@@ -34,7 +35,7 @@ function Freelancer1() {
       const isDuplicate = profiledata.languages.some(
         (lang) => lang.language === selectedLanguage
       );
-  
+
       if (!isDuplicate) {
         setProfiledata((prev) => ({
           ...prev,
@@ -50,7 +51,7 @@ function Freelancer1() {
       alert("Please select both a language and a proficiency.");
     }
   };
-    // Handle input changes
+  // Handle input changes
   const handleChange = (e) => {
     const { id, value } = e.target;
     setProfiledata((prevData) => ({
@@ -75,14 +76,15 @@ function Freelancer1() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const userId = localStorage.getItem("_id"); // Retrieve userId from local storage
+    const userId = localStorage.getItem("_id"); 
+    // Retrieve userId from local storage
     if (!userId) {
       console.error("User ID not found in localStorage");
       toast("User not logged in. Please log in first."); // User-friendly message
       return;
     }
 
-    const payload = { ...profiledata, userId,imageUrl }; // Include userId in the payload
+    const payload = { ...profiledata, userId }; // Include userId in the payload
 
     console.log("Payload being sent:", payload);
 
@@ -123,18 +125,17 @@ function Freelancer1() {
       });
   };
 
-  const [index,setIndex]=useState(true)
+  const [index, setIndex] = useState(true)
 
 
   return (
     <>
-      <div></div>
-        {profileId&&index==true?<Profileget index={index} setIndex={setIndex} ></Profileget>:
-      <div className="flex flex-col w-full min-h-screen 320:p-0 p-4">
-        
-        {/* -------------------data entry--------------------- */}
+      {profileId && index == true ? <Profileget index={index} setIndex={setIndex} ></Profileget> :
+        <div className="flex flex-col w-full min-h-screen 320:p-0 p-4">
 
-        <div className="w-full   sm:w-full lg:w-full flex flex-col p-6 rounded-lg shadow-lg">
+          {/* -------------------data entry--------------------- */}
+
+          <div className="w-full   sm:w-full lg:w-full flex flex-col p-6 rounded-lg shadow-lg">
             <div className="flex  flex-col sm:flex-row justify-between mb-4">
               <div className="w-full sm:w-[48%] mb-4 sm:mb-0">
                 <label
@@ -432,13 +433,13 @@ function Freelancer1() {
               type="submit"
               className="bg-maincolor text-white px-5 py-2 rounded-lg mt-3 mb-14">
               Submit
-        </button>
+            </button>
             <button onClick={notify}>Notify!</button>
+          </div>
+          <ToastContainer />
         </div>
-        <ToastContainer />
-      </div>
-                  }
-      </>
+      }
+    </>
   );
 }
 

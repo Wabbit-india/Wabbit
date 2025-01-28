@@ -56,9 +56,9 @@ export default function Profile() {
     }
   };
 
-  const handleIconClick = () => {
-    fileInputRef.current.click(); // Trigger file input on icon click
-  };
+  // const handleIconClick = () => {
+  //   fileInputRef.current.click(); // Trigger file input on icon click
+  // };
 
   return (
     <>
@@ -73,7 +73,7 @@ export default function Profile() {
 
               <div className="flex flex-col items-center relative">
                 <div className="w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] rounded-full border-2 border-black flex justify-center items-center">
-                  
+
                   <input
                     type="file"
                     ref={fileInputRef}

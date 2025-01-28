@@ -93,10 +93,10 @@ const Navbar = () => {
       </div>
 
       {/* Conditional Navbar */}
-      {usertype === "seller" ? (
-        <div className="w-auto h-full flex items-center justify-end md:w-[85%] gap-[11%]">
+      {!token || usertype === "Buying" ? (
+        <div className="h-full flex items-center justify-end md:w-[90%] gap-[11%]">
           {/* Seller-specific Nav Items */}
-          <div className="hidden md:flex flex-row items-center h-[100%] justify-between gap-[9%]">
+          <nav className="hidden md:flex flex-row items-center w-[50%] h-[100%] justify-between gap-[9%]">
             <Link
               className="list-none text-2xl font-semibold md:text-xl hover:text-hovercolor cursor-pointer transition"
               to="/"
@@ -112,7 +112,7 @@ const Navbar = () => {
             <li className="list-none text-2xl font-semibold md:text-xl hover:text-hovercolor cursor-pointer transition">
               Monetize Your Skill
             </li>
-          </div>
+          </nav>
 
           <button
             className="text-nowrap w-[95%] px-4 py-2 border-[1px] flex items-center justify-center sm:left-[0px] sm:text-lg bg-black text-white text-[17px] font-[500] rounded-xl md:w-[150px]"
