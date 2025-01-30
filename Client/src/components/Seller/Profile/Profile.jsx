@@ -65,7 +65,7 @@ export default function Profile() {
       <div className=" lg:w-[81vw] bg-bgmain w-[100vw]  h-screen flex flex-col  lg:justify-center sm:flex-row">
         
         {/* Sidebar */}
-        <aside className="w-full sm:w-[400px] flex justify-center p-5 m-3">
+        <aside className="w-full sm:w-[400px] flex justify-center p-5 ">
 
           <div className="bg-white shadow-lg w-full max-w-[380px] h-[400px] flex flex-col justify-center items-center rounded-lg p-4">
 
@@ -113,7 +113,7 @@ export default function Profile() {
         {/* TopSideNavbar */}
         
         <div className="flex flex-col w-full sm:w-2/3">
-          <nav className="bg-white sm:visible invisible text-[13px] md:text-lg lg:w-[90%] lg:mx-auto rounded shadow-lg mt-8 flex-shrink-0 h-16 flex items-center justify-around">
+          <nav className="bg-white text-[13px] md:text-lg lg:w-[90%] lg:mx-auto rounded shadow-lg mt-8 flex-shrink-0 h-16 flex items-center justify-around">
             <button
               className={`text-black ${activeProfile === "Freelancer1" ? "underline" : ""}`}
               onClick={() => setActiveProfile("Freelancer1")}

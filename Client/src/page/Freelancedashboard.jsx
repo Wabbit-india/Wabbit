@@ -21,9 +21,9 @@ export default function Freelancedashboard() {
     { id: 4, icons: <FaSackDollar />, name: 'Payouts' },
     { id: 5, icons: <MdSupportAgent />, name: 'Support' },
   ];
-  const [activeComponent, setActiveComponent] = useState(1)
-  const { isnavbar } = useContext(Mycontext);
-  const [activeId, setActiveId] = useState(1); // Track the active button
+
+  const { isnavbar ,activeComponent, setActiveComponent,activeId, setActiveId} = useContext(Mycontext);
+
 
   const changeHandler = (id) => {
     setActiveId(id);

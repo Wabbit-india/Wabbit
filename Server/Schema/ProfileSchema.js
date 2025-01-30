@@ -11,7 +11,7 @@ const ProfileSchema = new Schema(
     },
     firstname: { type: String, required: true },
     lastname: { type: String, required: true },
-    occuption: { type: String },
+    occupation: { type: String },
     university: { type: String },
     region:{type:String,required:true},
     city:{type:String,required:true},
