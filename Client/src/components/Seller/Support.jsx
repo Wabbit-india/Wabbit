@@ -19,7 +19,7 @@ export default function Support() {
                         </h2>
                     </div>
 
-                    <div className='max-md:ml-0 h-[15vh] w-[20vw] ml-16 flex items-center gap-10 bg-slate-500'>
+                    <div className='max-md:ml-0 h-[15vh] w-[20vw] ml-16 flex items-center gap-10 '>
                         {/* Email Us Button */}
                         <a
                             href="mailto:Support@wabbit.in"
