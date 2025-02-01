@@ -62,17 +62,17 @@ export default function Profile() {
 
   return (
     <>
-      <div className=" lg:w-[81vw] bg-bgmain w-[100vw] h-screen flex flex-col justify-center sm:flex-row">
+      <div className=" lg:w-[81vw] bg-bgmain w-[100vw]  h-screen flex flex-col  lg:justify-center sm:flex-row">
         
         {/* Sidebar */}
-        <aside className="w-full sm:w-[400px] flex justify-center p-5 m-3">
+        <aside className="w-full sm:w-[400px] flex justify-center p-5 ">
 
           <div className="bg-white shadow-lg w-full max-w-[380px] h-[400px] flex flex-col justify-center items-center rounded-lg p-4">
 
             <div className="sm:w-1/2 flex justify-center sm:justify-start">
 
               <div className="flex flex-col items-center relative">
-                <div className="w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] rounded-full border-2 border-black flex justify-center items-center">
+                  <div className="w-[163px] cursor-pointer h-[164px] rounded-full border-2 border-black flex justify-center items-center">
 
                   <input
                     type="file"
@@ -82,11 +82,11 @@ export default function Profile() {
                     onChange={handleFileChange}
                   />
 
-                  <div onClick={() => fileInputRef.current.click()}>
+                  <div onClick={() => fileInputRef.current.click()} className="">
                     {imagePreview ? (
-                      <img src={imagePreview} alt="Profile Preview" className="w-full h-[200px] rounded-full" />
+                      <img src={imagePreview} alt="Profile Preview" className="bg-center bg-cover h-[164px] w-[163px]" />
                     ) : (
-                      <IoCameraOutline />
+                      <IoCameraOutline className="text-4xl cursor-pointer" />
                     )}
                   </div>
                 </div>

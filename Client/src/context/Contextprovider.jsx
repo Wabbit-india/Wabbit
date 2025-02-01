@@ -15,6 +15,8 @@ export const Contextprovider = ({ children }) => {
   const [normaluser, setnormaluser] = useState(false);
   const [newModal, setnewModal] = useState(false);
   const [imageUrl, setImageUrl] = useState(null);
+   const [activeComponent, setActiveComponent] = useState(1);
+     const [activeId, setActiveId] = useState(1); 
   const [userData, setUserData] = useState({
     freelancerType: "",
     freelancingPurpose: [],
@@ -83,7 +85,11 @@ export const Contextprovider = ({ children }) => {
         newModal,
         setnewModal,
         imageUrl,
-        setImageUrl
+        setImageUrl,
+        activeId, 
+        setActiveId,
+        activeComponent, 
+        setActiveComponent
       }}
     >
       {children}

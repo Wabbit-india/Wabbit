@@ -5,7 +5,7 @@ export const profiledata = async (req, res) => {
           userId,
           firstname,
           lastname,
-          occuption,  
+          occupation,
           university,
           region,
           city,
@@ -32,7 +32,7 @@ export const profiledata = async (req, res) => {
         // Update only the fields that are provided in the request body
         profile.firstname = firstname || profile.firstname;
         profile.lastname = lastname || profile.lastname;
-        profile.occuption = occuption || profile.occuption;
+        profile.occuption = occupation || profile.occupation;
         profile.university = university || profile.university;
         profile.region = region || profile.region;
         profile.city = city || profile.city;
@@ -57,7 +57,7 @@ export const profiledata = async (req, res) => {
           userId,
           firstname,
           lastname,
-          occuption,
+          occupation,
           university,
           region,
           city,
