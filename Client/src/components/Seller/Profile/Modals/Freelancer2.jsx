@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { FaPlus } from 'react-icons/fa'; // Importing plus icon from react-icons
-
+import axios from 'axios';
 function Freelancer2() {
   const fileInputRef = useRef(null);
   const [isFileSelected, setIsFileSelected] = useState(false); // State to control modal visibility after file selection
@@ -29,6 +29,49 @@ function Freelancer2() {
   const closeModal = () => {
     setIsFileSelected(false); // Close modal after showing pop-up
     setSelectedFile(null); // Reset the selected file when modal closes
+  };
+  const [title,setTitle]=useState("");
+  const [projectCategorise,setProjectCategorise]=useState("");
+  const handleTitleChange = (e) => {
+    setTitle(e.target.value);
+    console.log(title)
+  };
+
+  // Handle category selection
+  const handleCategoryChange = (category) => {
+    if (projectCategorise.includes(category)) {
+      // If already selected, remove it
+      const updatedCategories = projectCategorise.filter((cat) => cat !== category);
+      setProjectCategorise(updatedCategories);
+      console.log("Updated Categories after removal:", updatedCategories); // Log to console
+    } else {
+      // If not selected, add it
+      const updatedCategories = [...projectCategorise, category];
+      setProjectCategorise(updatedCategories);
+      console.log("Updated Categories after addition:", updatedCategories); // Log to console
+    }
+  };
+  const handlePublish = async () => {
+    const projectData = {
+      title,
+      categories: projectCategorise,
+    };
+
+    // Save to database (see step 2)
+    try {
+      const response = await axios.post('/api/projects', {projectData
+      });
+
+      if (response.ok) {
+        alert('Project saved successfully!');
+        closeModal(); // Close the modal after saving
+      } else {
+        alert('Failed to save project.');
+      }
+    } catch (error) {
+      console.error('Error saving project:', error);
+      alert('An error occurred while saving the project.');
+    }
   };
 
   return (
@@ -81,23 +124,29 @@ function Freelancer2() {
               <div className="w-full md:w-[65%] p-2">
                 <h1 className="my-1 text-lg">Project Title</h1>
                 <input
-                  type="text"
-                  className="w-full border border-gray-500 p-2 mb-4"
-                  placeholder="Enter project title"
-                />
+        type="text"
+        className="w-full border border-gray-500 p-2 mb-4"
+        placeholder="Enter project title"
+        value={title}
+        onChange={handleTitleChange}
+      />
 
 <h1 className="mt-4 mx-5 text-lg">How Would You Categorize This Project?</h1>
-                <div className="flex flex-wrap justify-between">
-                  {/* Categories */}
-                  {['Graphic Design', 'Web Development', 'App Development', 'UI/UX Design', 'Content Writing', 'SEO'].map((category, index) => (
-                    <div key={index} className="w-full shadow-lg rounded-md  sm:w-1/3 p-1 flex items-center"> {/* Use w-full on small screens, w-1/3 on sm and up */}
-                      <div className="w-full  p-2 flex items-center">
-                        <input type="checkbox" className="mx-2" />
-                        <label className=" sm:text-[15px] lg:text-[15px]">{category}</label> {/* Small text size */}
-                      </div>
-                    </div>
-                  ))}
-                </div>
+<div className="flex flex-wrap justify-between">
+        {['Graphic Design', 'Web Development', 'App Development', 'UI/UX Design', 'Content Writing', 'SEO'].map((category, index) => (
+          <div key={index} className="w-full shadow-lg rounded-md sm:w-1/3 p-1 flex items-center">
+            <div className="w-full p-2 flex items-center">
+              <input
+                type="checkbox"
+                className="mx-2"
+                checked={projectCategorise.includes(category)}
+                onChange={() => handleCategoryChange(category)}
+              />
+              <label className="sm:text-[15px] lg:text-[15px]">{category}</label>
+            </div>
+          </div>
+        ))}
+      </div>
               </div>
             </div>
 
@@ -111,8 +160,8 @@ function Freelancer2() {
               </button>
               <button
                 className="bg-maincolor text-white px-4 py-2 rounded-lg"
-                onClick={closeModal}
-              >
+                onClick={handlePublish}
+                >
                 Publish
               </button>
             </div>

@@ -1,7 +1,7 @@
 import express from "express";
 import authRouter from "./Routes/auth.js"
 import profileRouter from "./Routes/profile.js"
-
+import portfolioRouter from "./Routes/portfolio.js"
 import cors from "cors";
 import dotenv from "dotenv";
 import connectToDb from "./db/Db.js";
@@ -18,6 +18,7 @@ try {
 
   app.use("/auth" , authRouter);
   app.use("/api", profileRouter)
+  app.use("/api", portfolioRouter)
   
 
   app.get("/", (req, res) => {

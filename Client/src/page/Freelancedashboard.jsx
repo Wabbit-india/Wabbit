@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Navbar from '../components/Home/Navbar/Navbar'
 import { MdMessage } from "react-icons/md";
 import { FaSackDollar } from "react-icons/fa6";
@@ -29,12 +29,20 @@ export default function Freelancedashboard() {
     setActiveId(id);
     setActiveComponent(id) // Set the clicked button as active
   };
+  // const Buying = localStorage.getItem("accountType");
+
+  // useEffect(() => {
+  //   if (Buying) {
+  //     navigate("/"); // Redirect to login or any other page
+  //   }
+  // }, [Buying, navigate]);
+  
 
   const logoutHandler = () => {
     localStorage.clear();
     navigate("/");
-
   }
+
 
   return (
     <>
