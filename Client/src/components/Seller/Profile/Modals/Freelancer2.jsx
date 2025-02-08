@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { FaPlus } from 'react-icons/fa'; // Importing plus icon from react-icons
-
+import axios from 'axios';
 function Freelancer2() {
   const fileInputRef = useRef(null);
   const [imagePreview, setImagePreview] = useState(null);
@@ -135,10 +135,12 @@ function Freelancer2() {
               <div className="w-full md:w-[65%] p-2">
                 <h1 className="my-1 text-lg">Project Title</h1>
                 <input
-                  type="text"
-                  className="w-full border border-gray-500 p-2 mb-4"
-                  placeholder="Enter project title"
-                />
+        type="text"
+        className="w-full border border-gray-500 p-2 mb-4"
+        placeholder="Enter project title"
+        value={title}
+        onChange={handleTitleChange}
+      />
 
                 <h1 className="mt-4 mx-5 text-lg">How Would You Categorize This Project?</h1>
                 <div className="flex flex-wrap justify-between">

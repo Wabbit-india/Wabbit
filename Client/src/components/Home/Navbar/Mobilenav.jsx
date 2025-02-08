@@ -67,5 +67,5 @@ export default function Mobilenav() {
         </nav>
       </div>
     </ClickAwayListener>
-  );
+  );
 }
