@@ -20,7 +20,7 @@ export default function Projects() {
             </div> */}
 
             {/* Red Div */}
-            <div className="mt-6 bg-red-500 h-20 rounded-md shadow-md"></div>
+            {/* <div className="mt-6 bg-red-500 h-20 rounded-md shadow-md"></div> */}
         </div>
     );
 }

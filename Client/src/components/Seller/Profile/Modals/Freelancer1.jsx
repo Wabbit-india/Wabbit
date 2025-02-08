@@ -1,14 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { countries } from "../../../../../public/data/country";
 import Profileget from "./profileget";
 import axios from "axios";
+import { Mycontext } from "../../../../context/Mycontext";
 import { BiSolidEdit } from "react-icons/bi";
 import { ToastContainer, toast } from "react-toastify";
 
 function Freelancer1() {
-  const notify = () => toast("Wow so easy!");
+
+  const { imageUrl ,handleFileChange} = useContext(Mycontext);
   const [selectedLanguage, setSelectedLanguage] = useState("");
   const [selectedProficiency, setSelectedProficiency] = useState("");
+
+  
+
+  // useEffect(() => {
+  //   console.log("Freelancer1 received imageUrl ok02:", imageUrl); // ✅ Debug log
+  // }, [imageUrl]);
 
   const [profiledata, setProfiledata] = useState({
     firstname: "",
@@ -27,11 +35,11 @@ function Freelancer1() {
 
   const handleAddLanguage = () => {
     if (selectedLanguage && selectedProficiency) {
-      // Check for duplicates
+
       const isDuplicate = profiledata.languages.some(
         (lang) => lang.language === selectedLanguage
       );
-  
+
       if (!isDuplicate) {
         setProfiledata((prev) => ({
           ...prev,
@@ -41,13 +49,15 @@ function Freelancer1() {
           ],
         }));
       } else {
-        alert("This language is already added.");
+        toast.error("This language is already added.");
       }
     } else {
-      alert("Please select both a language and a proficiency.");
+      toast.error("Please select both a language and a proficiency.");
     }
   };
-    // Handle input changes
+
+  
+  // Handle input changes
   const handleChange = (e) => {
     const { id, value } = e.target;
     setProfiledata((prevData) => ({
@@ -55,7 +65,7 @@ function Freelancer1() {
       [id]: value,
     }));
   };
-  console.log(profiledata);
+
 
   const handleSelectChange = (e) => {
     const { id, value } = e.target;
@@ -64,12 +74,14 @@ function Freelancer1() {
       [id]: value,
     }));
   };
+
   let userId = localStorage.getItem("_id");
-  console.log(userId);
+
   let profileId = localStorage.getItem("profile_id");
-  console.log('profiledid',profileId)
+
   const handleSubmit = (e) => {
     e.preventDefault();
+     handleFileChange();
 
     const userId = localStorage.getItem("_id"); // Retrieve userId from local storage
     if (!userId) {
@@ -78,12 +90,11 @@ function Freelancer1() {
       return;
     }
 
-    const payload = { ...profiledata, userId }; // Include userId in the payload
+    const payload = { ...profiledata, userId , imageUrl};
 
-    console.log("Payload being sent:", payload);
 
     axios
-      .post("http://localhost:8000/api/profile", payload)
+      .post("http://localhost:8000/api/profile", payload,)
       .then((response) => {
         toast.success("Form submitted successfully:");
 
@@ -91,10 +102,11 @@ function Freelancer1() {
         const profileId = response.data.profile_id;
         if (profileId) {
           localStorage.setItem("profile_id", profileId);
-          console.log("Profile ID saved to localStorage:", profileId);
+
           toast.success("Profile Upadate successfully!"); // Display success toast
         } else {
           console.warn("No profile_id received in the response.");
+
           toast.warn("Profile saved, but no ID received."); // Display warning toast
         }
 
@@ -113,26 +125,30 @@ function Freelancer1() {
           email: "",
           languages: "",
         });
+
+        
       })
       .catch((error) => {
         console.error("Error submitting form:", error);
+
         alert("An error occurred while saving the profile. Please try again.");
       });
   };
 
-  const [index,setIndex]=useState(true)
+  const [index, setIndex] = useState(true)
 
 
   return (
     <>
-      <div></div>
-        {profileId&&index==true?<Profileget index={index} setIndex={setIndex} ></Profileget>:
-      <div className="flex flex-col w-full min-h-screen 320:p-0 p-4">
-        
-        {/* -------------------data entry--------------------- */}
+      {profileId && index == true ? <Profileget index={index} setIndex={setIndex} >
+      </Profileget> :
 
-        <div className="w-full   sm:w-full lg:w-full flex flex-col p-6 rounded-lg shadow-lg">
-       {profileId? <button className="bg-blue-400 w-16 p-1 rounded-full text-white" onClick={()=>setIndex(true)}>Back</button>:null}
+        <form className="flex flex-col w-full min-h-screen 320:p-0 p-4" onSubmit={handleSubmit}>
+
+          {/* -------------------data entry--------------------- */}
+
+          <div className="w-full   sm:w-full lg:w-full flex flex-col p-6 rounded-lg shadow-lg">
+            {profileId ? <button className="bg-blue-400 w-16 p-1 rounded-full text-white" onClick={() => setIndex(true)}>Back</button> : null}
             <div className="flex  flex-col sm:flex-row justify-between mb-4">
               <div className="w-full sm:w-[48%] mb-4 sm:mb-0">
                 <label
@@ -323,6 +339,7 @@ function Freelancer1() {
                       key={index}
                       className="bg-gray-200 text-gray-800 px-3 py-1 rounded-lg text-sm">
                       {skill}
+
                       <button
                         type="button"
                         onClick={() =>
@@ -334,6 +351,7 @@ function Freelancer1() {
                         className="ml-2 text-red-600 font-bold">
                         &times;
                       </button>
+                      
                     </span>
                   ))
                 ) : (
@@ -411,11 +429,13 @@ function Freelancer1() {
 
             {/* Email */}
             <div className="mb-6">
+
               <label
                 htmlFor="email"
                 className="block mb-2 text-sm sm:text-base lg:text-lg">
                 Email
               </label>
+
               <input
                 type="email"
                 id="email"
@@ -424,18 +444,20 @@ function Freelancer1() {
                 placeholder="Email"
                 className="w-full p-2 border border-gray-300 rounded-md"
               />
+
             </div>
+
             <button
-              onClick={handleSubmit}
               type="submit"
               className="bg-maincolor text-white px-5 py-2 rounded-lg mt-3 mb-14">
               Submit
-        </button>
-        </div>
-        <ToastContainer />
-      </div>
-                  }
-      </>
+            </button>
+
+          </div>
+          <ToastContainer />
+        </form>
+      }
+    </>
   );
 }
 

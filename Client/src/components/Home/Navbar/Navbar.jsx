@@ -30,12 +30,7 @@ const Navbar = () => {
   } = useContext(Mycontext);
 
   const token = localStorage.getItem("token");
-  const [sideModal, setSideModal] = useState(false);
-
-  useEffect(() => {
-    console.log(isnavbar);
-  }, [isnavbar]);
-
+  
   useEffect(() => {
     if (isModal || newModal) {
       document.body.classList.add("overflow-hidden");
@@ -57,6 +52,7 @@ const Navbar = () => {
     setRegisterStep(0);
     setcreateAccount(false);
     setLoginStep(0);
+
     setUserData({
       freelancerType: "",
       freelancingPurpose: [],
@@ -104,7 +100,7 @@ const Navbar = () => {
       </div>
 
       {/* Conditional Navbar */}
-      {!token || usertype === "Buying" ? (
+    
         <div className="h-full flex items-center md:w-[85%] justify-end">
           {/* Seller-specific Nav Items */}
           <nav className="hidden md:flex flex-row items-center w-[64%] h-[100%] gap-[4%] lg:justify-evenly">
@@ -125,44 +121,14 @@ const Navbar = () => {
             </li>
           </nav>
 
-          {!token ? (
+          
             <button
               className="text-nowrap w-[95%] px-4 py-2 border-[1px] flex items-center justify-center sm:left-[0px] sm:text-lg bg-black text-white text-[17px] font-[500] rounded-xl md:w-[150px]"
               onClick={() => setIsModal(true)}
             >
               Get Started
             </button>
-          ) : (
-            // Show Side Modal if logged in
-            <div>
-              <button
-                className="bg-maincolor rounded-full w-[45px] h-[45px] text-white text-center uppercase font-bold text-[25px] mr-4 max-md:mr-1"
-                onClick={() => setSideModal(true)}
-              >
-                {name[0]}
-
-              </button>
-            </div>
-          )}
         </div>
-
-      ) : (
-        /* Basic Navbar for Non-sellers */
-        <div className="w-full flex items-center justify-end gap-10">
-
-          <nav className="hidden md:flex h-[100%] gap-[1%]">
-            <li className="list-none text-3xl text-nowrap font-semibold md:text-xl hover:text-hovercolor hover:cursor-pointer transition-all">
-              Notification
-            </li>
-          </nav>
-
-          <button
-            className="bg-maincolor rounded-full w-[45px] h-[45px] text-white text-center uppercase font-bold text-[25px] mr-4"
-          >
-            {name[0]}
-          </button>
-        </div>
-      )}
 
       {/* Modal for Login/Register */}
       {isModal && (
@@ -184,31 +150,6 @@ const Navbar = () => {
             </div>
           </ClickAwayListener>
         </div>
-      )}
-
-      {sideModal && (
-        <ClickAwayListener onClickAway={handleSideModalClose}>
-          <div className="fixed top-[70px] right-0 w-[250px] bg-white shadow-lg rounded-lg z-50">
-            <ul className="p-4">
-              <li
-                className="text-lg font-medium py-2 hover:bg-gray-100 cursor-pointer"
-                onClick={() => {
-                  navigate("/profile");
-                  setSideModal(false);
-                }}
-              >
-                Profile
-              </li>
-
-              <li
-                className="text-lg font-medium py-2 hover:bg-gray-100 cursor-pointer"
-                onClick={handleLogout}
-              >
-                Logout
-              </li>
-            </ul>
-          </div>
-        </ClickAwayListener>
       )}
     </div>
   );

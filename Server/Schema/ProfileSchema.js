@@ -27,6 +27,7 @@ const ProfileSchema = new Schema(
     ],
          contact:[String],
     email:[String],
+    imageUrl:[String]
     },
 );
 

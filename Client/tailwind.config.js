@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+
   theme: {
     extend: {
       screens:{
@@ -22,6 +23,7 @@ export default {
         Secbg:'#adebad',
         Thirdbg:'#10443e',
       },
+      
       boxShadow: {
         'box-shadow': 'rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px',
       },

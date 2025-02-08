@@ -10,10 +10,12 @@ import Payout from '../components/Seller/Payout';
 import Projects from '../components/Seller/Projects';
 import { useNavigate } from 'react-router-dom';
 import { Mycontext } from '../context/Mycontext';
-import Mobilenav from '../components/Home/Navbar/Mobilenav';
+import UtilmobileNav from '../util/Utilmobilenav'
+import Utilnavbar from '../util/Utilnavbar'
 
 export default function Freelancedashboard() {
   const navigate = useNavigate();
+
   const sidebutton = [
     { id: 1, icons: <MdAccountBox />, name: 'Profiles' },
     { id: 2, icons: <MdMessage />, name: 'Message' },
@@ -22,7 +24,7 @@ export default function Freelancedashboard() {
     { id: 5, icons: <MdSupportAgent />, name: 'Support' },
   ];
 
-  const { isnavbar ,activeComponent, setActiveComponent,activeId, setActiveId} = useContext(Mycontext);
+  const {  isutilnavbar, activeComponent, setActiveComponent, activeId, setActiveId } = useContext(Mycontext);
 
 
   const changeHandler = (id) => {
@@ -38,14 +40,14 @@ export default function Freelancedashboard() {
 
   return (
     <>
-      <Navbar />
-      {isnavbar && <Mobilenav />}
+      <Utilnavbar />
+       {isutilnavbar && <UtilmobileNav />}
 
       <div className='overflow-hidden   flex flex-row w-full h-[89.30vh] mt-[85px]'>
         <div className="flex">
 
           <aside className=" w-[300px] h-auto lg:visible invisible   mt-8 shadow-lg flex flex-col gap-3 py-8 items-center">
-        
+
             {sidebutton.map((item) => (
               <div
                 key={item.id}
@@ -61,8 +63,9 @@ export default function Freelancedashboard() {
             <div className='relative top-32 bg-maincolor cursor-pointer lg:text-2xl text-xl w-[80%] rounded-lg p-2 flex items-center  justify-evenly' onClick={logoutHandler}>Logout</div>
           </aside>
         </div>
-            
+
         <div className='max-md:w-[100%] w-[81%] h-screen'>
+
           <main className='w-[80%] h-screen'>
             {activeComponent === 1 ? <Profile /> : null}
             {activeComponent === 2 ? <Chat /> : null}

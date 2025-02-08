@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import { BiSolidEdit } from "react-icons/bi";
 
 import axios from "axios";
-function profileget({ index, setIndex }) {
+function profileget({index,setIndex}) {
+
   const profileId = localStorage.getItem("profile_id");
-  const [profiledata, setProfileData] = useState([]); // Initialize as an empty array
+  
+  const [profiledata, setProfileData] = useState([]);
+   // Initialize as an empty array
 
   const fetchdata = async () => {
     if (profileId) {
@@ -12,19 +15,22 @@ function profileget({ index, setIndex }) {
         const response = await axios.get(
           `http://localhost:8000/api/getprofile?id=${profileId}`
         );
+        
         const data = response.data?.data;
 
         // If data is an object, wrap it in an array to ensure compatibility with .map()
         setProfileData(Array.isArray(data) ? data : [data]);
-        console.log(data); // Log the fetched data
+       
       } catch (error) {
         console.log(error, "errorror");
       }
     }
   };
+
   useEffect(() => {
-    fetchdata(); // Fetch data on component mount
-  }, []);
+    fetchdata();
+  }, [profileId]);
+
 
   const updateHandle = () => {
     setIndex(false);
@@ -40,7 +46,7 @@ function profileget({ index, setIndex }) {
             <div className="w-full sm:w-[48%] mb-4 sm:mb-0">
               <label
                 htmlFor="firstname"
-                className="block flex items-center mb-2 text-sm sm:text-base lg:text-lg">
+                className="flex items-center mb-2 text-sm sm:text-base lg:text-lg">
                 First Name
                 <BiSolidEdit
                   className="cursor-pointer"

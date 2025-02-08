@@ -3,6 +3,7 @@ import { Mycontext } from "./Mycontext";
 
 export const Contextprovider = ({ children }) => {
   const [isnavbar, setIsnavbar] = useState(false);
+  const [isutilnavbar, setIsutilnavbar] = useState(false);
   const [isModal, setIsModal] = useState(false);
   const [createAccount, setcreateAccount] = useState(false);
   const [LoginStep, setLoginStep] = useState(0);
@@ -14,9 +15,10 @@ export const Contextprovider = ({ children }) => {
   const [freelance, setfreelance] = useState(false);
   const [normaluser, setnormaluser] = useState(false);
   const [newModal, setnewModal] = useState(false);
-  const [imageUrl, setImageUrl] = useState(null);
-   const [activeComponent, setActiveComponent] = useState(1);
-     const [activeId, setActiveId] = useState(1); 
+  const [imageUrl, setImageUrl] = useState("");
+  const [activeComponent, setActiveComponent] = useState(1);
+  const [activeId, setActiveId] = useState(1);
+  const [imagePreview, setImagePreview] = useState(null);
   const [userData, setUserData] = useState({
     freelancerType: "",
     freelancingPurpose: [],
@@ -48,6 +50,41 @@ export const Contextprovider = ({ children }) => {
     portfoliolinks: "",
   })
 
+  const handleFileChange = async (event) => {
+    const file = event.target.files[0];
+    if (file) {
+
+      const previewUrl = URL.createObjectURL(file);
+      setImagePreview(previewUrl);
+
+      const data = new FormData();
+      data.append("file", file);
+      data.append("upload_preset", "ProfilePhoto");
+      data.append("cloud_name", "dvnrzuumg");
+
+      try {
+        const res = await fetch(
+          "https://api.cloudinary.com/v1_1/dvnrzuumg/image/upload",
+          {
+            method: "POST",
+            body: data,
+          }
+        );
+
+        if (!res.ok) throw new Error("Failed to upload image");
+
+        const result = await res.json();
+
+        setImageUrl(result.url);
+
+
+      } catch (error) {
+        console.error("Error uploading the image:", error.message);
+      }
+    }
+  };
+
+
   return (
     <Mycontext.Provider
       value={{
@@ -56,6 +93,8 @@ export const Contextprovider = ({ children }) => {
         setProfileData,
         isnavbar,
         setIsnavbar,
+        isutilnavbar,
+        setIsutilnavbar,
         isModal,
         setIsModal,
         createAccount,
@@ -86,10 +125,13 @@ export const Contextprovider = ({ children }) => {
         setnewModal,
         imageUrl,
         setImageUrl,
-        activeId, 
+        activeId,
         setActiveId,
-        activeComponent, 
-        setActiveComponent
+        activeComponent,
+        setActiveComponent,
+        imagePreview,
+        setImagePreview,
+        handleFileChange
       }}
     >
       {children}

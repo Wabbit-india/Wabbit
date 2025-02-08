@@ -78,6 +78,7 @@ export default function About() {
           </div>
           <div className="sm:text-[29px] font-[700] 320:text-[22px] ">
             We see what you do</div>
+            
           <div className="lg:text-[28px] sm:text-[22px] 320:text-[18px] ">
             Every project, whether it’s a quick UI design or an expansive
             development cycle, reflects the dedication and passion of Wabbit's

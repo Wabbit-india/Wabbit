@@ -20,7 +20,7 @@ export default function Support() {
                         </h2>
                     </div>
 
-                  
+
                     <div className='max-md:w-[100%] max-md:h-[50%] h-[50%] flex  items-center justify-center gap-12'>
                         {/* Email Us Button */}
                         <a
@@ -48,6 +48,6 @@ export default function Support() {
                     />
                 </div>
             </div>
-         </div>
+        </div>
     );
 }
