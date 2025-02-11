@@ -3,6 +3,7 @@ import { MdMessage } from "react-icons/md";
 import { FaSackDollar } from "react-icons/fa6";
 import { MdSupportAgent, MdNewspaper, MdAccountBox } from "react-icons/md";
 import { Mycontext } from '../context/Mycontext';
+import Profile  from '../components/Buyer/Profile/Profie';
 import Projects from '../components/Buyer/Project';
 import Payout from '../components/Buyer/Payout';
 import Support from '../components/Buyer/Support';
@@ -63,7 +64,7 @@ export default function Buyerprofile() {
                 <div className='max-md:w-[100%] w-[81%] h-screen'>
 
                     <main className='w-[80%] h-screen'>
-                        {/* {activeComponent === 1 ? <Profile /> : null} */}
+                        {activeComponent === 1 ? <Profile /> : null}
                         {/* {activeComponent === 2 ? <Chat /> : null} */}
                         {activeComponent === 3 ? <Projects /> : null}
                         {activeComponent === 4 ? <Payout /> : null}
