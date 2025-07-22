@@ -17,6 +17,7 @@ export const Contextprovider = ({ children }) => {
   const [newModal, setnewModal] = useState(false);
   const [imageUrl, setImageUrl] = useState("");
   const [activeComponent, setActiveComponent] = useState(1);
+  const [ispeofile, setprofile] = useState(false)
   const [activeId, setActiveId] = useState(1);
   const [imagePreview, setImagePreview] = useState(null);
   const [userData, setUserData] = useState({
@@ -131,7 +132,9 @@ export const Contextprovider = ({ children }) => {
         setActiveComponent,
         imagePreview,
         setImagePreview,
-        handleFileChange
+        handleFileChange,
+        ispeofile,
+        setprofile
       }}
     >
       {children}

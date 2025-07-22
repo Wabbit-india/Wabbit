@@ -23,7 +23,7 @@ export default function Workwithus() {
         <img
           src={img1}
           alt="img01"
-          className='max-sm:hidden  absolute object-cover  md:h-24 md:left-2 md:top-3 xl:h-32 xl:left-10'
+          className='max-sm:hidden  absolute object-cover  md:h-20 md:left-2 md:top-3 xl:h-32 xl:left-10'
         />
 
         <img
@@ -47,11 +47,11 @@ export default function Workwithus() {
 
         {/* Heading Dev */}
 
-        <h1 className=' pt-3 font-nunito font-bold text-[50px] max-lg:text-[23px] max-md:pt-10 xl:text-[50px]'>
+        <h1 className=' pt-3 font-nunito font-bold text-[50px] max-lg:text-[23px] max-md:pt-10 lg:text-[46px]'>
           Instantly Connect with the Perfect
         </h1>
 
-        <div className='flex gap-2 pt-1 sm:gap-6 max-md:pt-4'>
+        <div className='flex gap-2 pt-1 sm:gap-3 max-md:pt-4'>
 
           <h2 className='text-maincolor font-[900]  font-nunito text-[50px] max-lg:text-[23px]'>
             Freelance
@@ -63,7 +63,7 @@ export default function Workwithus() {
 
         </div>
 
-        <div className='flex gap-2 pt-1  sm:gap-6 max-md:pt-4'>
+        <div className='flex gap-2 pt-1  sm:gap-4 max-md:pt-4'>
 
           <h3 className='font-bold font-nunito text-[50px] max-lg:text-[23px]'>
             Your
@@ -87,14 +87,13 @@ export default function Workwithus() {
 
         {/* WorkWith */}
 
-        <div className="relative w-full flex flex-col items-center">
+        <div className="max-md:hidden relative w-full h-[10vh] flex flex-col items-center justify-center lg:mt-14 mt-6 md:mt-14">
           {/* Search Bar */}
-          <div className="max-sm:hidden w-[90%] bg-black h-14 rounded-3xl flex flex-row items-center gap-36 text-white lg:absolute lg:bottom-0">
-            <h1 className="pl-36 font-nunito font-bold">Trusted By</h1>
+          <div className="max-sm:hidden  w-[90%] bg-black h-14 rounded-3xl flex flex-row items-center gap-36 text-white">
+
+            <h1 className="pl-9 font-nunito font-bold">Trusted By</h1>
             {Brand.map((brandItem, index) => (
               <h1 key={index}>
-
-
               </h1>
             ))}
           </div>

@@ -1,14 +1,12 @@
 import express from "express";
-import { createUser, loginUser, setinfo } from "../Controller/auth.js";
+import { createUser, loginUser, setinfo, checkUsername } from "../Controller/auth.js";
 
 const router = express.Router();
 
-try {
-    router.post("/register", createUser);
-    router.post("/login", loginUser);
-    router.post("/setinfo",setinfo);
-} catch (error) {
-    console.log("Intrenal server error at auth route 🔴 ", error);
-}
+// Define routes correctly
+router.post("/register", createUser);
+router.post("/login", loginUser);
+router.post("/setinfo", setinfo);
+router.get("/check-username/:username", checkUsername); // Fixed username check route
 
 export default router;

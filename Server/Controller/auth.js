@@ -4,6 +4,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 dotenv.config();
+
 export const createUser = async (req, res) => {
   try {
     const {
@@ -78,6 +79,10 @@ export const createUser = async (req, res) => {
     return res.status(500).json({ error: "Internal server error" });
   }
 };
+
+
+
+
 
 // Login
 
@@ -185,3 +190,31 @@ export const setinfo = async (req, res) => {
     return res.status(500).json({ error: "Internal server error" });
   }
 };
+
+
+//usernames
+
+export const checkUsername = async (req, res) => {
+  try {
+    const { username } = req.params; // Get username from request URL
+
+    if (!username) {
+      return res.status(400).json({ error: "Username not provided" });
+    }
+
+    const user = await UserSchema.findOne({ username });
+
+    if (user) {
+      return res.json({ available: false }); // Username is already taken
+    } else {
+      return res.json({ available: true }); // Username is available
+    }
+  } catch (error) {
+    console.error("Internal server error at username check:", error);
+    return res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+
+
+

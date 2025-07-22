@@ -1,6 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Mycontext } from "../../../context/Mycontext";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const RegisterStep2 = () => {
   const {
@@ -12,52 +14,53 @@ const RegisterStep2 = () => {
     registerUsername,
     setRegisterUsername,
     setIsModal,
-    setcreateAccount,
-    setLoginStep, setnewModal
+    setnewModal,
   } = useContext(Mycontext);
 
-  // const register = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const response = await fetch("http://localhost:8000/auth/register", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         email: registerEmail,
-  //         password: registerPassword,
-  //         username: registerUsername,
-  //       }),
-  //     });
-  //     const result = await response.json();
-  //     console.log(result);
-  //     const token = result.authToken;
-  //     localStorage.setItem("token", token);
-  //     localStorage.setItem("_id", result._id);
-  //     localStorage.setItem("username", result.username);
-  //     setRegisterUsername("");
-  //     setRegisterEmail("");
-  //     setRegisterPassword("");
-  //     setRegisterStep(0);
-  //     setcreateAccount(false);
-  //     setLoginStep(0);
-  //     setIsModal(false);
-  //     navigate("/userInfo");
-  //   } catch (error) {
-  //     console.log(error);
-  //     console.log("an error occured in registering");
-  //   }
-  // };
+  const [isChecking, setIsChecking] = useState(false);
+  const [usernameAvailable, setUsernameAvailable] = useState(null);
+
+  // Function to check if username is unique
+  const checkUsername = async () => {
+    if (!registerUsername.trim()) {
+      toast.warning("Username cannot be empty! ⚠️");
+      return;
+    }
+
+    setIsChecking(true);
+    try {
+      const response = await fetch(
+        `http://localhost:8000/auth/check-username/${registerUsername}`
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to check username");
+      }
+
+      const data = await response.json();
+
+      if (!data.available) {
+        
+        setUsernameAvailable(false);
+        toast.error("Username is already taken! ❌");
+
+      } else {
+        setUsernameAvailable(true);
+        toast.success("Username is available! ✅");
+      }
+    } catch (error) {
+      console.error("Error checking username:", error);
+      toast.error("Something went wrong while checking username.");
+    }
+    setIsChecking(false);
+  };
 
   return (
-    <div className="flex flex-col  gap-3 h-[100%]">
+    <div className="flex flex-col gap-3 h-[100%]">
       <div className="absolute top-6">
         <button
           className="text-start font-bold text-sm flex gap-2 flex-row items-center justify-start"
-          onClick={() => {
-            setRegisterStep(1);
-          }}
+          onClick={() => setRegisterStep(1)}
         >
           <FaArrowLeftLong />
           Back
@@ -66,53 +69,46 @@ const RegisterStep2 = () => {
 
       <form className="h-[85%] flex flex-col gap-3">
         <div className="text-[22px] md:text-3xl text-start font-nunito font-bold">
-          Get your profile started{" "}
+          Get your profile started
         </div>
         <div className="text-[16px] text-gray-600">
-          Add a username that's unique to you, this is how you'll appear to
-          others.
+          Add a unique username. This is how you'll appear to others.
         </div>
-        <div className="text-[16px] text-gray-600 font-bold">
-          You can't change your username, so choose wisely.
-        </div>
+
         <div className="flex flex-col gap-3 mt-5">
           <label htmlFor="username" className="font-bold w-fit">
             Choose a username
           </label>
-          <div className="relative h-auto">
+          <div className="relative">
             <input
               type="text"
               id="username"
-              placeholder="username"
+              placeholder="Enter username"
               value={registerUsername}
-              onChange={(e) => {
-                setRegisterUsername(e.target.value);
-              }}
-              className="border rounded-lg py-2 px-3 pr-10 border-[rgb(0,0,0,0.2)] w-full focus:outline-[rgb(0,0,0,0.5)]"
+              onChange={(e) => setRegisterUsername(e.target.value)}
+                onBlur={checkUsername} // Check username when input loses focus
+              className={`border rounded-lg py-2 px-3 pr-10 border-gray-300 w-full focus:outline-gray-500 
+                ${usernameAvailable === false ? "border-red-500" : ""}
+                ${usernameAvailable === true ? "border-green-500" : ""}`
+              }
             />
           </div>
         </div>
+
         <button
-        onClick={() => {
-          setIsModal(false);
-          setnewModal(true);
-        }}
+          onClick={(e) => {
+            e.preventDefault();
+            setIsModal(false);
+            setnewModal(true);
+            toast.success("Proceeding to the next step 🚀");
+          }}
           disabled={
-            registerEmail.length === 0 &&
-            registerPassword.length === 0 &&
-            registerUsername.length === 0
-              ? true
-              : false
+            !registerEmail || !registerPassword || !registerUsername || usernameAvailable === false
           }
           type="submit"
-          className="py-3 text-center w-full cursor-pointer border rounded-xl border-[rgb(0,0,0,0.2)] font-bold flex-row flex items-center justify-center gap-[5%] bg-black mt-6"
+          className="py-3 text-center w-full cursor-pointer border rounded-xl border-gray-300 font-bold flex items-center justify-center bg-black mt-6"
         >
-          <p
-            className="text-[16px] text-white"
-            
-          >
-            Continue
-          </p>
+          <p className="text-[16px] text-white">Continue</p>
         </button>
       </form>
     </div>
