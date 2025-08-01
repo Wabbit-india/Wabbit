@@ -110,9 +110,16 @@ import Navbar from "../Home/Navbar/Navbar";
                   <hr className="w-[80%] mx-auto mt-4" />
 
                   <div className="flex py-5 flex-row-reverse items-center">
-                    <button className="py-2 px-4 bg-maincolor text-white rounded-full hover:bg-opacity-90 transition">
-                      Hire Me
-                    </button>
+                <button className="py-2 px-4 bg-maincolor text-white rounded-full hover:bg-opacity-90 transition">
+<a
+  href={`https://wa.me/919876543210?text=Hi%20${editor.firstname},%20I'm%20interested%20in%20your%20Mockup%20services.`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="py-2 px-4 bg-maincolor text-white rounded-full hover:bg-opacity-90 transition text-center"
+>
+  Hire Me
+</a>
+                </button>
 <button
   className="py-2 px-4 bg-blue-600 text-white rounded-full hover:bg-opacity-90 transition"
   onClick={() => handleViewProfile(editor.userId)}
